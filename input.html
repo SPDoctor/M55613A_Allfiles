@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>The Smallest Page</title>
+  <style>
+    input {
+      border: solid 1px;
+    }
+
+    input:invalid {
+      border-color: #ff0000;
+    }
+
+    input:valid {
+      border-color: #00ff00;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>This is a form!</h1>
+  <form name="login" method="post" action="login.aspx" onsubmit="validate()">
+    <fieldset>
+      <legend>Please enter your details:</legend>
+      <div class="box">
+        <label for="username">User name:</label>
+        <input style="width:250px" id="username" name="username" type="text" placeholder="Enter username" required="required" />
+      </div>
+      <br />
+      <div class="box">
+        <label for="password">Password:</label>
+        <input id="password" name="password" type="password" placeholder="Enter password" />
+      </div>
+      <br />
+      <div class="box">
+        <select id="country" name="country">
+          <optgroup label="Europe">
+              <option value="GB">United Kingdom</option>
+              <option value="FR">France</option>
+              <option value="DE">Germany</option>
+              <option value="ES">Spain</option>
+              <option value="IT">Italy</option>
+          </optgroup>
+          <optgroup label="North America">
+              <option value="US">United States</option>
+              <option value="CA">Canada</option>
+          </optgroup>
+        </select>
+      </div>
+      <br />
+      <div class="box">
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="email" placeholder="Enter your email address" />
+      </div>
+      <br />
+      <div class="box">
+        <label for="height">Height (in cm):</label>
+        <input style="width:200px" id="height" name="height" type="number" placeholder="Enter your height in cm"
+          min="50" max="300" />
+      </div>
+      <br />
+      <div class="box">
+        <label for="height">Product ref:</label>
+        <!-- <input id="productRef" name="productReference" type="text" pattern="[0-9]{2}[A-Z]{3}"
+          title="2 digits and 3 uppercase letters" oninput="validateRef()" /> -->
+        <input id="productRef" name="productReference" type="text" oninput="validateRef()" />
+      </div>
+    </fieldset>
+    <br />
+    <input type="submit" value="Send" />
+  </form>
+  <script>
+    function validate() {
+      var start = document.forms["login"]["start"].value;
+      var end = document.forms["login"]["end"].value;
+      if (start >= end) {
+        alert("end value should be greater than start value");
+        return false;
+      }
+      return true;
+    }
+
+    function validateRef() {
+      var ref = document.getElementById("productRef").value;
+      var pattern = new RegExp("[0-9]{2}[A-Z]{3}");
+      if (pattern.test(ref)) {
+        document.getElementById("productRef").setCustomValidity("");
+      } else {
+        document.getElementById("productRef").setCustomValidity("2 digits and 3 uppercase letters");
+      }
+    }
+  </script>
+</body>
+
+</html>

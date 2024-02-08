@@ -1,0 +1,39 @@
+h1 {
+  height: 100px;
+  width: 400px;
+  padding: 10px;
+  border-left-style: dotted;
+  border-left-color: black;
+  border-width: 5px;
+  border-left-width: 10px;
+  border-radius: 2px;
+  margin: 10px 0 10px 0;
+  background: lightblue url("pattern.png") no-repeat fixed center;
+  background-color: lightblue;
+  background-image: url("pattern.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* input {
+  border: solid 1px red;
+} */
+input:focus {
+  outline: none;
+}
+/* input:invalid {
+  border-color: red;
+}
+input:valid {
+  border-color: green;
+} */
+input[type="submit"] {
+  border: solid 1px black;
+}
+input.valid {
+  border-color: #00ff00; 
+}
+input.invalid {
+  border-color: #ff0000;
+}

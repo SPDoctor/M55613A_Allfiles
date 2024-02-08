@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>The Smallest Page</title>
+  <link rel="stylesheet" href="test.css" />
+</head>
+
+<body>
+  <h1>Content</h1>
+  <script>
+    function makeRequest(response, callback) {
+      console.log(response);
+      callback(response);
+    }
+    function doSomething(response, callback) {
+      console.log(response);
+      callback(response);
+    }
+    function doSomethingElse(response, callback) {
+      console.log(response);
+      callback(response);
+    }
+
+
+let wait = delay => new Promise((res, rej) => {
+  if(delay < 0) rej("Invalid delay");
+  setTimeout(res, delay);
+});
+
+// function wait(delay) {
+//   return new Promise(function(resolve) {
+//     setTimeout(resolve, delay);
+//   });
+// }
+wait(-1000).then(()=> console.log("Timeout done")).catch(err => console.log(err));
+
+function callSlowEndpoint() {
+  return 200;
+}
+
+let promise1 = new Promise(function(resolve, reject) {
+  let status = callSlowEndpoint();
+  if (status == 300) {
+    resolve("OK");
+  } else {
+    reject("Error");
+  }
+});
+
+promise1.then(()=>console.log("success")).catch(()=>console.log("failure"));
+
+function getRemoteData(url) {
+  return new Promise((resolve, reject) => resolve("foo"));
+}
+
+// getRemoteData("http://flosim.com/resources/foo")
+//   .then(data => getRemoteData("http://flosim.com/endpoint/" + data))
+//   .then(data => getRemoteData("http://flosim.com/data/" + data))
+//   .then(data => console.log('Final result: ', data))
+//   .catch(err => console.error('Error: ', err));
+
+// Promise.all([
+//   getRemoteData("http://flosim.com/resources/foo"),
+//   getRemoteData("http://flosim.com/endpoint/foo"),
+//   getRemoteData("http://flosim.com/data/foo")
+//   ]).then(data => console.log('All done', data))
+//     .catch(err => console.error('Error: ', err));
+
+async function getResults() {
+  try {
+    let data1 = await getRemoteData("http://flosim.com/resources/foo");
+    let data2 = await getRemoteData("http://flosim.com/endpoint/" + data1);
+    let data3 = await getRemoteData("http://flosim.com/data/" + data2);
+    console.log("Final result: ", data3);
+   }
+   catch(err) {
+     console.error('Error: ', err);
+   }
+}
+
+getResults();
+
+
+
+    // window.addEventListener("load", () => {
+    //   console.log("Page loaded");
+    //   document.getElementById("productRef").addEventListener("input", event => {
+    //     // do something with the event
+    //     makeRequest(request, response => {
+    //       // do something with the response
+    //       doSomething(response, event => {
+    //         // do something with the event
+    //         doSomethingElse(event, response => {
+    //           // do something with the response
+    //           console.log("All done");
+    //         });
+    //       });
+    //     });
+    //   });
+    // });
+
+    function validateRef() {
+      var ref = document.getElementById("productRef");
+      var pattern = new RegExp("[0-9]{2}[A-Z]{3}");
+      if (pattern.test(ref.value)) {
+        document.getElementById("productRef").setCustomValidity("");
+        ref.className = "valid";
+      } else {
+        document.getElementById("productRef").setCustomValidity("2 digits and 3 uppercase letters");
+        ref.className = "invalid";
+      }
+    }
+  </script>
+  <form id="scoreForm" method="post" action="results.aspx">
+    <input id="productRef" name="prodRef" type="text" oninput="validateRef()" />
+    <input type="submit" value="Submit" />
+  </form>
+</body>
+
+</html>
