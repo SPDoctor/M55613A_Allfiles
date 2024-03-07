@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  <title>My First HTML Page</title>
+</head>
+
+<body>
+  <h1>Using drag and drop</h1>
+  <div draggable="true" id="drag-me">
+    <strong>drag me!</strong>
+  </div>
+  <br>
+  <br>
+  <div id="drop-zone">
+    <strong>drop here!</strong>
+  </div>
+  <script type="text/javascript">
+    let dragme = document.getElementById("drag-me");
+    let dropzone = document.getElementById("drop-zone");
+
+    dragme.addEventListener("dragstart", e => {
+      e.dataTransfer.effectAllowed = "copy";
+      e.dataTransfer.dropEffect = "copy";
+      e.dataTransfer.setData("text/plain", e.target.innerHTML);
+    });
+
+    dropzone.addEventListener("dragover", e => {
+      e.preventDefault();
+      e.stopPropagation();
+      e.dataTransfer.dropEffect = "copy";
+    });
+
+    dropzone.addEventListener("drop", e => {
+      e.preventDefault();
+      e.stopPropagation();
+      let data = e.dataTransfer.getData("text/plain");
+      e.target.innerHTML = "Dropped: " + data;
+    });
+  </script>
+</body>
+
+</html>
