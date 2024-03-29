@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>The Smallest Page</title>
+  <style>
+    div {
+      width: 400px;
+      height: 60px;
+      background-color: yellow;
+      transition-property: width, height, font-size, background-color;
+      transition-duration: 2s, 2s, 2s, 3750ms;
+      transition-timing-function: ease-in;
+      transition-delay: 1s;
+    }
+
+    div:hover {
+      width: 600px;
+      height: 80px;
+      font-size: large;
+      background-color: red
+    }
+  </style>
+</head>
+
+<body onload="onLoad()">
+  <div>Text appearing in a div</div>
+  <div>More text appearing in a div</div>
+  <p id="messages"></p>
+  <script>
+    function onLoad() {
+      const divs = document.getElementsByTagName("div");
+      const messages = document.getElementById("messages");
+      for (let i = 0; i < divs.length; i++) {
+        divs[i].addEventListener("transitionend", (event) => {
+          messages.innerText += event.propertyName;
+          messages.innerText += ", elapsedTime ";
+          messages.innerText += event.elapsedTime;
+          messages.innerText += "\n";
+        }, true);
+      }
+    }
+  </script>
+</body>
+
+</html>
