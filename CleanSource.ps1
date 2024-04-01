@@ -1,0 +1,1 @@
+Get-ChildItem . -include .vs,bin,obj,packages,node_modules -Recurse -Force | ForEach-Object ($_) { Write-Host "Removing" + $_.FullName; Remove-Item $_.FullName -Force -Recurse }
