@@ -15,9 +15,9 @@
  *
  * Includes matchMedia polyfill; Copyright (c) 2010 Filament Group, Inc; http://opensource.org/licenses/MIT
  *
- * Includes material adapted from ES5-shim https://github.com/kriskowal/es5-shim/blob/master/es5-shim.js; Copyright 2009-2012 by contributors; http://opensource.org/licenses/MIT
+ * Includes material adapted from ES5-shim https://github.com/kriskowal/es5-shim/blob/master/es5-shim.js; Copyright 2009-2024 by contributors; http://opensource.org/licenses/MIT
  *
- * Includes material from css-support; Copyright (c) 2005-2012 Diego Perini; https://github.com/dperini/css-support/blob/master/LICENSE
+ * Includes material from css-support; Copyright (c) 2005-2024 Diego Perini; https://github.com/dperini/css-support/blob/master/LICENSE
  *
  * NUGET: END LICENSE TEXT */
 
