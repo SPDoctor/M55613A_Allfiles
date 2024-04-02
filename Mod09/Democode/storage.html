@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Storage API Demo</title>
+</head>
+
+<body>
+  <h1>Storage API Demo</h1>
+  <script>
+    // Cookies can still be used
+    document.cookie = "user=bill";
+    document.cookie = "id=1234; expires=30 Dec 2050 12:00:00 UTC";
+    alert("cookie = " + document.cookie);
+
+    // Storage API is a better solution for storing data
+
+    localStorage.setItem("user", "bill");
+    localStorage.setItem("id", "1234");
+    alert("user = " + localStorage.getItem("user"));
+    alert("id = " + localStorage.getItem("id"));
+
+    sessionStorage.setItem("basket", "empty");
+  </script>
+</body>
+
+</html>
