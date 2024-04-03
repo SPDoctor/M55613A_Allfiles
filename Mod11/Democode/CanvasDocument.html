@@ -40,7 +40,7 @@
     Sorry, your browser does not support canvas.
   </canvas>
 
-  <img id="wales" src="Wales.png" style="display: none;" />
+  <img id="picture" src="picture.png" style="display: none;" />
   
   <script>
   
@@ -99,7 +99,7 @@
     function drawShape() {
 	
       // Create a pattern to use as a style for filling and stroking.
-      var image = document.getElementById("wales");
+      var image = document.getElementById("picture");
       var theStyle = context.createPattern(image, "repeat");
 
       // Draw a filled triangle, using the specified style.

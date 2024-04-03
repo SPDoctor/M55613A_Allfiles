@@ -7,17 +7,13 @@
 </head>
 
 <body>
-  <svg xmlns="http://www.w3.org/2000/svg" id="textPath" width="1000" height="700">
-    <path id="wavyPath1" fill="none" stroke="green" stroke-width="5" d="M 50 250 
-                    C 150 150 250 50 350 150 
-                    C 450 250 550 350 650 250 
-                    C 750 150 850 150 850 150" />
-    <text font-size="46" fill="red" font-family="Verdana">
-      <textPath xlink:href="#wavyPath1">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-      </textPath>
-    </text>
-  </svg>
+<svg xmlns="http://www.w3.org/2000/svg">
+  <pattern id="pattern" patternUnits="userSpaceOnUse" width="50" height="50">
+    <image xlink:href="picture.png" x="0" y="0" width="50" height="50" />
+  </pattern>
+  <rect x="10" y="10" rx="10" width="120" height="75" fill="url(#pattern)" />
+</svg>
+
 </body>
 
 </html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Canvas Page</title>
+</head>
+
+<body>
+  <style>
+    canvas {
+      border: 2px solid darkblue;
+      background-color: lightgreen;
+      width: 400px;
+      height: 200px;
+    }
+  </style>
+  <h1>Getting started with canvas</h1>
+  <canvas id="canvas"></canvas>
+  <script>
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    context.strokeStyle = "rgb(0, 0, 255)";
+    context.fillStyle = "rgba(255, 0, 0, 0.75)";
+    // Create a path in absolute coordinates.
+    context.beginPath();
+    context.moveTo(60, 30);
+    context.lineTo(100, 90);
+    context.lineTo(20, 90);
+    context.closePath();
+    // Draw the path as a stroked shape;
+    context.stroke();
+    // Draw the path as a filled shape.
+    context.fill();
+  </script>
+</body>
+
+</html>

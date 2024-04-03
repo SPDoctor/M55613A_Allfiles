@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Canvas Page</title>
+</head>
+
+<body>
+  <style>
+    canvas {
+      border: 2px solid darkblue;
+      background-color: lightgreen;
+      width: 400px;
+      height: 200px;
+    }
+  </style>
+  <h1>Getting started with canvas</h1>
+  <canvas id="canvas"></canvas>
+  <script>
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    context.fillStyle = "red";
+    context.fillRect(20, 20, canvas.width - 40, canvas.height - 40);
+  </script>
+</body>
+
+</html>
