@@ -1,33 +1,32 @@
 /* Styles for the about page */
 
-/* TODO: .about > article > section */
 .about > article > section {
+    text-align: justify;
+
+    /* Columns Layout */
+    -webkit-column-count: 3;
+    -webkit-column-gap: 5rem;
     column-count: 3;
     column-gap: 5rem;
-    text-align: justify;
 }
 
-/* TODO: Add drop cap styling */
-.about p:first-child:first-letter {
+.about p:first-child:first-letter /* Picks out first letter only for drop cap effect */ {
     font-size: 300%;
     float: left;
-    margin: 0 0 5rem 0 0;
+    margin: 0 0.5rem 0 0;
     line-height: .8;
     color: #aaa;
 }
 
-/* TODO: Indent paragraphs */
 .about p {
     text-indent: 3rem;
 }
 
-.about p:first-child {
-    /* Prevents text indenting after drop cap */
+.about p:first-child /* Prevents text indenting after drop cap */ {
     text-indent: 0;
     margin-top: 0;
 }
 
-/* TODO: Blockquote */
 .about blockquote {
     font-size: 1.2em;
     padding: 0 0 0 6rem;
@@ -44,4 +43,20 @@
     left: 0;
     top: -1rem;
     line-height: 1;
+}
+
+/* For small screens revert back to normal layout */
+@media screen and (max-width: 960px) {
+    .about > article > section {
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
+    
+    .about p:first-child:first-letter {
+        font-size: inherit;
+        float: inherit;
+        margin: inherit;
+        line-height: inherit;
+        color: inherit;
+    }
 }
