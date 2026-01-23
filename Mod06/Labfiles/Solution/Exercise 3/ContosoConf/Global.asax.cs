@@ -12,7 +12,7 @@ namespace ContosoConf
             RouteTable.Routes.MapRoute(
                 "Default",
                 "{controller}/{action}/{id}",
-                new {id = UrlParameter.Optional}
+                new { id = UrlParameter.Optional }
             );
         }
     }

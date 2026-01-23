@@ -30,7 +30,7 @@ namespace ContosoConf.Live
 
         void SendRemove(int id)
         {
-            SendJsonMessage(new{ remove = id });
+            SendJsonMessage(new { remove = id });
         }
 
         void SendJsonMessage(object message)
@@ -132,7 +132,7 @@ namespace ContosoConf.Live
             var result = await socket.ReceiveAsync(buffer, CancellationToken.None);
             var json = Encoding.UTF8.GetString(buffer.Array, buffer.Offset, result.Count);
             var serializer = new JavaScriptSerializer();
-            return (IDictionary<string, object>) serializer.DeserializeObject(json);
+            return (IDictionary<string, object>)serializer.DeserializeObject(json);
         }
 
         class Question

@@ -10,7 +10,7 @@ namespace Conference.Controllers
         {
             if (!form.PasswordsMatch)
             {
-                ModelState.AddModelError("ConfirmPassword", "Passwords don't match.");    
+                ModelState.AddModelError("ConfirmPassword", "Passwords don't match.");
             }
 
             if (ModelState.IsValid)
