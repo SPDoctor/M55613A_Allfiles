@@ -1,0 +1,1797 @@
+{
+  "settings": {
+    "components": {
+      "code": false,
+      "binaries": false
+    },
+    "targetId": "net10.0",
+    "targetDisplayName": ".NETCoreApp,Version=v10.0"
+  },
+  "analysisStartTime": "2026-01-23T18:45:01.3517724Z",
+  "analysisEndTime": "2026-01-23T18:45:01.5796823Z",
+  "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
+  "stats": {
+    "summary": {
+      "projects": 1,
+      "issues": 9,
+      "incidents": 75,
+      "effort": 75
+    },
+    "charts": {
+      "severity": {
+        "Mandatory": 66,
+        "Optional": 0,
+        "Potential": 9,
+        "Information": 0
+      },
+      "category": {
+        "NuGet": 4,
+        "Project": 2,
+        "Feature": 2,
+        "Api": 67
+      }
+    }
+  },
+  "projects": [
+    {
+      "path": "ContosoConf\\ContosoConf.csproj",
+      "startingProject": true,
+      "issues": 8,
+      "storyPoints": 75,
+      "properties": {
+        "appName": "ContosoConf",
+        "projectKind": "Wap",
+        "frameworks": [
+          "net48"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": false,
+        "numberOfFiles": 87,
+        "numberOfCodeFiles": 7,
+        "linesTotal": 27835,
+        "linesOfCode": 561,
+        "totalApiScanned": 562,
+        "minLinesOfCodeToChange": 67,
+        "maxLinesOfCodeToChange": 67
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "5f5bbf84-402b-4aed-886e-6dd59367add3",
+          "ruleId": "NuGet.0003",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNet.Mvc, 5.2.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "Microsoft.AspNet.Mvc, 5.2.3\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\ContosoConf.csproj",
+            "snippet": "Microsoft.AspNet.Mvc, 5.2.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "Microsoft.AspNet.Mvc, 5.2.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "Microsoft.AspNet.Mvc 5.2.3",
+            "properties": {
+              "PackageId": "Microsoft.AspNet.Mvc",
+              "PackageVersion": "5.2.3",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "9d09bc8d-3d96-4514-b75b-7fea77a0a78f",
+          "ruleId": "NuGet.0003",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNet.Razor, 3.2.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "Microsoft.AspNet.Razor, 3.2.3\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\ContosoConf.csproj",
+            "snippet": "Microsoft.AspNet.Razor, 3.2.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "Microsoft.AspNet.Razor, 3.2.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "Microsoft.AspNet.Razor 3.2.3",
+            "properties": {
+              "PackageId": "Microsoft.AspNet.Razor",
+              "PackageVersion": "3.2.3",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "f049473a-8a11-4c59-8080-1fcb514618aa",
+          "ruleId": "NuGet.0003",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNet.WebPages, 3.2.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "Microsoft.AspNet.WebPages, 3.2.3\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\ContosoConf.csproj",
+            "snippet": "Microsoft.AspNet.WebPages, 3.2.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "Microsoft.AspNet.WebPages, 3.2.3\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "Microsoft.AspNet.WebPages 3.2.3",
+            "properties": {
+              "PackageId": "Microsoft.AspNet.WebPages",
+              "PackageVersion": "3.2.3",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "0c9200b5-3e0b-45af-a1eb-ef0ca7de0039",
+          "ruleId": "NuGet.0003",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.Web.Infrastructure, 1.0.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "Microsoft.Web.Infrastructure, 1.0.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\ContosoConf.csproj",
+            "snippet": "Microsoft.Web.Infrastructure, 1.0.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "Microsoft.Web.Infrastructure, 1.0.0.0\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "Microsoft.Web.Infrastructure 1.0.0.0",
+            "properties": {
+              "PackageId": "Microsoft.Web.Infrastructure",
+              "PackageVersion": "1.0.0.0",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "71189482-633e-4688-bc3e-93f6bb8683d0",
+          "ruleId": "Project.0001",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "kind": "File",
+            "path": "ContosoConf\\ContosoConf.csproj"
+          }
+        },
+        {
+          "incidentId": "b63a18ff-449a-49b0-82a7-25098fbb6acf",
+          "ruleId": "Project.0002",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net10.0",
+              "protected": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net10.0"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\ContosoConf.csproj",
+            "snippet": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net10.0",
+            "protectedSnippet": "Current target framework: .NETFramework,Version=v4.8\nRecommended target framework: net10.0",
+            "properties": {
+              "CurrentTargetFramework": ".NETFramework,Version=v4.8",
+              "RecommendedTargetFramework": "net10.0"
+            }
+          }
+        },
+        {
+          "incidentId": "5ed65c2b-635a-413e-8a20-c7fe68190fe7",
+          "ruleId": "Feature.1000",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "kind": "File",
+            "path": "ContosoConf\\Global.asax.cs"
+          }
+        },
+        {
+          "incidentId": "6dcf9050-b10b-484e-be18-4c63ae578632",
+          "ruleId": "Feature.0002",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "kind": "File",
+            "path": "ContosoConf\\Global.asax.cs"
+          }
+        },
+        {
+          "incidentId": "ac46fdb3-27f4-4908-8688-3be56930b4aa",
+          "ruleId": "Api.0001",
+          "description": "System.Web.Mvc.ActionResult is no longer supported. Use Microsoft.AspNetCore.Mvc.ActionResult instead.\n\nAPI is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "public ActionResult New(NewRegistrationForm form)",
+              "protected": "T:System.Web.Mvc.ActionResult"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "public ActionResult New(NewRegistrationForm form)",
+            "protectedSnippet": "T:System.Web.Mvc.ActionResult",
+            "label": "T:System.Web.Mvc.ActionResult",
+            "line": 8,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "3d53a71c-1e4c-4afa-9e45-4b90ef1fbe16",
+          "ruleId": "Api.0001",
+          "description": "System.Web.Mvc.ViewResult is no longer supported. Use Microsoft.AspNetCore.Mvc.ViewResult instead.\n\nAPI is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return View(\u0022Error\u0022, errorMessages);",
+              "protected": "T:System.Web.Mvc.ViewResult"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "return View(\u0022Error\u0022, errorMessages);",
+            "protectedSnippet": "T:System.Web.Mvc.ViewResult",
+            "label": "T:System.Web.Mvc.ViewResult",
+            "line": 24,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "22185a8f-9d21-47b9-92ac-d31fe0edac77",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return View(\u0022Error\u0022, errorMessages);",
+              "protected": "M:System.Web.Mvc.Controller.View(System.String,System.Object)"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "return View(\u0022Error\u0022, errorMessages);",
+            "protectedSnippet": "M:System.Web.Mvc.Controller.View(System.String,System.Object)",
+            "label": "M:System.Web.Mvc.Controller.View(System.String,System.Object)",
+            "line": 24,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "b1857a48-e419-4e11-9e5d-85a630706fcd",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var errorMessages = ModelState\r\n                    .SelectMany(s =\u003E s.Value.Errors)\r\n                    .Select(e =\u003E e.ErrorMessage);",
+              "protected": "P:System.Web.Mvc.ModelError.ErrorMessage"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "var errorMessages = ModelState\r\n                    .SelectMany(s =\u003E s.Value.Errors)\r\n                    .Select(e =\u003E e.ErrorMessage);",
+            "protectedSnippet": "P:System.Web.Mvc.ModelError.ErrorMessage",
+            "label": "P:System.Web.Mvc.ModelError.ErrorMessage",
+            "line": 21,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "0eedb747-e6de-40a3-9715-fd10bbd9044e",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var errorMessages = ModelState\r\n                    .SelectMany(s =\u003E s.Value.Errors)\r\n                    .Select(e =\u003E e.ErrorMessage);",
+              "protected": "T:System.Web.Mvc.ModelState"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "var errorMessages = ModelState\r\n                    .SelectMany(s =\u003E s.Value.Errors)\r\n                    .Select(e =\u003E e.ErrorMessage);",
+            "protectedSnippet": "T:System.Web.Mvc.ModelState",
+            "label": "T:System.Web.Mvc.ModelState",
+            "line": 21,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "494a5a3e-0882-4269-962f-f4d8f042b5c9",
+          "ruleId": "Api.0001",
+          "description": "System.Web.Mvc.ModelErrorCollection is no longer supported. Use Microsoft.AspNetCore.Mvc.ModelBinding.ModelErrorCollection instead.\n\nAPI is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var errorMessages = ModelState\r\n                    .SelectMany(s =\u003E s.Value.Errors)\r\n                    .Select(e =\u003E e.ErrorMessage);",
+              "protected": "T:System.Web.Mvc.ModelErrorCollection"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "var errorMessages = ModelState\r\n                    .SelectMany(s =\u003E s.Value.Errors)\r\n                    .Select(e =\u003E e.ErrorMessage);",
+            "protectedSnippet": "T:System.Web.Mvc.ModelErrorCollection",
+            "label": "T:System.Web.Mvc.ModelErrorCollection",
+            "line": 21,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "9d3d61d8-b752-497e-9ae7-e2093cfd6def",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var errorMessages = ModelState\r\n                    .SelectMany(s =\u003E s.Value.Errors)\r\n                    .Select(e =\u003E e.ErrorMessage);",
+              "protected": "P:System.Web.Mvc.ModelState.Errors"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "var errorMessages = ModelState\r\n                    .SelectMany(s =\u003E s.Value.Errors)\r\n                    .Select(e =\u003E e.ErrorMessage);",
+            "protectedSnippet": "P:System.Web.Mvc.ModelState.Errors",
+            "label": "P:System.Web.Mvc.ModelState.Errors",
+            "line": 21,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "8dd5ebe5-11e9-4faf-b041-27f5152063a3",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var errorMessages = ModelState\r\n                    .SelectMany(s =\u003E s.Value.Errors)\r\n                    .Select(e =\u003E e.ErrorMessage);",
+              "protected": "T:System.Web.Mvc.ModelStateDictionary"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "var errorMessages = ModelState\r\n                    .SelectMany(s =\u003E s.Value.Errors)\r\n                    .Select(e =\u003E e.ErrorMessage);",
+            "protectedSnippet": "T:System.Web.Mvc.ModelStateDictionary",
+            "label": "T:System.Web.Mvc.ModelStateDictionary",
+            "line": 21,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "ec4ff8ca-ccc5-4744-bf05-3b161aa032ff",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var errorMessages = ModelState\r\n                    .SelectMany(s =\u003E s.Value.Errors)\r\n                    .Select(e =\u003E e.ErrorMessage);",
+              "protected": "P:System.Web.Mvc.Controller.ModelState"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "var errorMessages = ModelState\r\n                    .SelectMany(s =\u003E s.Value.Errors)\r\n                    .Select(e =\u003E e.ErrorMessage);",
+            "protectedSnippet": "P:System.Web.Mvc.Controller.ModelState",
+            "label": "P:System.Web.Mvc.Controller.ModelState",
+            "line": 21,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "7b1ba78d-1657-4e8c-aa98-059c051e1cc4",
+          "ruleId": "Api.0001",
+          "description": "System.Web.Mvc.RedirectResult is no longer supported. Use Microsoft.AspNetCore.Mvc.RedirectResult instead.\n\nAPI is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return Redirect(\u0022/registered.htm\u0022);",
+              "protected": "T:System.Web.Mvc.RedirectResult"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "return Redirect(\u0022/registered.htm\u0022);",
+            "protectedSnippet": "T:System.Web.Mvc.RedirectResult",
+            "label": "T:System.Web.Mvc.RedirectResult",
+            "line": 17,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "bd23815d-1ccc-4673-bed5-6df0ef0fcc89",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return Redirect(\u0022/registered.htm\u0022);",
+              "protected": "M:System.Web.Mvc.Controller.Redirect(System.String)"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "return Redirect(\u0022/registered.htm\u0022);",
+            "protectedSnippet": "M:System.Web.Mvc.Controller.Redirect(System.String)",
+            "label": "M:System.Web.Mvc.Controller.Redirect(System.String)",
+            "line": 17,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "3684ecc1-4a2b-475e-9daa-f6ffa1a9a683",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "if (ModelState.IsValid)\r\n            {\r\n                return Redirect(\u0022/registered.htm\u0022);\r\n            }\r\n            else\r\n            {\r\n                var errorMessages = ModelState\r\n                    .SelectMany(s =\u003E s.Value.Errors)\r\n                    .Select(e =\u003E e.ErrorMessage);\r\n                return View(\u0022Error\u0022, errorMessages);\r\n            }",
+              "protected": "T:System.Web.Mvc.ModelStateDictionary"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "if (ModelState.IsValid)\r\n            {\r\n                return Redirect(\u0022/registered.htm\u0022);\r\n            }\r\n            else\r\n            {\r\n                var errorMessages = ModelState\r\n                    .SelectMany(s =\u003E s.Value.Errors)\r\n                    .Select(e =\u003E e.ErrorMessage);\r\n                return View(\u0022Error\u0022, errorMessages);\r\n            }",
+            "protectedSnippet": "T:System.Web.Mvc.ModelStateDictionary",
+            "label": "T:System.Web.Mvc.ModelStateDictionary",
+            "line": 15,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "0d1f1e09-983d-4b7d-8b1e-5d3f6ca68241",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "if (ModelState.IsValid)\r\n            {\r\n                return Redirect(\u0022/registered.htm\u0022);\r\n            }\r\n            else\r\n            {\r\n                var errorMessages = ModelState\r\n                    .SelectMany(s =\u003E s.Value.Errors)\r\n                    .Select(e =\u003E e.ErrorMessage);\r\n                return View(\u0022Error\u0022, errorMessages);\r\n            }",
+              "protected": "P:System.Web.Mvc.Controller.ModelState"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "if (ModelState.IsValid)\r\n            {\r\n                return Redirect(\u0022/registered.htm\u0022);\r\n            }\r\n            else\r\n            {\r\n                var errorMessages = ModelState\r\n                    .SelectMany(s =\u003E s.Value.Errors)\r\n                    .Select(e =\u003E e.ErrorMessage);\r\n                return View(\u0022Error\u0022, errorMessages);\r\n            }",
+            "protectedSnippet": "P:System.Web.Mvc.Controller.ModelState",
+            "label": "P:System.Web.Mvc.Controller.ModelState",
+            "line": 15,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "62115ae5-e8f4-4820-948e-d70d3092415e",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "if (ModelState.IsValid)\r\n            {\r\n                return Redirect(\u0022/registered.htm\u0022);\r\n            }\r\n            else\r\n            {\r\n                var errorMessages = ModelState\r\n                    .SelectMany(s =\u003E s.Value.Errors)\r\n                    .Select(e =\u003E e.ErrorMessage);\r\n                return View(\u0022Error\u0022, errorMessages);\r\n            }",
+              "protected": "P:System.Web.Mvc.ModelStateDictionary.IsValid"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "if (ModelState.IsValid)\r\n            {\r\n                return Redirect(\u0022/registered.htm\u0022);\r\n            }\r\n            else\r\n            {\r\n                var errorMessages = ModelState\r\n                    .SelectMany(s =\u003E s.Value.Errors)\r\n                    .Select(e =\u003E e.ErrorMessage);\r\n                return View(\u0022Error\u0022, errorMessages);\r\n            }",
+            "protectedSnippet": "P:System.Web.Mvc.ModelStateDictionary.IsValid",
+            "label": "P:System.Web.Mvc.ModelStateDictionary.IsValid",
+            "line": 15,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "5c9e497a-3495-4c2a-a6ce-22334785e83c",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "ModelState.AddModelError(\u0022ConfirmPassword\u0022, \u0022Passwords don\u0027t match.\u0022);",
+              "protected": "T:System.Web.Mvc.ModelStateDictionary"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "ModelState.AddModelError(\u0022ConfirmPassword\u0022, \u0022Passwords don\u0027t match.\u0022);",
+            "protectedSnippet": "T:System.Web.Mvc.ModelStateDictionary",
+            "label": "T:System.Web.Mvc.ModelStateDictionary",
+            "line": 12,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "e7218fd3-cf19-4619-affe-a831fc0b16ff",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "ModelState.AddModelError(\u0022ConfirmPassword\u0022, \u0022Passwords don\u0027t match.\u0022);",
+              "protected": "P:System.Web.Mvc.Controller.ModelState"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "ModelState.AddModelError(\u0022ConfirmPassword\u0022, \u0022Passwords don\u0027t match.\u0022);",
+            "protectedSnippet": "P:System.Web.Mvc.Controller.ModelState",
+            "label": "P:System.Web.Mvc.Controller.ModelState",
+            "line": 12,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "2f4130a0-31e1-4fbe-a65e-ee7419c4ccd5",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "ModelState.AddModelError(\u0022ConfirmPassword\u0022, \u0022Passwords don\u0027t match.\u0022);",
+              "protected": "M:System.Web.Mvc.ModelStateDictionary.AddModelError(System.String,System.String)"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "ModelState.AddModelError(\u0022ConfirmPassword\u0022, \u0022Passwords don\u0027t match.\u0022);",
+            "protectedSnippet": "M:System.Web.Mvc.ModelStateDictionary.AddModelError(System.String,System.String)",
+            "label": "M:System.Web.Mvc.ModelStateDictionary.AddModelError(System.String,System.String)",
+            "line": 12,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "1f560a12-402c-403a-b6b8-20d55fe61d16",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Controller",
+              "protected": "M:System.Web.Mvc.Controller.#ctor"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "Controller",
+            "protectedSnippet": "M:System.Web.Mvc.Controller.#ctor",
+            "label": "M:System.Web.Mvc.Controller.#ctor",
+            "line": 6,
+            "column": 42
+          }
+        },
+        {
+          "incidentId": "82daabd9-8ae9-4060-9f3b-608cb9dc0639",
+          "ruleId": "Api.0001",
+          "description": "System.Web.Mvc.Controller is no longer supported. Use Microsoft.AspNetCore.Mvc.Controller instead.\n\nAPI is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Controller",
+              "protected": "T:System.Web.Mvc.Controller"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\RegistrationController.cs",
+            "snippet": "Controller",
+            "protectedSnippet": "T:System.Web.Mvc.Controller",
+            "label": "T:System.Web.Mvc.Controller",
+            "line": 6,
+            "column": 42
+          }
+        },
+        {
+          "incidentId": "b5cc4a46-c68d-4980-a223-8a6cb65d2c1c",
+          "ruleId": "Api.0001",
+          "description": "System.Web.Mvc.ActionResult is no longer supported. Use Microsoft.AspNetCore.Mvc.ActionResult instead.\n\nAPI is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "public ActionResult Star(string id, bool starred)",
+              "protected": "T:System.Web.Mvc.ActionResult"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "public ActionResult Star(string id, bool starred)",
+            "protectedSnippet": "T:System.Web.Mvc.ActionResult",
+            "label": "T:System.Web.Mvc.ActionResult",
+            "line": 242,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "e15e1df8-6427-403f-894e-3442279d1085",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "HttpPost",
+              "protected": "M:System.Web.Mvc.HttpPostAttribute.#ctor"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "HttpPost",
+            "protectedSnippet": "M:System.Web.Mvc.HttpPostAttribute.#ctor",
+            "label": "M:System.Web.Mvc.HttpPostAttribute.#ctor",
+            "line": 242,
+            "column": 9
+          }
+        },
+        {
+          "incidentId": "a30ae6ad-0514-421d-acef-6b43659d3884",
+          "ruleId": "Api.0001",
+          "description": "System.Web.Mvc.HttpPostAttribute is no longer supported. Use Microsoft.AspNetCore.Mvc.HttpPostAttribute instead.\n\nAPI is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "HttpPost",
+              "protected": "T:System.Web.Mvc.HttpPostAttribute"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "HttpPost",
+            "protectedSnippet": "T:System.Web.Mvc.HttpPostAttribute",
+            "label": "T:System.Web.Mvc.HttpPostAttribute",
+            "line": 242,
+            "column": 9
+          }
+        },
+        {
+          "incidentId": "93e4dd28-b90b-4cb9-973e-3ec3674a04bf",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return Json(new { item.starCount });",
+              "protected": "T:System.Web.Mvc.JsonResult"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "return Json(new { item.starCount });",
+            "protectedSnippet": "T:System.Web.Mvc.JsonResult",
+            "label": "T:System.Web.Mvc.JsonResult",
+            "line": 247,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "3ec54aa2-4c7f-4d53-b4cf-a2d3745120b6",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return Json(new { item.starCount });",
+              "protected": "M:System.Web.Mvc.Controller.Json(System.Object)"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "return Json(new { item.starCount });",
+            "protectedSnippet": "M:System.Web.Mvc.Controller.Json(System.Object)",
+            "label": "M:System.Web.Mvc.Controller.Json(System.Object)",
+            "line": 247,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "6159406a-1108-448d-8e57-2edf9aea52c2",
+          "ruleId": "Api.0001",
+          "description": "System.Web.Mvc.ActionResult is no longer supported. Use Microsoft.AspNetCore.Mvc.ActionResult instead.\n\nAPI is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "public ActionResult List()",
+              "protected": "T:System.Web.Mvc.ActionResult"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "public ActionResult List()",
+            "protectedSnippet": "T:System.Web.Mvc.ActionResult",
+            "label": "T:System.Web.Mvc.ActionResult",
+            "line": 229,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "1572d391-90dc-42b4-9675-80a1fbd8275b",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return Json(new { message = \u0022Service currently unavailable.\u0022 }, JsonRequestBehavior.AllowGet);",
+              "protected": "T:System.Web.Mvc.JsonRequestBehavior"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "return Json(new { message = \u0022Service currently unavailable.\u0022 }, JsonRequestBehavior.AllowGet);",
+            "protectedSnippet": "T:System.Web.Mvc.JsonRequestBehavior",
+            "label": "T:System.Web.Mvc.JsonRequestBehavior",
+            "line": 238,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "59dae3f5-9e9c-40c7-bdc7-18131a8163de",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return Json(new { message = \u0022Service currently unavailable.\u0022 }, JsonRequestBehavior.AllowGet);",
+              "protected": "T:System.Web.Mvc.JsonRequestBehavior"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "return Json(new { message = \u0022Service currently unavailable.\u0022 }, JsonRequestBehavior.AllowGet);",
+            "protectedSnippet": "T:System.Web.Mvc.JsonRequestBehavior",
+            "label": "T:System.Web.Mvc.JsonRequestBehavior",
+            "line": 238,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "58d751da-f756-45e1-85b9-b1fc0865c509",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return Json(new { message = \u0022Service currently unavailable.\u0022 }, JsonRequestBehavior.AllowGet);",
+              "protected": "F:System.Web.Mvc.JsonRequestBehavior.AllowGet"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "return Json(new { message = \u0022Service currently unavailable.\u0022 }, JsonRequestBehavior.AllowGet);",
+            "protectedSnippet": "F:System.Web.Mvc.JsonRequestBehavior.AllowGet",
+            "label": "F:System.Web.Mvc.JsonRequestBehavior.AllowGet",
+            "line": 238,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "0fb9db5c-df96-4314-942c-9d176b8b3407",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return Json(new { message = \u0022Service currently unavailable.\u0022 }, JsonRequestBehavior.AllowGet);",
+              "protected": "T:System.Web.Mvc.JsonResult"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "return Json(new { message = \u0022Service currently unavailable.\u0022 }, JsonRequestBehavior.AllowGet);",
+            "protectedSnippet": "T:System.Web.Mvc.JsonResult",
+            "label": "T:System.Web.Mvc.JsonResult",
+            "line": 238,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "1ec9705e-e18d-4add-a370-68216d7c7580",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return Json(new { message = \u0022Service currently unavailable.\u0022 }, JsonRequestBehavior.AllowGet);",
+              "protected": "M:System.Web.Mvc.Controller.Json(System.Object,System.Web.Mvc.JsonRequestBehavior)"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "return Json(new { message = \u0022Service currently unavailable.\u0022 }, JsonRequestBehavior.AllowGet);",
+            "protectedSnippet": "M:System.Web.Mvc.Controller.Json(System.Object,System.Web.Mvc.JsonRequestBehavior)",
+            "label": "M:System.Web.Mvc.Controller.Json(System.Object,System.Web.Mvc.JsonRequestBehavior)",
+            "line": 238,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "50e53c77-34e8-47b2-b67c-762648e7784c",
+          "ruleId": "Api.0002",
+          "description": "API is available in package Microsoft.AspNetCore.SystemWebAdapters, 1.4.0. Add package reference to Microsoft.AspNetCore.SystemWebAdapters, 1.4.0",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Response.StatusCode = 503;",
+              "protected": "T:System.Web.HttpResponseBase"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "Response.StatusCode = 503;",
+            "protectedSnippet": "T:System.Web.HttpResponseBase",
+            "label": "T:System.Web.HttpResponseBase",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.SystemWebAdapters",
+              "PackageNewVersion": "1.4.0"
+            },
+            "line": 237,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "796c9a47-ef51-497e-9923-0b58a99fc0fc",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Response.StatusCode = 503;",
+              "protected": "P:System.Web.Mvc.Controller.Response"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "Response.StatusCode = 503;",
+            "protectedSnippet": "P:System.Web.Mvc.Controller.Response",
+            "label": "P:System.Web.Mvc.Controller.Response",
+            "line": 237,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "897f32fc-434d-40c8-b5ac-bd9b982997b8",
+          "ruleId": "Api.0002",
+          "description": "API is available in package Microsoft.AspNetCore.SystemWebAdapters, 1.4.0. Add package reference to Microsoft.AspNetCore.SystemWebAdapters, 1.4.0",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Response.StatusCode = 503;",
+              "protected": "P:System.Web.HttpResponseBase.StatusCode"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "Response.StatusCode = 503;",
+            "protectedSnippet": "P:System.Web.HttpResponseBase.StatusCode",
+            "label": "P:System.Web.HttpResponseBase.StatusCode",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.SystemWebAdapters",
+              "PackageNewVersion": "1.4.0"
+            },
+            "line": 237,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "dee2142b-18f7-493c-b3f1-2ee5e74c713f",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return Json(new { schedule }, JsonRequestBehavior.AllowGet);",
+              "protected": "T:System.Web.Mvc.JsonRequestBehavior"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "return Json(new { schedule }, JsonRequestBehavior.AllowGet);",
+            "protectedSnippet": "T:System.Web.Mvc.JsonRequestBehavior",
+            "label": "T:System.Web.Mvc.JsonRequestBehavior",
+            "line": 233,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "cf36fa92-f7c3-4bbe-9dac-21a94b6ea92d",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return Json(new { schedule }, JsonRequestBehavior.AllowGet);",
+              "protected": "T:System.Web.Mvc.JsonRequestBehavior"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "return Json(new { schedule }, JsonRequestBehavior.AllowGet);",
+            "protectedSnippet": "T:System.Web.Mvc.JsonRequestBehavior",
+            "label": "T:System.Web.Mvc.JsonRequestBehavior",
+            "line": 233,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "8e5fe3af-70f2-4e46-953b-1c488d9af6ce",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return Json(new { schedule }, JsonRequestBehavior.AllowGet);",
+              "protected": "F:System.Web.Mvc.JsonRequestBehavior.AllowGet"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "return Json(new { schedule }, JsonRequestBehavior.AllowGet);",
+            "protectedSnippet": "F:System.Web.Mvc.JsonRequestBehavior.AllowGet",
+            "label": "F:System.Web.Mvc.JsonRequestBehavior.AllowGet",
+            "line": 233,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "2b90c698-f49c-4aba-8b6d-2c11486fd7d9",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return Json(new { schedule }, JsonRequestBehavior.AllowGet);",
+              "protected": "T:System.Web.Mvc.JsonResult"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "return Json(new { schedule }, JsonRequestBehavior.AllowGet);",
+            "protectedSnippet": "T:System.Web.Mvc.JsonResult",
+            "label": "T:System.Web.Mvc.JsonResult",
+            "line": 233,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "7d237d2c-831d-46c4-8c75-05c5f7e3d917",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return Json(new { schedule }, JsonRequestBehavior.AllowGet);",
+              "protected": "M:System.Web.Mvc.Controller.Json(System.Object,System.Web.Mvc.JsonRequestBehavior)"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "return Json(new { schedule }, JsonRequestBehavior.AllowGet);",
+            "protectedSnippet": "M:System.Web.Mvc.Controller.Json(System.Object,System.Web.Mvc.JsonRequestBehavior)",
+            "label": "M:System.Web.Mvc.Controller.Json(System.Object,System.Web.Mvc.JsonRequestBehavior)",
+            "line": 233,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "89509cf3-b536-4ef4-98a2-891d2b1e30e1",
+          "ruleId": "Api.0002",
+          "description": "API is available in package Microsoft.AspNetCore.SystemWebAdapters, 1.4.0. Add package reference to Microsoft.AspNetCore.SystemWebAdapters, 1.4.0",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "if (Request.Url.Query != \u0022?fail\u0022)\r\n            {\r\n                return Json(new { schedule }, JsonRequestBehavior.AllowGet);\r\n            }\r\n            else\r\n            {\r\n                Response.StatusCode = 503;\r\n                return Json(new { message = \u0022Service currently unavailable.\u0022 }, JsonRequestBehavior.AllowGet);\r\n            }",
+              "protected": "T:System.Web.HttpRequestBase"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "if (Request.Url.Query != \u0022?fail\u0022)\r\n            {\r\n                return Json(new { schedule }, JsonRequestBehavior.AllowGet);\r\n            }\r\n            else\r\n            {\r\n                Response.StatusCode = 503;\r\n                return Json(new { message = \u0022Service currently unavailable.\u0022 }, JsonRequestBehavior.AllowGet);\r\n            }",
+            "protectedSnippet": "T:System.Web.HttpRequestBase",
+            "label": "T:System.Web.HttpRequestBase",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.SystemWebAdapters",
+              "PackageNewVersion": "1.4.0"
+            },
+            "line": 231,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "b681902d-2801-45ca-a0e3-76faee45e9a8",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "if (Request.Url.Query != \u0022?fail\u0022)\r\n            {\r\n                return Json(new { schedule }, JsonRequestBehavior.AllowGet);\r\n            }\r\n            else\r\n            {\r\n                Response.StatusCode = 503;\r\n                return Json(new { message = \u0022Service currently unavailable.\u0022 }, JsonRequestBehavior.AllowGet);\r\n            }",
+              "protected": "P:System.Web.Mvc.Controller.Request"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "if (Request.Url.Query != \u0022?fail\u0022)\r\n            {\r\n                return Json(new { schedule }, JsonRequestBehavior.AllowGet);\r\n            }\r\n            else\r\n            {\r\n                Response.StatusCode = 503;\r\n                return Json(new { message = \u0022Service currently unavailable.\u0022 }, JsonRequestBehavior.AllowGet);\r\n            }",
+            "protectedSnippet": "P:System.Web.Mvc.Controller.Request",
+            "label": "P:System.Web.Mvc.Controller.Request",
+            "line": 231,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "29db549c-4068-4e53-abc0-31d06b0527c7",
+          "ruleId": "Api.0003",
+          "description": "Breaking change: URI length limits removed ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "if (Request.Url.Query != \u0022?fail\u0022)\r\n            {\r\n                return Json(new { schedule }, JsonRequestBehavior.AllowGet);\r\n            }\r\n            else\r\n            {\r\n                Response.StatusCode = 503;\r\n                return Json(new { message = \u0022Service currently unavailable.\u0022 }, JsonRequestBehavior.AllowGet);\r\n            }",
+              "protected": "T:System.Uri"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "if (Request.Url.Query != \u0022?fail\u0022)\r\n            {\r\n                return Json(new { schedule }, JsonRequestBehavior.AllowGet);\r\n            }\r\n            else\r\n            {\r\n                Response.StatusCode = 503;\r\n                return Json(new { message = \u0022Service currently unavailable.\u0022 }, JsonRequestBehavior.AllowGet);\r\n            }",
+            "protectedSnippet": "T:System.Uri",
+            "label": "T:System.Uri",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/networking/10.0/uri-length-limits-removed.md",
+                "isCustom": false
+              }
+            ],
+            "line": 231,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "5407543b-4cc7-42c5-93ac-daa062504547",
+          "ruleId": "Api.0002",
+          "description": "API is available in package Microsoft.AspNetCore.SystemWebAdapters, 1.4.0. Add package reference to Microsoft.AspNetCore.SystemWebAdapters, 1.4.0",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "if (Request.Url.Query != \u0022?fail\u0022)\r\n            {\r\n                return Json(new { schedule }, JsonRequestBehavior.AllowGet);\r\n            }\r\n            else\r\n            {\r\n                Response.StatusCode = 503;\r\n                return Json(new { message = \u0022Service currently unavailable.\u0022 }, JsonRequestBehavior.AllowGet);\r\n            }",
+              "protected": "P:System.Web.HttpRequestBase.Url"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "if (Request.Url.Query != \u0022?fail\u0022)\r\n            {\r\n                return Json(new { schedule }, JsonRequestBehavior.AllowGet);\r\n            }\r\n            else\r\n            {\r\n                Response.StatusCode = 503;\r\n                return Json(new { message = \u0022Service currently unavailable.\u0022 }, JsonRequestBehavior.AllowGet);\r\n            }",
+            "protectedSnippet": "P:System.Web.HttpRequestBase.Url",
+            "label": "P:System.Web.HttpRequestBase.Url",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.SystemWebAdapters",
+              "PackageNewVersion": "1.4.0"
+            },
+            "line": 231,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "cf77836f-cd11-4c16-9c46-3d33b6d50bcf",
+          "ruleId": "Api.0001",
+          "description": "System.Web.Mvc.Controller is no longer supported. Use Microsoft.AspNetCore.Mvc.Controller instead.\n\nAPI is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Controller",
+              "protected": "T:System.Web.Mvc.Controller"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Controllers\\ScheduleController.cs",
+            "snippet": "Controller",
+            "protectedSnippet": "T:System.Web.Mvc.Controller",
+            "label": "T:System.Web.Mvc.Controller",
+            "line": 7,
+            "column": 38
+          }
+        },
+        {
+          "incidentId": "6293eb50-533c-4146-afe9-9ce19921657a",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": " Task ProcessWebSocketRequest(AspNetWebSocketContext context)",
+              "protected": "T:System.Web.WebSockets.AspNetWebSocketContext"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Live\\LiveHttpHandler.cs",
+            "snippet": " Task ProcessWebSocketRequest(AspNetWebSocketContext context)",
+            "protectedSnippet": "T:System.Web.WebSockets.AspNetWebSocketContext",
+            "label": "T:System.Web.WebSockets.AspNetWebSocketContext",
+            "line": 16,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "e817da2b-a675-4d74-9004-8dbbbb52b6ef",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var socket = context.WebSocket;",
+              "protected": "P:System.Web.WebSockets.AspNetWebSocketContext.WebSocket"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Live\\LiveHttpHandler.cs",
+            "snippet": "var socket = context.WebSocket;",
+            "protectedSnippet": "P:System.Web.WebSockets.AspNetWebSocketContext.WebSocket",
+            "label": "P:System.Web.WebSockets.AspNetWebSocketContext.WebSocket",
+            "line": 18,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "85673714-597d-4802-aa61-21e91548ecc1",
+          "ruleId": "Api.0002",
+          "description": "API is available in package Microsoft.AspNetCore.SystemWebAdapters, 1.4.0. Add package reference to Microsoft.AspNetCore.SystemWebAdapters, 1.4.0",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "public void ProcessRequest(HttpContext context)",
+              "protected": "T:System.Web.HttpContext"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Live\\LiveHttpHandler.cs",
+            "snippet": "public void ProcessRequest(HttpContext context)",
+            "protectedSnippet": "T:System.Web.HttpContext",
+            "label": "T:System.Web.HttpContext",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.SystemWebAdapters",
+              "PackageNewVersion": "1.4.0"
+            },
+            "line": 8,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "2a1c5e9e-074b-4911-9d88-a36e3c1a9378",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "context.AcceptWebSocketRequest(ProcessWebSocketRequest);",
+              "protected": "M:System.Web.HttpContext.AcceptWebSocketRequest(System.Func{System.Web.WebSockets.AspNetWebSocketContext,System.Threading.Tasks.Task})"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Live\\LiveHttpHandler.cs",
+            "snippet": "context.AcceptWebSocketRequest(ProcessWebSocketRequest);",
+            "protectedSnippet": "M:System.Web.HttpContext.AcceptWebSocketRequest(System.Func{System.Web.WebSockets.AspNetWebSocketContext,System.Threading.Tasks.Task})",
+            "label": "M:System.Web.HttpContext.AcceptWebSocketRequest(System.Func{System.Web.WebSockets.AspNetWebSocketContext,System.Threading.Tasks.Task})",
+            "line": 12,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "df75da67-452e-4d21-bd7a-8aaa59ada2f6",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "if (context.IsWebSocketRequest)\r\n            {\r\n                context.AcceptWebSocketRequest(ProcessWebSocketRequest);\r\n            }",
+              "protected": "P:System.Web.HttpContext.IsWebSocketRequest"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Live\\LiveHttpHandler.cs",
+            "snippet": "if (context.IsWebSocketRequest)\r\n            {\r\n                context.AcceptWebSocketRequest(ProcessWebSocketRequest);\r\n            }",
+            "protectedSnippet": "P:System.Web.HttpContext.IsWebSocketRequest",
+            "label": "P:System.Web.HttpContext.IsWebSocketRequest",
+            "line": 10,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "a7b9d79d-1d0d-40b2-bdd0-3c1d46df38d1",
+          "ruleId": "Api.0002",
+          "description": "API is available in package Microsoft.AspNetCore.SystemWebAdapters, 1.4.0. Add package reference to Microsoft.AspNetCore.SystemWebAdapters, 1.4.0",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "IHttpHandler",
+              "protected": "T:System.Web.IHttpHandler"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Live\\LiveHttpHandler.cs",
+            "snippet": "IHttpHandler",
+            "protectedSnippet": "T:System.Web.IHttpHandler",
+            "label": "T:System.Web.IHttpHandler",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.SystemWebAdapters",
+              "PackageNewVersion": "1.4.0"
+            },
+            "line": 6,
+            "column": 35
+          }
+        },
+        {
+          "incidentId": "27a7acae-3ae0-497a-a9c9-622fe73dde77",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "return (IDictionary\u003Cstring, object\u003E)serializer.DeserializeObject(json);",
+              "protected": "M:System.Web.Script.Serialization.JavaScriptSerializer.DeserializeObject(System.String)"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Live\\LiveClientConnection.cs",
+            "snippet": "return (IDictionary\u003Cstring, object\u003E)serializer.DeserializeObject(json);",
+            "protectedSnippet": "M:System.Web.Script.Serialization.JavaScriptSerializer.DeserializeObject(System.String)",
+            "label": "M:System.Web.Script.Serialization.JavaScriptSerializer.DeserializeObject(System.String)",
+            "line": 134,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "56c03e68-bf15-40a8-8cf0-017a61e2f605",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var serializer = new JavaScriptSerializer();",
+              "protected": "T:System.Web.Script.Serialization.JavaScriptSerializer"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Live\\LiveClientConnection.cs",
+            "snippet": "var serializer = new JavaScriptSerializer();",
+            "protectedSnippet": "T:System.Web.Script.Serialization.JavaScriptSerializer",
+            "label": "T:System.Web.Script.Serialization.JavaScriptSerializer",
+            "line": 133,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "ec52bec9-a7eb-491e-820e-7a5160585a89",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var serializer = new JavaScriptSerializer();",
+              "protected": "M:System.Web.Script.Serialization.JavaScriptSerializer.#ctor"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Live\\LiveClientConnection.cs",
+            "snippet": "var serializer = new JavaScriptSerializer();",
+            "protectedSnippet": "M:System.Web.Script.Serialization.JavaScriptSerializer.#ctor",
+            "label": "M:System.Web.Script.Serialization.JavaScriptSerializer.#ctor",
+            "line": 133,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "16cc0bc8-0b00-4087-9410-bdae37d85ced",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var json = serializer.Serialize(message);",
+              "protected": "M:System.Web.Script.Serialization.JavaScriptSerializer.Serialize(System.Object)"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Live\\LiveClientConnection.cs",
+            "snippet": "var json = serializer.Serialize(message);",
+            "protectedSnippet": "M:System.Web.Script.Serialization.JavaScriptSerializer.Serialize(System.Object)",
+            "label": "M:System.Web.Script.Serialization.JavaScriptSerializer.Serialize(System.Object)",
+            "line": 40,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "7ed49e44-da72-434a-8790-966cf0b327a5",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var serializer = new JavaScriptSerializer();",
+              "protected": "T:System.Web.Script.Serialization.JavaScriptSerializer"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Live\\LiveClientConnection.cs",
+            "snippet": "var serializer = new JavaScriptSerializer();",
+            "protectedSnippet": "T:System.Web.Script.Serialization.JavaScriptSerializer",
+            "label": "T:System.Web.Script.Serialization.JavaScriptSerializer",
+            "line": 39,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "9e805e25-f39c-4049-856b-36e0e6a70003",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "var serializer = new JavaScriptSerializer();",
+              "protected": "M:System.Web.Script.Serialization.JavaScriptSerializer.#ctor"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Live\\LiveClientConnection.cs",
+            "snippet": "var serializer = new JavaScriptSerializer();",
+            "protectedSnippet": "M:System.Web.Script.Serialization.JavaScriptSerializer.#ctor",
+            "label": "M:System.Web.Script.Serialization.JavaScriptSerializer.#ctor",
+            "line": 39,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "e9c634c6-0ad6-4d41-bd80-46470bc14f83",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+              "protected": "T:System.Web.Mvc.UrlParameter"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Global.asax.cs",
+            "snippet": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+            "protectedSnippet": "T:System.Web.Mvc.UrlParameter",
+            "label": "T:System.Web.Mvc.UrlParameter",
+            "line": 11,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "cc4a1f51-de82-453b-8fea-2a32bdfdbaa9",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+              "protected": "T:System.Web.Mvc.UrlParameter"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Global.asax.cs",
+            "snippet": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+            "protectedSnippet": "T:System.Web.Mvc.UrlParameter",
+            "label": "T:System.Web.Mvc.UrlParameter",
+            "line": 11,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "67f48563-7a7f-4c77-a524-8d015ae21288",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+              "protected": "F:System.Web.Mvc.UrlParameter.Optional"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Global.asax.cs",
+            "snippet": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+            "protectedSnippet": "F:System.Web.Mvc.UrlParameter.Optional",
+            "label": "F:System.Web.Mvc.UrlParameter.Optional",
+            "line": 11,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "756204ff-0c03-47b8-87b6-ac62699db8b6",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+              "protected": "T:System.Web.Mvc.UrlParameter"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Global.asax.cs",
+            "snippet": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+            "protectedSnippet": "T:System.Web.Mvc.UrlParameter",
+            "label": "T:System.Web.Mvc.UrlParameter",
+            "line": 11,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "f6d808de-c633-4a6f-9181-22399b60ec0c",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+              "protected": "T:System.Web.Routing.RouteTable"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Global.asax.cs",
+            "snippet": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+            "protectedSnippet": "T:System.Web.Routing.RouteTable",
+            "label": "T:System.Web.Routing.RouteTable",
+            "line": 11,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "2533f819-5b6e-4fa2-934b-9d308e283460",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+              "protected": "T:System.Web.Routing.RouteCollection"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Global.asax.cs",
+            "snippet": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+            "protectedSnippet": "T:System.Web.Routing.RouteCollection",
+            "label": "T:System.Web.Routing.RouteCollection",
+            "line": 11,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "4e603e8f-70a4-467d-98ff-28651c547603",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+              "protected": "P:System.Web.Routing.RouteTable.Routes"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Global.asax.cs",
+            "snippet": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+            "protectedSnippet": "P:System.Web.Routing.RouteTable.Routes",
+            "label": "P:System.Web.Routing.RouteTable.Routes",
+            "line": 11,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "f462dce2-61d8-4635-8daf-a9dabccb7718",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+              "protected": "T:System.Web.Mvc.RouteCollectionExtensions"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Global.asax.cs",
+            "snippet": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+            "protectedSnippet": "T:System.Web.Mvc.RouteCollectionExtensions",
+            "label": "T:System.Web.Mvc.RouteCollectionExtensions",
+            "line": 11,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "5cf0ac34-cc23-4423-8bed-58c4aa12a203",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+              "protected": "T:System.Web.Routing.Route"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Global.asax.cs",
+            "snippet": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+            "protectedSnippet": "T:System.Web.Routing.Route",
+            "label": "T:System.Web.Routing.Route",
+            "line": 11,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "0e5c473b-b329-490e-aa19-a28343d3485c",
+          "ruleId": "Api.0001",
+          "description": "API is unavailable in net8.0 ",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+              "protected": "M:System.Web.Mvc.RouteCollectionExtensions.MapRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Object)"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Global.asax.cs",
+            "snippet": "RouteTable.Routes.MapRoute(\r\n                \u0022Default\u0022,\r\n                \u0022{controller}/{action}/{id}\u0022,\r\n                new { id = UrlParameter.Optional }\r\n            );",
+            "protectedSnippet": "M:System.Web.Mvc.RouteCollectionExtensions.MapRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Object)",
+            "label": "M:System.Web.Mvc.RouteCollectionExtensions.MapRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Object)",
+            "line": 11,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "be3c4d06-49a2-480e-b115-27c199986d37",
+          "ruleId": "Api.0002",
+          "description": "API is available in package Microsoft.AspNetCore.SystemWebAdapters, 1.4.0. Add package reference to Microsoft.AspNetCore.SystemWebAdapters, 1.4.0",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "HttpApplication",
+              "protected": "M:System.Web.HttpApplication.#ctor"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Global.asax.cs",
+            "snippet": "HttpApplication",
+            "protectedSnippet": "M:System.Web.HttpApplication.#ctor",
+            "label": "M:System.Web.HttpApplication.#ctor",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.SystemWebAdapters",
+              "PackageNewVersion": "1.4.0"
+            },
+            "line": 7,
+            "column": 26
+          }
+        },
+        {
+          "incidentId": "992b40b0-a78e-4c45-8069-e398a57e0db7",
+          "ruleId": "Api.0002",
+          "description": "API is available in package Microsoft.AspNetCore.SystemWebAdapters, 1.4.0. Add package reference to Microsoft.AspNetCore.SystemWebAdapters, 1.4.0",
+          "projectPath": "ContosoConf\\ContosoConf.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "HttpApplication",
+              "protected": "T:System.Web.HttpApplication"
+            },
+            "kind": "File",
+            "path": "ContosoConf\\Global.asax.cs",
+            "snippet": "HttpApplication",
+            "protectedSnippet": "T:System.Web.HttpApplication",
+            "label": "T:System.Web.HttpApplication",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.SystemWebAdapters",
+              "PackageNewVersion": "1.4.0"
+            },
+            "line": 7,
+            "column": 26
+          }
+        }
+      ],
+      "features": [
+        {
+          "featureId": "SystemWeb",
+          "incidents": [
+            "992b40b0-a78e-4c45-8069-e398a57e0db7",
+            "be3c4d06-49a2-480e-b115-27c199986d37",
+            "0e5c473b-b329-490e-aa19-a28343d3485c",
+            "5cf0ac34-cc23-4423-8bed-58c4aa12a203",
+            "f462dce2-61d8-4635-8daf-a9dabccb7718",
+            "4e603e8f-70a4-467d-98ff-28651c547603",
+            "2533f819-5b6e-4fa2-934b-9d308e283460",
+            "f6d808de-c633-4a6f-9181-22399b60ec0c",
+            "756204ff-0c03-47b8-87b6-ac62699db8b6",
+            "67f48563-7a7f-4c77-a524-8d015ae21288",
+            "cc4a1f51-de82-453b-8fea-2a32bdfdbaa9",
+            "e9c634c6-0ad6-4d41-bd80-46470bc14f83",
+            "9e805e25-f39c-4049-856b-36e0e6a70003",
+            "7ed49e44-da72-434a-8790-966cf0b327a5",
+            "16cc0bc8-0b00-4087-9410-bdae37d85ced",
+            "ec52bec9-a7eb-491e-820e-7a5160585a89",
+            "56c03e68-bf15-40a8-8cf0-017a61e2f605",
+            "27a7acae-3ae0-497a-a9c9-622fe73dde77",
+            "a7b9d79d-1d0d-40b2-bdd0-3c1d46df38d1",
+            "df75da67-452e-4d21-bd7a-8aaa59ada2f6",
+            "2a1c5e9e-074b-4911-9d88-a36e3c1a9378",
+            "85673714-597d-4802-aa61-21e91548ecc1",
+            "e817da2b-a675-4d74-9004-8dbbbb52b6ef",
+            "6293eb50-533c-4146-afe9-9ce19921657a",
+            "cf77836f-cd11-4c16-9c46-3d33b6d50bcf",
+            "5407543b-4cc7-42c5-93ac-daa062504547",
+            "b681902d-2801-45ca-a0e3-76faee45e9a8",
+            "89509cf3-b536-4ef4-98a2-891d2b1e30e1",
+            "7d237d2c-831d-46c4-8c75-05c5f7e3d917",
+            "2b90c698-f49c-4aba-8b6d-2c11486fd7d9",
+            "8e5fe3af-70f2-4e46-953b-1c488d9af6ce",
+            "cf36fa92-f7c3-4bbe-9dac-21a94b6ea92d",
+            "dee2142b-18f7-493c-b3f1-2ee5e74c713f",
+            "897f32fc-434d-40c8-b5ac-bd9b982997b8",
+            "796c9a47-ef51-497e-9923-0b58a99fc0fc",
+            "50e53c77-34e8-47b2-b67c-762648e7784c",
+            "1ec9705e-e18d-4add-a370-68216d7c7580",
+            "0fb9db5c-df96-4314-942c-9d176b8b3407",
+            "58d751da-f756-45e1-85b9-b1fc0865c509",
+            "59dae3f5-9e9c-40c7-bdc7-18131a8163de",
+            "1572d391-90dc-42b4-9675-80a1fbd8275b",
+            "6159406a-1108-448d-8e57-2edf9aea52c2",
+            "3ec54aa2-4c7f-4d53-b4cf-a2d3745120b6",
+            "93e4dd28-b90b-4cb9-973e-3ec3674a04bf",
+            "a30ae6ad-0514-421d-acef-6b43659d3884",
+            "e15e1df8-6427-403f-894e-3442279d1085",
+            "b5cc4a46-c68d-4980-a223-8a6cb65d2c1c",
+            "82daabd9-8ae9-4060-9f3b-608cb9dc0639",
+            "1f560a12-402c-403a-b6b8-20d55fe61d16",
+            "2f4130a0-31e1-4fbe-a65e-ee7419c4ccd5",
+            "e7218fd3-cf19-4619-affe-a831fc0b16ff",
+            "5c9e497a-3495-4c2a-a6ce-22334785e83c",
+            "62115ae5-e8f4-4820-948e-d70d3092415e",
+            "0d1f1e09-983d-4b7d-8b1e-5d3f6ca68241",
+            "3684ecc1-4a2b-475e-9daa-f6ffa1a9a683",
+            "bd23815d-1ccc-4673-bed5-6df0ef0fcc89",
+            "7b1ba78d-1657-4e8c-aa98-059c051e1cc4",
+            "ec4ff8ca-ccc5-4744-bf05-3b161aa032ff",
+            "8dd5ebe5-11e9-4faf-b041-27f5152063a3",
+            "9d3d61d8-b752-497e-9ae7-e2093cfd6def",
+            "494a5a3e-0882-4269-962f-f4d8f042b5c9",
+            "0eedb747-e6de-40a3-9715-fd10bbd9044e",
+            "b1857a48-e419-4e11-9e5d-85a630706fcd",
+            "22185a8f-9d21-47b9-92ac-d31fe0edac77",
+            "3d53a71c-1e4c-4afa-9e45-4b90ef1fbe16",
+            "ac46fdb3-27f4-4908-8688-3be56930b4aa"
+          ]
+        }
+      ]
+    }
+  ],
+  "rules": {
+    "NuGet.0003": {
+      "id": "NuGet.0003",
+      "isFeature": false,
+      "description": "NuGet package functionality is included with framework reference.\n\nPackage needs to be removed.",
+      "label": "NuGet package functionality is included with framework reference",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262609",
+          "isCustom": false
+        }
+      ]
+    },
+    "Project.0001": {
+      "id": "Project.0001",
+      "isFeature": false,
+      "description": "Project file needs to be converted to SDK-style. Modern .NET framework projects require a change in the project file format and use SDK corresponding to project flavor and functionality.",
+      "label": "Project file needs to be converted to SDK-style",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    },
+    "Project.0002": {
+      "id": "Project.0002",
+      "isFeature": false,
+      "description": "Project\u0027s target framework(s) needs to be changed to the new target framework that you selected for this upgrade.\n\nDuring upgrade target framework will be adjusted to corresponding platform when applicable. In some cases project would result in multiple target frameworks after the upgrade if it was using features that now have their own platforms in modern .NET frameworks (windows, iOS, Android etc).",
+      "label": "Project\u0027s target framework(s) needs to be changed",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    },
+    "Feature.1000": {
+      "id": "Feature.1000",
+      "isFeature": true,
+      "description": "Convert application initialization code from Global.asax.cs to .NET Core and clean up Global.asax.cs.",
+      "label": "Convert application initialization code from Global.asax.cs to .NET Core and clean up Global.asax.cs",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        }
+      ]
+    },
+    "Feature.0002": {
+      "id": "Feature.0002",
+      "isFeature": true,
+      "description": "Routes registration via RouteCollection is not supported in .NET Core and needs to be converted to the route mappings on the application object.",
+      "label": "Routes registration via RouteCollection is not supported in .NET Core and needs to be converted to the route mappings on the application object",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        }
+      ]
+    },
+    "Api.0001": {
+      "id": "Api.0001",
+      "isFeature": false,
+      "description": "API is binary incompatible for selected .NET version: affects existing binaries, often requiring recompilation, because the API has changed in a way that prevents older binaries from loading or executing.",
+      "label": "Binary incompatible for selected .NET version",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Breaking changes in .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262679",
+          "isCustom": false
+        }
+      ]
+    },
+    "Api.0002": {
+      "id": "Api.0002",
+      "isFeature": false,
+      "description": "API is source incompatible for selected .NET version: requires code changes to compile successfully when targeting a new version, such as removing obsolete APIs or changing method signatures.",
+      "label": "Source incompatible for selected .NET version",
+      "severity": "Potential",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Breaking changes in .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262679",
+          "isCustom": false
+        }
+      ]
+    },
+    "Api.0003": {
+      "id": "Api.0003",
+      "isFeature": false,
+      "description": "API has a behavioral change in selected .NET version: code and binaries may behave differently at runtime without needing recompilation, but the new behavior might be undesirable and require updates.",
+      "label": "Behavioral change in selected .NET version",
+      "severity": "Potential",
+      "effort": 1
+    },
+    "SystemWeb": {
+      "id": "SystemWeb",
+      "isFeature": false,
+      "description": "Legacy ASP.NET Framework APIs for web applications (System.Web.*) that don\u0027t exist in ASP.NET Core due to architectural differences. ASP.NET Core represents a complete redesign of the web framework. Migrate to ASP.NET Core equivalents or consider System.Web.Adapters package for compatibility.",
+      "label": "ASP.NET Framework (System.Web)",
+      "severity": "Mandatory",
+      "effort": 4,
+      "links": [
+        {
+          "title": "Migrate from ASP.NET to ASP.NET Core",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2341905",
+          "isCustom": false
+        }
+      ]
+    }
+  }
+}
