@@ -7,7 +7,7 @@ using System.Net.WebSockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Script.Serialization;
+using System.Text.Json;
 
 namespace ContosoConf.Live
 {
@@ -37,8 +37,7 @@ namespace ContosoConf.Live
         {
             lock (socket)
             {
-                var serializer = new JavaScriptSerializer();
-                var json = serializer.Serialize(message);
+                var json = JsonSerializer.Serialize(message);
                 var buffer = new ArraySegment<byte>(Encoding.UTF8.GetBytes(json));
                 socket.SendAsync(buffer, WebSocketMessageType.Text, true, CancellationToken.None).Wait();
             }
@@ -131,8 +130,8 @@ namespace ContosoConf.Live
             var buffer = new ArraySegment<byte>(new byte[1024]);
             var result = await socket.ReceiveAsync(buffer, CancellationToken.None);
             var json = Encoding.UTF8.GetString(buffer.Array, buffer.Offset, result.Count);
-            var serializer = new JavaScriptSerializer();
-            return (IDictionary<string, object>)serializer.DeserializeObject(json);
+            var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(json);
+            return dict;
         }
 
         class Question

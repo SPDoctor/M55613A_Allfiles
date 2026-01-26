@@ -8,12 +8,6 @@
     <OutputPath>bin\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Configuration" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="about.htm" />
     <Content Include="dist\feedback.bundle.js" />
     <Content Include="dist\live.bundle.js" />
@@ -26,7 +20,6 @@
     <Content Include="dist\video.bundle.js" />
     <Content Include="images\speakers\mark-hanson-large.jpg" />
     <Content Include="registered.htm" />
-    <Content Include="Global.asax" />
     <Content Include="scripts\LivePage.js" />
     <Content Include="scripts\offline.js" />
     <Content Include="scripts\datetime.js" />
@@ -85,11 +78,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="webpack.config.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Live\socket.ashx" />

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http.Extensions;
 
 namespace Conference.Controllers
 {
@@ -229,14 +230,14 @@ namespace Conference.Controllers
 
         public ActionResult List()
         {
-            if (Request.Url.Query != "?fail")
+            if (Request.QueryString.ToString() != "?fail")
             {
-                return Json(new { schedule }, JsonRequestBehavior.AllowGet);
+                return Json(new { schedule });
             }
             else
             {
                 Response.StatusCode = 503;
-                return Json(new { message = "Service currently unavailable." }, JsonRequestBehavior.AllowGet);
+                return Json(new { message = "Service currently unavailable." });
             }
         }
 
