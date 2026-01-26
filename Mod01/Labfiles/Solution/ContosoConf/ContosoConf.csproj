@@ -70,9 +70,6 @@
     <Content Include="webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Live\socket.ashx" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="dist\feedback.bundle.js.map" />
     <Content Include="dist\live.bundle.js.map" />
     <Content Include="dist\location.bundle.js.map" />
