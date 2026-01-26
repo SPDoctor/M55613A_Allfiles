@@ -29,12 +29,17 @@ app.UseDefaultFiles(defaultFilesOptions);
 app.UseStaticFiles();
 
 // Serve static files from content root for backward compatibility
-app.UseStaticFiles(new StaticFileOptions
+var staticFileOptions = new StaticFileOptions
 {
     FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(
         app.Environment.ContentRootPath),
     RequestPath = ""
-});
+};
+// Add MIME type for .manifest files
+var provider = new Microsoft.AspNetCore.StaticFiles.FileExtensionContentTypeProvider();
+provider.Mappings[".manifest"] = "text/cache-manifest";
+staticFileOptions.ContentTypeProvider = provider;
+app.UseStaticFiles(staticFileOptions);
 
 app.UseRouting();
 app.UseAuthorization();
