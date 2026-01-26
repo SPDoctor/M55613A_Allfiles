@@ -108,13 +108,13 @@ namespace ContosoConf.Live
 
         void HandleAskQuestion(IDictionary<string, object> message)
         {
-            var ask = (string)message["ask"];
+            var ask = ((JsonElement)message["ask"]).GetString();
             Questions.Add(new Question(ask));
         }
 
         void HandleReport(IDictionary<string, object> message)
         {
-            var id = (int)message["report"];
+            var id = ((JsonElement)message["report"]).GetInt32();
             var question = Questions.FirstOrDefault(q => q.id == id);
             if (question == null) return;
             Task.Delay(1000).ContinueWith(_ => Questions.Remove(question));
@@ -124,6 +124,13 @@ namespace ContosoConf.Live
         {
             var buffer = new ArraySegment<byte>(new byte[1024]);
             var result = await socket.ReceiveAsync(buffer, CancellationToken.None);
+            
+            // Handle close frames - return null to signal no message content
+            if (result.MessageType == WebSocketMessageType.Close)
+            {
+                return null;
+            }
+            
             var json = Encoding.UTF8.GetString(buffer.Array, buffer.Offset, result.Count);
             var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(json);
             return dict;

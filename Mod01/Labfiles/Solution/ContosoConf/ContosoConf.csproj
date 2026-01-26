@@ -6,4 +6,19 @@
   <ItemGroup>
     <Folder Include="wwwroot\media\" />
   </ItemGroup>
+
+  <!-- Ensure npm packages are installed before build -->
+  <Target Name="NpmInstall" BeforeTargets="PreBuildEvent" Condition="!Exists('node_modules')">
+    <Exec Command="npm install" />
+  </Target>
+
+  <!-- Run webpack to bundle JavaScript files before build -->
+  <Target Name="WebpackBuild" BeforeTargets="Build" DependsOnTargets="NpmInstall">
+    <Exec Command="npm run webpack" />
+  </Target>
+
+  <!-- Clean webpack output when cleaning the project -->
+  <Target Name="WebpackClean" AfterTargets="Clean">
+    <RemoveDir Directories="wwwroot\dist" />
+  </Target>
 </Project>

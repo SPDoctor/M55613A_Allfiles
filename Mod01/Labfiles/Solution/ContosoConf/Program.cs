@@ -34,8 +34,18 @@ app.UseAuthorization();
 // Enable WebSocket support
 app.UseWebSockets();
 
-// Map WebSocket endpoint
-app.Map("/live", ContosoConf.Live.LiveWebSocketMiddleware.HandleWebSocketRequest);
+// Map endpoints
+app.Use(async (context, next) =>
+{
+    if (context.Request.Path == "/live/socket")
+    {
+        await ContosoConf.Live.LiveWebSocketMiddleware.HandleWebSocketRequest(context);
+    }
+    else
+    {
+        await next();
+    }
+});
 
 // Configure routes - migrated from Global.asax.cs
 app.MapControllerRoute(
