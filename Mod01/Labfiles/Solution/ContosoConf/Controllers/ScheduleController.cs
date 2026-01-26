@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http.Extensions;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Conference.Controllers
 {
@@ -228,9 +224,9 @@ namespace Conference.Controllers
             };
         }
 
-        public ActionResult List()
+        public IActionResult List()
         {
-            if (Request.QueryString.ToString() != "?fail")
+            if (!Request.Query.ContainsKey("fail"))
             {
                 return Json(new { schedule });
             }
@@ -242,7 +238,7 @@ namespace Conference.Controllers
         }
 
         [HttpPost]
-        public ActionResult Star(string id, bool starred)
+        public IActionResult Star(string id, bool starred)
         {
             var item = schedule.First(s => s.id == id);
             item.starCount += starred ? 1 : -1;

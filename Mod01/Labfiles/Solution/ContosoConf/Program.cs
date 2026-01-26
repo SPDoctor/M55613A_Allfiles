@@ -1,7 +1,3 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
@@ -18,28 +14,19 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// Enable default files (index.htm, default.htm, etc.) from content root
+// Enable default files (index.htm)
 var defaultFilesOptions = new DefaultFilesOptions();
 defaultFilesOptions.DefaultFileNames.Clear();
 defaultFilesOptions.DefaultFileNames.Add("index.htm");
-defaultFilesOptions.FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(
-    app.Environment.ContentRootPath);
 app.UseDefaultFiles(defaultFilesOptions);
 
-app.UseStaticFiles();
-
-// Serve static files from content root for backward compatibility
-var staticFileOptions = new StaticFileOptions
-{
-    FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(
-        app.Environment.ContentRootPath),
-    RequestPath = ""
-};
-// Add MIME type for .manifest files
+// Serve static files from wwwroot with MIME type for .manifest files
 var provider = new Microsoft.AspNetCore.StaticFiles.FileExtensionContentTypeProvider();
 provider.Mappings[".manifest"] = "text/cache-manifest";
-staticFileOptions.ContentTypeProvider = provider;
-app.UseStaticFiles(staticFileOptions);
+app.UseStaticFiles(new StaticFileOptions
+{
+    ContentTypeProvider = provider
+});
 
 app.UseRouting();
 app.UseAuthorization();

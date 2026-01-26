@@ -1,12 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace Conference.Controllers
 {
     public class RegistrationController : Controller
     {
-        public ActionResult New(NewRegistrationForm form)
+        public IActionResult New(NewRegistrationForm form)
         {
             if (!form.PasswordsMatch)
             {

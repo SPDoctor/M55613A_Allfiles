@@ -1,8 +1,4 @@
-﻿using System.Net.WebSockets;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-
-namespace ContosoConf.Live
+﻿namespace ContosoConf.Live
 {
     public static class LiveWebSocketMiddleware
     {
