@@ -1,18 +1,19 @@
 
+
 /* Styles for the page navigation bar */
 
-nav.page-nav {
+nav {
     background-color: #1d1d1d;
     line-height: 6rem;
     font-size: 1.7rem;
 }
 
-nav.page-nav .container {
+nav .container {
     display: -ms-flexbox;
     display: flex;
 }
 
-nav.page-nav a {
+nav a {
     display: block;
     min-width: 9rem;
     padding: 0 1.8rem;
@@ -25,16 +26,16 @@ nav.page-nav a {
     text-shadow: 0 1px 0 #000;
 }
 
-nav.page-nav a:first-child {
+nav a:first-child {
     border-left: 1px dotted #3D3D3D;
 }
 
-nav.page-nav a:hover {
+nav a:hover {
     color: #e4e4e4;
     background-color: black;
 }
 
-nav.page-nav .active {
+nav .active {
     color: #fff;
 
     /* Background gradient effects */
@@ -42,11 +43,11 @@ nav.page-nav .active {
     background: linear-gradient(#C95656, #8d0606);
 }
 
-nav.page-nav .active:hover {
+nav .active:hover {
     color: #fff; /* Overrides hover effect for active page link */
 }
 
-nav.page-nav .active:before /* Creates ribbon effect on active link */ {
+nav .active:before /* Creates ribbon effect on active link */ {
     position: absolute;
     top: 6rem;
     display: block;
@@ -58,7 +59,7 @@ nav.page-nav .active:before /* Creates ribbon effect on active link */ {
     content: "";
 }
 
-nav.page-nav .active:after /* Creates ribbon effect on active link */ {
+nav .active:after /* Creates ribbon effect on active link */ {
     position: absolute;
     display: block;
     height: 0;
