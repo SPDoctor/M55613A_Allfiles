@@ -32,6 +32,7 @@ namespace ContosoConf.Live
         {
             lock (socket)
             {
+                if (socket.State != WebSocketState.Open) return;
                 var json = JsonSerializer.Serialize(message);
                 var buffer = new ArraySegment<byte>(Encoding.UTF8.GetBytes(json));
                 socket.SendAsync(buffer, WebSocketMessageType.Text, true, CancellationToken.None).Wait();
