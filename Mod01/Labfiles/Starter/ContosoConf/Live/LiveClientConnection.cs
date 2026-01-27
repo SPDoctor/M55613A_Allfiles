@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.Linq;
 using System.Net.WebSockets;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web.Script.Serialization;
+using System.Text.Json;
 
 namespace ContosoConf.Live
 {
@@ -37,8 +32,7 @@ namespace ContosoConf.Live
         {
             lock (socket)
             {
-                var serializer = new JavaScriptSerializer();
-                var json = serializer.Serialize(message);
+                var json = JsonSerializer.Serialize(message);
                 var buffer = new ArraySegment<byte>(Encoding.UTF8.GetBytes(json));
                 socket.SendAsync(buffer, WebSocketMessageType.Text, true, CancellationToken.None).Wait();
             }
@@ -114,13 +108,13 @@ namespace ContosoConf.Live
 
         void HandleAskQuestion(IDictionary<string, object> message)
         {
-            var ask = (string)message["ask"];
+            var ask = ((JsonElement)message["ask"]).GetString();
             Questions.Add(new Question(ask));
         }
 
         void HandleReport(IDictionary<string, object> message)
         {
-            var id = (int)message["report"];
+            var id = ((JsonElement)message["report"]).GetInt32();
             var question = Questions.FirstOrDefault(q => q.id == id);
             if (question == null) return;
             Task.Delay(1000).ContinueWith(_ => Questions.Remove(question));
@@ -130,9 +124,16 @@ namespace ContosoConf.Live
         {
             var buffer = new ArraySegment<byte>(new byte[1024]);
             var result = await socket.ReceiveAsync(buffer, CancellationToken.None);
+            
+            // Handle close frames - return null to signal no message content
+            if (result.MessageType == WebSocketMessageType.Close)
+            {
+                return null;
+            }
+            
             var json = Encoding.UTF8.GetString(buffer.Array, buffer.Offset, result.Count);
-            var serializer = new JavaScriptSerializer();
-            return (IDictionary<string, object>)serializer.DeserializeObject(json);
+            var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(json);
+            return dict;
         }
 
         class Question

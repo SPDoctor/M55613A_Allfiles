@@ -84,8 +84,7 @@ export class LivePage {
 
     createQuestionItem(question) {
         const item = document.createElement("li");
-        // BAD: textContent is safe, but best to be explicit about sanitization
-        item.textContent = this.sanitizeText(question.text) + " ";
+        item.textContent = question.text + " ";
         item.questionId = question.id;
         return item;
     }
@@ -101,7 +100,7 @@ export class LivePage {
     handleQuestionsClick(event) {
         event.preventDefault();
 
-        const clickedElement = event.target;
+        const clickedElement = event.srcElement || event.target;
         if (this.isReportLink(clickedElement)) {
             const questionId = clickedElement.parentNode.questionId;
             this.reportQuestion(questionId);
@@ -116,12 +115,5 @@ export class LivePage {
     reportQuestion(questionId) {
         // TODO: Send socket message { report: questionId }
         this.socket.send(JSON.stringify({ report: questionId }));
-    }
-
-    sanitizeText(text) {
-        // Create a temporary div to strip any HTML
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.textContent;
     }
 }

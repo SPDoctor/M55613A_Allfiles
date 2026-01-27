@@ -1,0 +1,2 @@
+(()=>{var e=/^\/(index|about|schedule|location).htm$/;function n(){for(var n=document.querySelectorAll("nav.page-nav a"),t=0;t<n.length;t++){var o=n[t].getAttribute("href");e.test(o)||(n[t].style.display="none")}}navigator.onLine||n(),document.body.onoffline=n,document.body.ononline=function(){for(var e=document.querySelectorAll("nav.page-nav a"),n=0;n<e.length;n++)e[n].style.display=""},applicationCache.addEventListener("error",n,!1)})();
+//# sourceMappingURL=offline.bundle.js.map

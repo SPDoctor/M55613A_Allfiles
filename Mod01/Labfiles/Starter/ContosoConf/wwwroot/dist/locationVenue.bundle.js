@@ -1,0 +1,2 @@
+(()=>{for(var e=document.getElementById("instruction"),t=document.querySelectorAll(".room"),n=0;n<t.length;n++)t[n].addEventListener("click",function(){var t,n;t=this.id,n=document.getElementById(t+"-info"),e&&(e.style.display="none"),n.style.display="block",e=n})})();
+//# sourceMappingURL=locationVenue.bundle.js.map

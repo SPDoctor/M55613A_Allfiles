@@ -40,44 +40,56 @@ namespace ContosoConf.Live
 
         public async Task Start()
         {
-            Questions.CollectionChanged += (sender, args) =>
+            try
             {
-                switch (args.Action)
+                Questions.CollectionChanged += (sender, args) =>
                 {
-                    case NotifyCollectionChangedAction.Add:
-                        SendQuestions(args.NewItems.Cast<Question>());
-                        break;
+                    switch (args.Action)
+                    {
+                        case NotifyCollectionChangedAction.Add:
+                            SendQuestions(args.NewItems.Cast<Question>());
+                            break;
 
-                    case NotifyCollectionChangedAction.Remove:
-                        {
-                            var ids = args.OldItems.Cast<Question>().Select(q => q.id).ToList();
-                            ids.ForEach(SendRemove);
-                        }
-                        break;
+                        case NotifyCollectionChangedAction.Remove:
+                            {
+                                var ids = args.OldItems.Cast<Question>().Select(q => q.id).ToList();
+                                ids.ForEach(SendRemove);
+                            }
+                            break;
+                    }
+                };
+
+                if (Questions.Count == 0)
+                {
+                    SimulateOtherClients();
                 }
-            };
+                else
+                {
+                    SendQuestions(Questions);
+                }
 
-            if (Questions.Count == 0)
-            {
-                SimulateOtherClients();
+                while (socket.State == WebSocketState.Open)
+                {
+                    var message = await ReceiveMessage();
+                    if (message == null) continue;
+                    if (message.ContainsKey("ask"))
+                    {
+                        HandleAskQuestion(message);
+                    }
+                    else if (message.ContainsKey("report"))
+                    {
+                        HandleReport(message);
+                    }
+                }
             }
-            else
+            finally
             {
-                SendQuestions(Questions);
-            }
-
-            while (socket.State == WebSocketState.Open)
-            {
-                var message = await ReceiveMessage();
-                if (message == null) continue;
-                if (message.ContainsKey("ask"))
+                // Properly close the WebSocket connection
+                if (socket.State == WebSocketState.Open || socket.State == WebSocketState.CloseReceived)
                 {
-                    HandleAskQuestion(message);
+                    await socket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Connection closed", CancellationToken.None);
                 }
-                else if (message.ContainsKey("report"))
-                {
-                    HandleReport(message);
-                }
+                socket.Dispose();
             }
         }
 
