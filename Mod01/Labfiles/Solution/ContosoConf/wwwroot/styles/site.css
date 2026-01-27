@@ -5,11 +5,12 @@ html {
     font-size: 62.5%;
     font-family: Calibri, Arial, sans-serif;
     background-color: #EAEEFA;
-    height: 100%;
 }
 
 body {
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     margin: 0;
     /* Default font-size to about 18px */
     font-size: 1.8rem;
@@ -28,7 +29,11 @@ input, button {
     margin: 0 auto;
 }
 
-section.page-section .container {
+main {
+    flex: 1; /* Grows to fill available space, pushing footer to bottom */
+}
+
+main .container {
     padding-bottom: 2rem;
 }
 

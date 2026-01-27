@@ -8,6 +8,10 @@
     max-width: 60rem;    
 }
 
+.feedback {
+    padding-bottom: 3rem;
+}
+
 .feedback .comments {
     margin: 1rem 0;
 }
