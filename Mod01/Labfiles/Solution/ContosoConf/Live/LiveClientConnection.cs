@@ -9,8 +9,7 @@ namespace ContosoConf.Live
     class LiveClientConnection
     {
         // Shared question list across all connections (for demo purposes)
-        static readonly QuestionList Questions = new QuestionList();
-
+        static readonly ObservableCollection<Question> Questions = new ObservableCollection<Question>();
         readonly WebSocket socket;
 
         public LiveClientConnection(WebSocket socket)
@@ -64,7 +63,7 @@ namespace ContosoConf.Live
 
                 if (Questions.Count == 0)
                 {
-                    await SimulateOtherClientsAsync();
+                    _ = SimulateOtherClientsAsync(); // run in background
                 }
                 else
                 {
@@ -99,32 +98,16 @@ namespace ContosoConf.Live
         async Task SimulateOtherClientsAsync()
         {
             var badQuestion = new Question(3, "This is an #&!%!* inappropriate message!!");
-
-            // Start background tasks to simulate other clients asking questions
-            _ = Task.Run(async () =>
-            {
-                await Task.Delay(250);
-                Questions.Add(new Question(1, "What are some good resources for getting started with HTML5?"));
-            });
-
-            _ = Task.Run(async () =>
-            {
-                await Task.Delay(1000);
-                Questions.Add(new Question(2, "Can you explain more about the Web Socket API please?"));
-                Questions.Add(badQuestion);
-            });
-
-            _ = Task.Run(async () =>
-            {
-                await Task.Delay(3000);
-                Questions.Remove(badQuestion);
-            });
-
-            _ = Task.Run(async () =>
-            {
-                await Task.Delay(4000);
-                Questions.Add(new Question(4, "How much of CSS3 can I use right now?"));
-            });
+            
+            await Task.Delay(1000);
+            Questions.Add(new Question(1, "What are some good resources for getting started with HTML5?"));
+            await Task.Delay(2000);
+            Questions.Add(new Question(2, "Can you explain more about the Web Socket API please?"));
+            Questions.Add(badQuestion);
+            await Task.Delay(2000);
+            Questions.Remove(badQuestion);
+            await Task.Delay(3000);
+            Questions.Add(new Question(4, "How much of CSS3 can I use right now?"));
         }
 
         void HandleAskQuestion(IDictionary<string, object> message)
@@ -142,7 +125,7 @@ namespace ContosoConf.Live
             // Start background task to remove question after delay
             _ = Task.Run(async () =>
             {
-                await Task.Delay(1000);
+                await Task.Delay(5000);
                 Questions.Remove(question);
             });
         }
@@ -181,10 +164,6 @@ namespace ContosoConf.Live
 
             public string text { get; set; }
             public int id { get; set; }
-        }
-
-        class QuestionList : ObservableCollection<Question>
-        {
         }
     }
 }
