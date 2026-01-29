@@ -8,6 +8,7 @@ namespace ContosoConf.Live
 {
     class LiveClientConnection
     {
+        // Shared question list across all connections (for demo purposes)
         static readonly QuestionList Questions = new QuestionList();
 
         readonly WebSocket socket;
@@ -17,44 +18,45 @@ namespace ContosoConf.Live
             this.socket = socket;
         }
 
-        void SendQuestions(IEnumerable<Question> questions)
+        async Task SendQuestionsAsync(IEnumerable<Question> questions)
         {
             var message = new { questions };
-            SendJsonMessage(message);
+            await SendJsonMessageAsync(message);
         }
 
-        void SendRemove(int id)
+        async Task SendRemoveAsync(int id)
         {
-            SendJsonMessage(new { remove = id });
+            await SendJsonMessageAsync(new { remove = id });
         }
 
-        void SendJsonMessage(object message)
+        async Task SendJsonMessageAsync(object message)
         {
-            lock (socket)
-            {
-                if (socket.State != WebSocketState.Open) return;
-                var json = JsonSerializer.Serialize(message);
-                var buffer = new ArraySegment<byte>(Encoding.UTF8.GetBytes(json));
-                socket.SendAsync(buffer, WebSocketMessageType.Text, true, CancellationToken.None).Wait();
-            }
+            if (socket.State != WebSocketState.Open) return;
+            
+            var json = JsonSerializer.Serialize(message);
+            var buffer = new ArraySegment<byte>(Encoding.UTF8.GetBytes(json));
+            await socket.SendAsync(buffer, WebSocketMessageType.Text, true, CancellationToken.None);
         }
 
         public async Task Start()
         {
             try
             {
-                Questions.CollectionChanged += (sender, args) =>
+                Questions.CollectionChanged += async (sender, args) =>
                 {
                     switch (args.Action)
                     {
                         case NotifyCollectionChangedAction.Add:
-                            SendQuestions(args.NewItems.Cast<Question>());
+                            await SendQuestionsAsync(args.NewItems.Cast<Question>());
                             break;
 
                         case NotifyCollectionChangedAction.Remove:
                             {
                                 var ids = args.OldItems.Cast<Question>().Select(q => q.id).ToList();
-                                ids.ForEach(SendRemove);
+                                foreach (var id in ids)
+                                {
+                                    await SendRemoveAsync(id);
+                                }
                             }
                             break;
                     }
@@ -62,11 +64,11 @@ namespace ContosoConf.Live
 
                 if (Questions.Count == 0)
                 {
-                    SimulateOtherClients();
+                    await SimulateOtherClientsAsync();
                 }
                 else
                 {
-                    SendQuestions(Questions);
+                    await SendQuestionsAsync(Questions);
                 }
 
                 while (socket.State == WebSocketState.Open)
@@ -94,29 +96,35 @@ namespace ContosoConf.Live
             }
         }
 
-        void SimulateOtherClients()
+        async Task SimulateOtherClientsAsync()
         {
             var badQuestion = new Question(3, "This is an #&!%!* inappropriate message!!");
 
-            Task.Delay(250)
-                .ContinueWith(_ => Questions.Add(
-                    new Question(1, "What are some good resources for getting started with HTML5?")
-                ));
+            // Start background tasks to simulate other clients asking questions
+            _ = Task.Run(async () =>
+            {
+                await Task.Delay(250);
+                Questions.Add(new Question(1, "What are some good resources for getting started with HTML5?"));
+            });
 
-            Task.Delay(1000)
-                .ContinueWith(_ =>
-                {
-                    Questions.Add(new Question(2, "Can you explain more about the Web Socket API please?"));
-                    Questions.Add(badQuestion);
-                });
+            _ = Task.Run(async () =>
+            {
+                await Task.Delay(1000);
+                Questions.Add(new Question(2, "Can you explain more about the Web Socket API please?"));
+                Questions.Add(badQuestion);
+            });
 
-            Task.Delay(3000)
-                .ContinueWith(_ => Questions.Remove(badQuestion));
+            _ = Task.Run(async () =>
+            {
+                await Task.Delay(3000);
+                Questions.Remove(badQuestion);
+            });
 
-            Task.Delay(4000)
-                .ContinueWith(_ => Questions.Add(
-                    new Question(4, "How much of CSS3 can I use right now?")
-                ));
+            _ = Task.Run(async () =>
+            {
+                await Task.Delay(4000);
+                Questions.Add(new Question(4, "How much of CSS3 can I use right now?"));
+            });
         }
 
         void HandleAskQuestion(IDictionary<string, object> message)
@@ -130,7 +138,13 @@ namespace ContosoConf.Live
             var id = ((JsonElement)message["report"]).GetInt32();
             var question = Questions.FirstOrDefault(q => q.id == id);
             if (question == null) return;
-            Task.Delay(1000).ContinueWith(_ => Questions.Remove(question));
+            
+            // Start background task to remove question after delay
+            _ = Task.Run(async () =>
+            {
+                await Task.Delay(1000);
+                Questions.Remove(question);
+            });
         }
 
         async Task<IDictionary<string, object>> ReceiveMessage()
