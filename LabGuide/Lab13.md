@@ -36,7 +36,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
     ![Screenshot](./Images/Lab13_Live.png "The Live page")
 
 9. [ ] Close Microsoft Edge and return to **ContosoConf - Microsoft Visual Studio**.
-10. [ ] In **Solution Explorer**, expand the **ContosoConf** project, and then double-click **live.htm**.
+10. [ ] In **Solution Explorer**, expand the **ContosoConf** project, and then double-click **live.htm** in the **wwwroot** folder.
 11. [ ] Verify that this page contains the following HTML markup:
     
     ```html
@@ -56,7 +56,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         <script src="/scripts/pages/live.js" type="module"></script>
     ```
 
-13. [ ] In **Solution Explorer**, expand the **scripts** folder, expand the **pages** folder, and then double-click **live.js**.
+13. [ ] In **Solution Explorer**, expand the **wwwroot/scripts** folder, expand the **pages** folder, and then double-click **live.js**.
 
 14. [ ] Verify that the file contains the following JavaScript code:
 
@@ -70,16 +70,18 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 1. [ ] In **live.js**, find the following comment near the beginning of the file:
 
     ```javascript
-        // TODO: Create a web socket connection to ws://localhost:[port]/live/socket.ashx
+        // TODO: Create a web socket connection to ws://localhost:[port]/live/socket
     ```
 
-2. [ ] After this comment, add the following JavaScript code and change the **[port]** as per your application port:
+2. [ ] After this comment, add the following JavaScript code:
 
     ```javascript
-        const socket = new WebSocket("ws://localhost:[port]/live/socket.ashx");
+        const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+        const socket = new WebSocket(`${protocol}//${window.location.host}/live/socket`);
     ```
 
-3. [ ] In Solution Explorer, expand the **scripts** folder, and then double-click **LivePage.js**.
+3. [ ] In Solution Explorer, expand the **wwwroot/scripts** folder, and then double-click **LivePage.js**.
+
 4. [ ] Find the following comment: 
 
     ```javascript
@@ -112,7 +114,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         // TODO: Check if message has a `questions` property, before calling handleQuestionsMessage
     ```
 
-4. [ ] Modify the statement following this comment, as shown below:
+4. [ ] After this comment, add the following code:
 
     ```javascript
         if (message.questions) {
@@ -174,7 +176,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
     **Note**: If **Security Warning for ContosoConf** dialog box appears, clear **Ask me for every project in this solution** checkbox and then click **OK**.
     :::
 
-3. [ ] In Solution Explorer, expand the **ContosoConf** project, expand the **scripts** folder, and then double-click **LivePage.js**.
+3. [ ] In Solution Explorer, expand the **ContosoConf** project, expand the **wwwroot/scripts** folder, and then double-click **LivePage.js**.
 4. [ ] Verify that the **LivePage.js** file contains the following function:
 
     ```javascript
@@ -264,7 +266,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
     **Note**: If **Security Warning for ContosoConf** dialog box appears, clear **Ask me for every project in this solution** checkbox and then click **OK**.
     :::
 
-3. [ ] In Solution Explorer, expand the **ContosoConf** project, expand the **scripts** folder, and then double-click **LivePage.js**.
+3. [ ] In Solution Explorer, expand the **ContosoConf** project, expand the **wwwroot/scripts** folder, and then double-click **LivePage.js**.
 4. [ ] In **LivePage.js**, find the following code:
 
     ```javascript
@@ -369,7 +371,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 2. [ ] On the **Debug** menu, click **Start Without Debugging**.
 3. [ ] In Microsoft Edge, after the page loads, wait five seconds.
 4. [ ] Next to **What are some good resources for getting started with HTML5?**, click **Report**.
-5. [ ] Wait for several seconds.
+5. [ ] Wait for about five seconds.
 6. [ ] Verify that the **What are some good resources for getting started with HTML5?** question is removed from the page.
 7. [ ] Close Microsoft Edge.
 

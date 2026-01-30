@@ -1,29 +1,19 @@
-﻿using System.Threading.Tasks;
-using System.Web;
-using System.Web.WebSockets;
-
-namespace ContosoConf.Live
+﻿namespace ContosoConf.Live
 {
-    public class LiveHttpHandler : IHttpHandler
+    public static class LiveWebSocketMiddleware
     {
-        public void ProcessRequest(HttpContext context)
+        public static async Task HandleWebSocketRequest(HttpContext context)
         {
-            if (context.IsWebSocketRequest)
+            if (context.WebSockets.IsWebSocketRequest)
             {
-                context.AcceptWebSocketRequest(ProcessWebSocketRequest);
+                var socket = await context.WebSockets.AcceptWebSocketAsync();
+                var connection = new LiveClientConnection(socket);
+                await connection.Start();
             }
-        }
-
-        Task ProcessWebSocketRequest(AspNetWebSocketContext context)
-        {
-            var socket = context.WebSocket;
-            var connection = new LiveClientConnection(socket);
-            return connection.Start();
-        }
-
-        public bool IsReusable
-        {
-            get { return false; }
+            else
+            {
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+            }
         }
     }
 }
