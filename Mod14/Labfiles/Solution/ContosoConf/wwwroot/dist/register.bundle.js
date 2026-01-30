@@ -1,0 +1,2 @@
+(()=>{var t=document.getElementById("registration-form"),e=t.querySelector("button"),s=document.getElementById("password"),n=document.getElementById("confirm-password");function d(){s.value===n.value?n.setCustomValidity(""):n.setCustomValidity("Your passwords don't match. Please type the same password again.")}s.addEventListener("input",d,!1),n.addEventListener("input",d,!1),e.addEventListener("click",function(){t.classList.add("submission-attempted")},!1)})();
+//# sourceMappingURL=register.bundle.js.map

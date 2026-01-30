@@ -1,20 +1,15 @@
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.Linq;
 using System.Net.WebSockets;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web.Script.Serialization;
+using System.Text.Json;
 
 namespace ContosoConf.Live
 {
     class LiveClientConnection
     {
-        static readonly QuestionList Questions = new QuestionList();
-
+        // Shared question list across all connections (for demo purposes)
+        static readonly ObservableCollection<Question> Questions = new ObservableCollection<Question>();
         readonly WebSocket socket;
 
         public LiveClientConnection(WebSocket socket)
@@ -22,117 +17,133 @@ namespace ContosoConf.Live
             this.socket = socket;
         }
 
-        void SendQuestions(IEnumerable<Question> questions)
+        async Task SendQuestionsAsync(IEnumerable<Question> questions)
         {
             var message = new { questions };
-            SendJsonMessage(message);
+            await SendJsonMessageAsync(message);
         }
 
-        void SendRemove(int id)
+        async Task SendRemoveAsync(int id)
         {
-            SendJsonMessage(new { remove = id });
+            await SendJsonMessageAsync(new { remove = id });
         }
 
-        void SendJsonMessage(object message)
+        async Task SendJsonMessageAsync(object message)
         {
-            lock (socket)
-            {
-                var serializer = new JavaScriptSerializer();
-                var json = serializer.Serialize(message);
-                var buffer = new ArraySegment<byte>(Encoding.UTF8.GetBytes(json));
-                socket.SendAsync(buffer, WebSocketMessageType.Text, true, CancellationToken.None).Wait();
-            }
+            if (socket.State != WebSocketState.Open) return;
+            
+            var json = JsonSerializer.Serialize(message);
+            var buffer = new ArraySegment<byte>(Encoding.UTF8.GetBytes(json));
+            await socket.SendAsync(buffer, WebSocketMessageType.Text, true, CancellationToken.None);
         }
 
         public async Task Start()
         {
-            Questions.CollectionChanged += (sender, args) =>
+            try
             {
-                switch (args.Action)
+                Questions.CollectionChanged += async (sender, args) =>
                 {
-                    case NotifyCollectionChangedAction.Add:
-                        SendQuestions(args.NewItems.Cast<Question>());
-                        break;
+                    switch (args.Action)
+                    {
+                        case NotifyCollectionChangedAction.Add:
+                            await SendQuestionsAsync(args.NewItems.Cast<Question>());
+                            break;
 
-                    case NotifyCollectionChangedAction.Remove:
-                        {
-                            var ids = args.OldItems.Cast<Question>().Select(q => q.id).ToList();
-                            ids.ForEach(SendRemove);
-                        }
-                        break;
+                        case NotifyCollectionChangedAction.Remove:
+                            {
+                                var ids = args.OldItems.Cast<Question>().Select(q => q.id).ToList();
+                                foreach (var id in ids)
+                                {
+                                    await SendRemoveAsync(id);
+                                }
+                            }
+                            break;
+                    }
+                };
+
+                if (Questions.Count == 0)
+                {
+                    _ = SimulateOtherClientsAsync(); // run in background
                 }
-            };
+                else
+                {
+                    await SendQuestionsAsync(Questions);
+                }
 
-            if (Questions.Count == 0)
-            {
-                SimulateOtherClients();
+                while (socket.State == WebSocketState.Open)
+                {
+                    var message = await ReceiveMessage();
+                    if (message == null) continue;
+                    if (message.ContainsKey("ask"))
+                    {
+                        HandleAskQuestion(message);
+                    }
+                    else if (message.ContainsKey("report"))
+                    {
+                        HandleReport(message);
+                    }
+                }
             }
-            else
+            finally
             {
-                SendQuestions(Questions);
-            }
-
-            while (socket.State == WebSocketState.Open)
-            {
-                var message = await ReceiveMessage();
-                if (message == null) continue;
-                if (message.ContainsKey("ask"))
+                // Properly close the WebSocket connection
+                if (socket.State == WebSocketState.Open || socket.State == WebSocketState.CloseReceived)
                 {
-                    HandleAskQuestion(message);
+                    await socket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Connection closed", CancellationToken.None);
                 }
-                else if (message.ContainsKey("report"))
-                {
-                    HandleReport(message);
-                }
+                socket.Dispose();
             }
         }
 
-        void SimulateOtherClients()
+        async Task SimulateOtherClientsAsync()
         {
             var badQuestion = new Question(3, "This is an #&!%!* inappropriate message!!");
-
-            Task.Delay(250)
-                .ContinueWith(_ => Questions.Add(
-                    new Question(1, "What are some good resources for getting started with HTML5?")
-                ));
-
-            Task.Delay(1000)
-                .ContinueWith(_ =>
-                {
-                    Questions.Add(new Question(2, "Can you explain more about the Web Socket API please?"));
-                    Questions.Add(badQuestion);
-                });
-
-            Task.Delay(3000)
-                .ContinueWith(_ => Questions.Remove(badQuestion));
-
-            Task.Delay(4000)
-                .ContinueWith(_ => Questions.Add(
-                    new Question(4, "How much of CSS3 can I use right now?")
-                ));
+            
+            await Task.Delay(1000);
+            Questions.Add(new Question(1, "What are some good resources for getting started with HTML5?"));
+            await Task.Delay(2000);
+            Questions.Add(new Question(2, "Can you explain more about the Web Socket API please?"));
+            Questions.Add(badQuestion);
+            await Task.Delay(2000);
+            Questions.Remove(badQuestion);
+            await Task.Delay(3000);
+            Questions.Add(new Question(4, "How much of CSS3 can I use right now?"));
         }
 
         void HandleAskQuestion(IDictionary<string, object> message)
         {
-            var ask = (string)message["ask"];
+            var ask = ((JsonElement)message["ask"]).GetString();
             Questions.Add(new Question(ask));
         }
 
         void HandleReport(IDictionary<string, object> message)
         {
-            var id = (int)message["report"];
+            var id = ((JsonElement)message["report"]).GetInt32();
             var question = Questions.FirstOrDefault(q => q.id == id);
             if (question == null) return;
-            Task.Delay(1000).ContinueWith(_ => Questions.Remove(question));
+            
+            // Start background task to remove question after delay
+            _ = Task.Run(async () =>
+            {
+                await Task.Delay(5000);
+                Questions.Remove(question);
+            });
         }
 
         async Task<IDictionary<string, object>> ReceiveMessage()
         {
             var buffer = new ArraySegment<byte>(new byte[1024]);
             var result = await socket.ReceiveAsync(buffer, CancellationToken.None);
+            
+            // Handle close frames - return null to signal no message content
+            if (result.MessageType == WebSocketMessageType.Close)
+            {
+                return null;
+            }
+            
             var json = Encoding.UTF8.GetString(buffer.Array, buffer.Offset, result.Count);
-            var serializer = new JavaScriptSerializer();
-            return (IDictionary<string, object>)serializer.DeserializeObject(json);
+            var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(json);
+            return dict;
         }
 
         class Question
@@ -153,10 +164,6 @@ namespace ContosoConf.Live
 
             public string text { get; set; }
             public int id { get; set; }
-        }
-
-        class QuestionList : ObservableCollection<Question>
-        {
         }
     }
 }
