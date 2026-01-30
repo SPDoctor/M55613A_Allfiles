@@ -1,30 +1,30 @@
 /* Styles for the page header */
 
-header.page-header {
+header {
     height: 20rem;
     background-repeat: repeat-x;
     background-position: left bottom;
     border-bottom: 4px solid #1d1d1d;
 }
 
-header.page-header .container {
+header .container {
     padding: 1rem;
     position: relative;
 }
 
-header.page-header h1 {
+header h1 {
     margin: 0;
     font-size: 6rem;
     padding-top: 3rem;
 }
 
-header.page-header p {
+header p {
     font-size: 2rem;
     font-style: italic;
 }
 
 
-header.page-header .register {
+header .register {
     display: block;
     position: absolute;
     top: 20px;
@@ -49,7 +49,7 @@ header.page-header .register {
     transition: transform 1s;
 }
 
-header.page-header .register:hover {
+header .register:hover {
     color: #fff;
     background: -ms-linear-gradient(#bc0101, #8c0909);
     background: linear-gradient(#bc0101, #8c0909);
@@ -61,7 +61,7 @@ header.page-header .register:hover {
     transition: transform 1s;
 }
 
-header.page-header .register:before /* Creates dotted border */ {
+header .register:before /* Creates dotted border */ {
     display: block;
     position: absolute;
     top: -7px;
@@ -73,7 +73,7 @@ header.page-header .register:before /* Creates dotted border */ {
     border-radius: 100%;
 }
 
-header.page-header .register .free {
+header .register .free {
     font-size: 80%;
 }
 

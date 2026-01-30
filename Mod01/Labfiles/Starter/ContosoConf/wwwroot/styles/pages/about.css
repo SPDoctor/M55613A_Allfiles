@@ -1,6 +1,6 @@
 /* Styles for the about page */
 
-.about > article > section {
+.about > div > section {
     text-align: justify;
 
     /* Columns Layout */

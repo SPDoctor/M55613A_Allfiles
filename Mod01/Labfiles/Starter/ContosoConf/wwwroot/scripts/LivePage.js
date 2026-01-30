@@ -84,6 +84,7 @@ export class LivePage {
 
     createQuestionItem(question) {
         const item = document.createElement("li");
+        // textContent is generally safe against XSS
         item.textContent = question.text + " ";
         item.questionId = question.id;
         return item;
@@ -100,7 +101,7 @@ export class LivePage {
     handleQuestionsClick(event) {
         event.preventDefault();
 
-        const clickedElement = event.srcElement || event.target;
+        const clickedElement = event.target;
         if (this.isReportLink(clickedElement)) {
             const questionId = clickedElement.parentNode.questionId;
             this.reportQuestion(questionId);
