@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "firstName": "Amy",
+    "lastName": "Taylor",
+    "phone": "617-564-3254",
+    "picture": "images/amy_taylor.jpg"
+  },
+  {
+    "id": 2,
+    "firstName": "Anup",
+    "lastName": "Gupta",
+    "phone": "617-564-1258",
+    "picture": "images/anup_gupta.jpg"
+  },
+  {
+    "id": 3,
+    "firstName": "Michael",
+    "lastName": "Jones",
+    "phone": "617-564-9657",
+    "picture": "images/michael_jones.jpg"
+  },
+  {
+    "id": 4,
+    "firstName": "Caroline",
+    "lastName": "Kingsley",
+    "phone": "617-564-8855",
+    "picture": "images/caroline_kingsley.jpg"
+  },
+  {
+    "id": 5,
+    "firstName": "James",
+    "lastName": "Kennedy",
+    "phone": "617-564-3347",
+    "picture": "images/james_kennedy.jpg"
+  },
+  {
+    "id": 6,
+    "firstName": "Jennifer",
+    "lastName": "Wu",
+    "phone": "617-564-1144",
+    "picture": "images/jennifer_wu.jpg"
+  },
+  {
+    "id": 7,
+    "firstName": "Jonathan",
+    "lastName": "Bradley",
+    "phone": "617-564-9831",
+    "picture": "images/jonathan_bradley.jpg"
+  },
+  {
+    "id": 8,
+    "firstName": "Kenneth",
+    "lastName": "Sato",
+    "phone": "617-564-4682",
+    "picture": "images/kenneth_sato.jpg"
+  }
+
+]

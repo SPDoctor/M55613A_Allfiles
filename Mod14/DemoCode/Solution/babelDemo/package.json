@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "scripts": {
+    "build": "babel wwwroot/scripts --out-dir wwwroot/dist --source-maps"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.6",
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.0"
+  }
+}
