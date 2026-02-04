@@ -5,6 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="wwwroot\media\" />
+    <Folder Include="wwwroot\dist\" />
   </ItemGroup>
 
   <!-- Ensure npm packages are installed before build -->
