@@ -29,13 +29,20 @@ export class SpeakerBadgePage {
 
         // More than one file could have been dropped, we'll just use the first.
         const file = files[0];
-        if (this.isImageType(file.type)) {
-            this.busy();
-            // TODO: Add grayscaleImage into the processing pipeline.
-            this.readFile(file)
-                .then((file) => this.loadImage(file))
-                .then((file) => grayscaleImage(file))
-                .then((file) => this.notBusy(file));
+      if (this.isImageType(file.type)) {
+        this.busy();
+        // TODO: Add grayscaleImage into the processing pipeline.
+        this.readFile(file)
+            .then((imageUrl) => this.loadImage(imageUrl))
+            .then((image) => grayscaleImage(image))
+            .then((processedImage) => {
+                this.drawBadge(processedImage);
+                this.notBusy();
+            })
+            .catch((error) => {
+                console.error("Error processing image:", error);
+                this.notBusy();
+            });
         } else {
             alert("Please drop an image file.");
         }
@@ -148,8 +155,11 @@ export class SpeakerBadgePage {
 
             reader.onload = function (loadEvent) {
                 const fileDataUrl = loadEvent.target.result;
+                resolve(fileDataUrl);
+            };
 
-                resolve([fileDataUrl]);
+            reader.onerror = function (error) {
+              reject(error);
             };
 
             reader.readAsDataURL(file);
