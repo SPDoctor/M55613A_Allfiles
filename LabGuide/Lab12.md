@@ -26,7 +26,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 **Note**: If **Security Warning for ContosoConf** dialog box appears, clear **Ask me for every project in this solution** checkbox and then click **OK**.
 :::
 
-4. [ ] In **Solution Explorer**, expand the **ContosoConf** project node, and then double-click **feedback.htm**.
+4. [ ] In **Solution Explorer**, expand the **ContosoConf** project node, expand the subdirectory **wwwroot** and then double-click **feedback.htm**.
 
 5. [ ] Verify that this page contains the following HTML markup:
 
@@ -77,7 +77,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 2: Animate the stars on the Feedback form
 
-1. [ ] In **Solution Explorer**, expand the **styles** folder, expand the **pages** folder, and then double-click **feedback.css**.
+1. [ ] In **Solution Explorer**, expand the **wwwroot/styles** folder, expand the **pages** folder, and then double-click **feedback.css**.
 2. [ ] Update the following CSS rule, and add the code shown below:
 
     ```css
@@ -123,7 +123,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 3: Animate the Register link on the Home page
 
-1. [ ] In **Solution Explorer**, in the **styles** folder, double-click **header.css**.
+1. [ ] In **Solution Explorer**, in the **wwwroot/styles** folder, double-click **header.css**.
 
 2. [ ] Update the following CSS rule, and add the code shown below:
 
@@ -201,7 +201,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
     **Note**: If **Security Warning for ContosoConf** dialog box appears, clear **Ask me for every project in this solution** checkbox and then click **OK**.
     :::
 
-3. [ ] In **Solution Explorer**, expand the **ContosoConf** project, expand the **styles** folder, expand the **pages** folder, and then double-click **feedback.css**.
+3. [ ] In **Solution Explorer**, expand the **ContosoConf** project, expand the **wwwroot** folder, and then the **styles** folder, expand the **pages** folder, and then double-click **feedback.css**.
 4. [ ] Find the following comment:
 
     ```css
@@ -248,7 +248,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 2: Trigger the animation
 
-1. [ ] In **Solution Explorer**, expand the **scripts** folder, expand the **pages** folder, and then double-click **feedback.js**.
+1. [ ] In **Solution Explorer**, expand the **wwwroot/scripts** folder, expand the **pages** folder, and then double-click **feedback.js**.
 
 2. [ ] Find the following comment:
 

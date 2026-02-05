@@ -34,10 +34,8 @@
 .feedback-question {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
-    flex-align: center;
-    -ms-flex-pack: justify;
-    flex-pack: justify;
+    align-items: center;
+    justify-content: space-between;
     -ms-flex: 1;
     flex: 1;
     padding: .5rem 0;
