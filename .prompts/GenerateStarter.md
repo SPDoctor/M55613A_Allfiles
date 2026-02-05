@@ -1,13 +1,13 @@
-# LabFixup Part 1: Module {MOD}, Exercise {EX} - Generate Starter
+# LabFixup Part 1: Module 12, Exercise 2
 
 ## Step 1: Confirm the Solution
-Verify that Mod{MOD}/Labfiles/Solution/Exercise {EX} exists and is .NET 10.
+Verify that Mod12/Labfiles/Solution/Exercise 2 exists and is .NET 10.
 
 ## Step 2: Read Lab Instructions  
-Read LabGuide/Lab{MOD}.md Exercise {EX}. List all tasks/code that students ADD during this exercise.
+Read LabGuide/Lab12.md Exercise 2. List all tasks/code that students ADD during this exercise.
 
 ## Step 3: Create Starter
-Copy Mod{MOD}/Labfiles/Solution/Exercise {EX} to Mod{MOD}/Labfiles/Starter/Exercise {EX}.
+Copy Mod12/Labfiles/Solution/Exercise 2 to Mod12/Labfiles/Starter/Exercise 2.
 Remove student-added code. Insert TODO comments matching task descriptions from the lab instructions.
 
 ## Report
