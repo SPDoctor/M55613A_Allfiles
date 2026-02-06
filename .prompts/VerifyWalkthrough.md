@@ -1,11 +1,13 @@
-# LabFixup Part 2: Module 12, Exercise 1 - Verify Walkthrough
+# LabFixup Part 2: Module 10, Exercise 2 - Verify Walkthrough
 
 ## Task
-Make a copy of Mod12/Labfiles/Starter/Exercise 1 called 'temp Exercise 1'.
+Make a copy of Mod10/Labfiles/Starter/Exercise 2 called 'temp Exercise 2'.
 
-Starting with 'temp Exercise 1', follow the step-by-step instructions in LabGuide/Lab12.md Exercise 1.
+Starting with 'temp Exercise 2', follow the step-by-step instructions in LabGuide/Lab10.md Exercise 2.
 
-After completing all tasks, compare the result with Mod12/Labfiles/Solution/Exercise 1.
+After completing all tasks, compare the result with Mod10/Labfiles/Solution/Exercise 2.
+
+Note: it is acceptable for the TODO comments to be present or missing from the solution files - either way is fine.
 
 ## Report
 - Does following the instructions produce the Solution? 

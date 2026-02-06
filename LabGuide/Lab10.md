@@ -23,7 +23,7 @@ Also, make sure that you have disabled caching in Microsoft Edge:
 #### Task 1: Review the existing application
 
 1.	Start Microsoft Visual Studio, and then from the **[Repository Root]\Allfiles\Mod10\Labfiles\Starter\Exercise 1** folder, open the **ContosoConf.sln** solution.
-2.	Run the application, and then view the **about.htm** page.
+2.	Run the application, and then view the **about.htm** page in the **wwwroot** folder.
 2.  In Microsoft Edge, if the **Intranet settings are turned off by default** message appears, click **Don’t show this message again**.
 3.	On the **About** page press **Ctrl+P**  to open the **Print Preview** window. Notice that the print preview attempts to display the page header and that the text columns are too narrow.
 
@@ -42,7 +42,7 @@ You will use these classes to style the elements when the page is printed.
 
 #### Task 2: Create a style sheet for printing web pages
 
-1.	In the ContosoConf project, right-click the **styles** folder, and choose **Add New Item** to add a new style sheet named **print.css**.
+1.	In the ContosoConf project, right-click the **wwwroot/styles** folder, and choose **Add New Item** to add a new style sheet named **print.css**.
 - Use the **Add New Item** wizard and the **Style Sheet** template on the **Web** tab, and give it the name **print.css**.
 2.	In the **print.css** style sheet, delete the existing content.
 2.  Add the following CSS rule to hide the **nav** element that has the **page-nav** class, the **header** element that has the **page-header** class, and the **footer** element that has the **page-footer** class, by setting the **display** property of these elements to **none**:
@@ -133,12 +133,9 @@ You will use these classes to style the elements when the page is printed.
 
 3.	In the media query, add a rule for **nav.page-nav .container** that uses a flexbox to display the contents of the navigation bar, as follows:
    ```css
-        display: flexbox;
+        display: flex;
         flex-wrap: wrap;
-        flex-pack: center;
-        display: -ms-flexbox;
-        -ms-flex-wrap: wrap;
-        -ms-flex-pack: center;
+        justify-content: center;
    ```
 4.	Add another rule that hides the **:before** and **:after** pseudo elements of the **.active** navigation link, setting the **display** property to none:
    ```css

@@ -195,7 +195,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         <canvas
             width="500"
             height="200"
-            style="border: 1px solid "#888"
+            style="border: 1px solid #888"
             data-speaker-id="234724"
             data-speaker-name="Mark Hanson">
         </canvas>
