@@ -25,7 +25,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
    **Note**: If **Security Warning for ContosoConf** dialog box appears, clear **Ask me for every project in this solution** checkbox and then click **OK**.
    :::
 
-3. [ ] In **Solution Explorer**, expand the **ContosoConf** project, and then double-click **schedule.htm**.
+3. [ ] In **Solution Explorer**, expand the **ContosoConf** project, expand the **wwwroot** folder, and then double-click **schedule.htm**.
 4. [ ] On the **Debug** menu, click **Start Without Debugging**.
 
 5. [ ] Expand the Windows notification area, right-click **IIS Express**, and then select **Exit**.
@@ -131,43 +131,34 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 5: Test the application
 
-1. [ ] In **Solution Explorer**, double-click **appcache.manifest**.
+1. [ ] Open **Solution Explorer**.
+1. [ ] On the **Debug** menu, click **Start Without Debugging**.
+1. [ ] In Microsoft Edge, navigate to the Schedule page.
+1. [ ] In Microsoft Edge, to hard refresh the page, press Ctrl-F5.
+1. [ ] Expand the Windows notification area, right-click **IIS Express**, and then select **Exit**.
+1. [ ] In the **Confirmation** dialog box, click **Yes**.
+1. [ ] In Microsoft Edge, click the star icon in the **Registration** box, and then verify that the icon is now coloured yellow.
+1. [ ] Press Ctrl-F5 to hard refresh the browser.
+1. [ ] Verify that the star icon for **Registration** is still coloured yellow.
+1. [ ] Close Microsoft Edge.
 
-2. [ ] Find the following line:
+#### Task 6: Clear local storage data
 
-      ```javascript
-        CACHE MANIFEST
-      ```
+1. [ ] In Microsoft Edge, press **F12** to open the Developer Tools.
+2. [ ] Click the **Application** tab (it may be under the >> menu if your window is narrow).
+3. [ ] In the left sidebar, expand **Storage**, then expand **Local Storage**.
+4. [ ] Click on the site URL (e.g., **http://localhost:xxxx** where xxxx is your port number).
+5. [ ] You should see the **stars** key with its JSON array value in the right panel.
+6. [ ] Right-click on the **stars** entry and select **Delete** to remove it.
+   
+   ::: warning
+   **Note**: Alternatively, you can clear all local storage for this site by right-clicking on the site URL in the left sidebar and selecting **Clear**.
+   :::
 
-3. [ ] After the line, insert the following line:
-
-      ```javascript
-        # version 2
-      ```
-
-4. [ ] In **Solution Explorer**, double-click **schedule.htm**.
-
-5. [ ] On the **Debug** menu, click **Start Without Debugging**.
-6. [ ] In Microsoft Edge, to refresh the page, press F5.
-7. [ ] Expand the Windows notification area, right-click **IIS Express**, and then select **Exit**.
-8. [ ] In the **Confirmation** dialog box, click **Yes**.
-9. [ ] In Microsoft Edge, click the star icon in the **Registration** box, and then verify that the icon is now colored yellow.
-10. [ ] Press F5.
-11. [ ] Verify that the star icon for **Registration** is still colored yellow.
-12. [ ] Close Microsoft Edge.
-
-#### Task 6: Reset Microsoft Edge caching
-
-1. [ ] On the taskbar, click **Microsoft Edge**.
-2. [ ] In Microsoft Edge, to display the menu bar, press F10.
-3. [ ] On the **Tools** menu, click **Internet options**.
-
-4. [ ] In the **Internet Options** dialog box, click **Settings**.
-5. [ ] In the **Website Data Settings** dialog box, click the **Caches and databases** tab.
-6. [ ] Clear the **Allow website caches and databases** check box, and then click **OK**.
-7. [ ] In the **Internet Options** dialog box, click **OK**.
-8. [ ] Close Microsoft Edge.
-9. [ ] Close all open windows.
+7. [ ] Press **F5** to refresh the page.
+8. [ ] Verify that all star icons are now all grey/white (unstarred).
+9. [ ] Close the Developer Tools and close Microsoft Edge.
+10. [ ] Close all open windows.
 
 ::: success
 **Results**: After completing this exercise, you will have updated the **Schedule** page to record starred sessions locally.
