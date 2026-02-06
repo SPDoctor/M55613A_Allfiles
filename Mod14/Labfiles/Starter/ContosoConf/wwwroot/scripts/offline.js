@@ -24,7 +24,3 @@ if (!navigator.onLine) {
 document.body.onoffline = hideLinksThatRequireOnline;
 document.body.ononline = showLinks;
 
-// Error fetching appcache.manifest: so we are probably offline
-applicationCache.addEventListener("error", hideLinksThatRequireOnline, false);
-
-
