@@ -3,10 +3,7 @@
 .speakers ul {
     list-style-type: none;
     padding: 0;
-    display: -ms-flexbox;
-    display: -webkit-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 
@@ -28,10 +25,7 @@
 .sponsors ul {
     list-style-type: none;
     padding: 0;
-    display: -ms-flexbox;
-    display: -webkit-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 

@@ -9,7 +9,6 @@ nav.page-nav {
 
 /* TODO: nav.page-nav .container */
 nav.page-nav .container {
-    display: -ms-flexbox;
     display: flex;
 }
 
@@ -40,7 +39,6 @@ nav.page-nav a:hover {
 /* TODO: nav.page-nav .active */
 nav.page-nav .active {
     color: #fff;
-    background: -ms-linear-gradient(#c95656, #8d0606);
     background: linear-gradient(#c95656, #8d0606);
 }
 

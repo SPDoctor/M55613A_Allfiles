@@ -79,7 +79,6 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
    ```css
         nav.page-nav .container {
-            display: -ms-flexbox;
             display: flex;
         }
    ```
@@ -146,7 +145,6 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
     ```css
         nav.page-nav .active {
             color: #fff;
-            background: -ms-linear-gradient(#c95656, #8d0606);
             background: linear-gradient(#c95656, #8d0606);
         }
     ```
@@ -334,11 +332,8 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
             text-transform: uppercase;
             text-shadow: 0 1px 0 #000;
             color: #fff;
-            background: -ms-linear-gradient(#a80000, #740404);
             background: linear-gradient(#a80000, #740404);
-            -ms-border-radius: 100%;
             border-radius: 100%;
-            -ms-transform: rotate(6deg);
             transform: rotate(6deg);
         }
       ```
@@ -355,7 +350,6 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
       ```css
         header.page-header .register:hover {
-            background: -ms-linear-gradient(#bc0101, #8c0909);
             background: linear-gradient(#bc0101, #8c0909);
         }
       ```
@@ -380,7 +374,6 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
             width: 16.8rem;
             content: "";
             border: 3px dotted #740404;
-            -ms-border-radius: 100%;
             border-radius: 100%;
         }
       ```

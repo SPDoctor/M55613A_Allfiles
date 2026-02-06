@@ -102,7 +102,6 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
             height: 15px;
             cursor: pointer;
             margin: .1rem;
-            -ms-flex: 0 0 15px;
             flex: 0 0 15px;
 
             /* TODO: Transition the transform property over 0.5 seconds */
@@ -130,7 +129,6 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
     ```css
         header.page-header .register:hover {
             color: #fff;
-            background: -ms-linear-gradient(#bc0101, #8c0909);
             background: linear-gradient(#bc0101, #8c0909);
 
             /* TODO: rotate to 16 degrees and scale by 1.1 */
@@ -158,13 +156,9 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
             text-align: center;
             text-decoration: none;
             text-transform: uppercase;
-            -ms-border-radius: 100%;
             border-radius: 100%;
-            -ms-text-shadow: 0 1px 0 #000;
             text-shadow: 0 1px 0 #000;
-            -ms-transform: rotate(6deg);
             transform: rotate(6deg);
-            background: -ms-linear-gradient(#a80000, #740404);
             background: linear-gradient(#a80000, #740404);
 
             /* TODO: Transition the transform property over 1 second */

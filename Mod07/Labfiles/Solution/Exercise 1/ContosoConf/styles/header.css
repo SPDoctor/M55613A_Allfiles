@@ -38,17 +38,14 @@ header.page-header .register {
     text-transform: uppercase;
      
     /* Rounded corners to create circle */
-    -ms-border-radius: 100%;
     border-radius: 100%;
 
     text-shadow: 0 1px 0 #000;
 
     /* Text transform rotation Effects */
-    -ms-transform: rotate(6deg);
     transform: rotate(6deg);
 
     /* Background Gradient Effects */
-    background: -ms-linear-gradient(#a80000, #740404);
     background: linear-gradient(#a80000, #740404);
 }
 
@@ -56,7 +53,6 @@ header.page-header .register:hover {
     color: #fff;
 
     /* Background Gradient Effects */
-    background: -ms-linear-gradient(#bc0101, #8c0909);
     background: linear-gradient(#bc0101, #8c0909);
 }
 
@@ -71,7 +67,6 @@ header.page-header .register:before /* Creates dotted border */ {
     border: 3px dotted #740404;
     
     /* Rounded corners to create circle */
-    -ms-border-radius: 100%;
     border-radius: 100%;
 }
 

@@ -42,7 +42,6 @@ header .register {
     border-radius: 100%;
     text-shadow: 0 1px 0 #000;
     transform: rotate(6deg);
-    background: -ms-linear-gradient(#a80000, #740404);
     background: linear-gradient(#a80000, #740404);
 
     /* TODO: Transition the transform property over 1 second */
@@ -51,7 +50,6 @@ header .register {
 
 header .register:hover {
     color: #fff;
-    background: -ms-linear-gradient(#bc0101, #8c0909);
     background: linear-gradient(#bc0101, #8c0909);
 
     /* TODO: rotate to 16 degrees and scale by 1.1 */

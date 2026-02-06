@@ -9,7 +9,6 @@ nav {
 }
 
 nav .container {
-    display: -ms-flexbox;
     display: flex;
 }
 
@@ -39,7 +38,6 @@ nav .active {
     color: #fff;
 
     /* Background gradient effects */
-    background: -ms-linear-gradient(#C95656, #8d0606);
     background: linear-gradient(#C95656, #8d0606);
 }
 

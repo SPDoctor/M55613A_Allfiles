@@ -42,13 +42,11 @@ header .register {
     border-radius: 100%;
     text-shadow: 0 1px 0 #000;
     transform: rotate(6deg);
-    background: -ms-linear-gradient(#a80000, #740404);
     background: linear-gradient(#a80000, #740404);
 }
 
 header .register:hover {
     color: #fff;
-    background: -ms-linear-gradient(#bc0101, #8c0909);
     background: linear-gradient(#bc0101, #8c0909);
 }
 
