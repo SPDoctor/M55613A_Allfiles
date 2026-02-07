@@ -28,7 +28,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 4. [ ] In **Solution Explorer**, expand the **ContosoConf** project node. 
 
-5. [ ] In **Solution Explorer**, double-click **speaker-badge.htm**.
+5. [ ] In **Solution Explorer**, expand the **wwwroot** folder, then double-click **speaker-badge.htm**.
 6. [ ] Verify that the HTML markup contains the following **&lt;img&gt;** element:
 
     ```html
@@ -40,7 +40,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         <script src="/scripts/pages/speaker-badge.js" type="module"></script>
     ```
 
-8. [ ] In **Solution Explorer**, expand the **scripts** folder, and then expand the **pages** folder.
+8. [ ] In **Solution Explorer**, expand the **wwwroot/scripts** folder, and then expand the **pages** folder.
 9. [ ] Double-click **speaker-badge.js**.
 10. [ ] Verify that the JavaScript file contains the following line of code:
 
@@ -60,8 +60,8 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 2. [ ] After the comment, add the following JavaScript code:
 
     ```javascript
-        element.addEventListener("dragover", this.handleDragOver.bind(this), false);
-        element.addEventListener("drop", this.handleDrop.bind(this), false);
+        this.canvas.addEventListener("dragover", this.handleDragOver.bind(this));
+        this.canvas.addEventListener("drop", this.handleDrop.bind(this));
     ```
 
 #### Task 3: Handle the drop event
@@ -105,12 +105,22 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 7. [ ] Find the following comment:
 
     ```javascript
-         //       Use this.readFile to read the file, then display the image
-         //       (Note that this.readFile returns a Promise, so chain ((file)=> this.displayImage(file)) using the "then" method.)
+         //       Use this.readFile to read the file, then load and draw the image
+         //       Chain: this.readFile(file) -> this.loadImage(imageUrl) -> this.drawBadge(image)
+         //       (Note that readFile and loadImage return Promises, so use .then() to chain them)
     ```
 8. [ ] After the comment, add the following JavaScript code:
     ```javascript
-			this.readFile(file).then((file)=> this.displayImage(file));
+			this.readFile(file)
+                .then((imageUrl) => this.loadImage(imageUrl))
+                .then((image) => {
+                    this.drawBadge(image);
+                    this.notBusy();
+                })
+                .catch((error) => {
+                    console.error("Error processing image:", error);
+                    this.notBusy();
+                });
         } else {
             alert("Please drop an image file.");
         }
@@ -143,7 +153,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
     ```javascript
         reader.onload = function (loadEvent) {
             const fileDataUrl = loadEvent.target.result;
-            resolve([fileDataUrl]);
+            resolve(fileDataUrl);
         };
     ```
 
@@ -161,9 +171,8 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 5: Test the Speaker Badge page
 
-1. [ ] In **Solution Explorer**, double-click **speaker-badge.htm**.
-2. [ ] On the **Debug** menu, click **Start Without Debugging**.
-
+1. [ ] In **Solution Explorer**, on the **Debug** menu, click **Start Without Debugging**.
+2. [ ] In Microsoft Edge, navigate to the **speaker-badge.htm** page by modifying the URL in the address bar.
 3. [ ] In Microsoft Edge, if the **Intranet settings are turned off by default** message appears, click **Don’t show this message again**.
 4. [ ] On the Windows taskbar, click **File Explorer**, and then browse to **[Repository Root]\Allfiles\Mod08\Labfiles\Resources**.
 5. [ ] Drag-and-drop **mark-hanson.jpg** from File Explorer, onto the empty rectangle in Microsoft Edge.
@@ -189,7 +198,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 3. [ ] In **Solution Explorer**, expand the **ContosoConf** project node.
 
-4. [ ] Double-click **index.htm**.
+4. [ ] Expand the **wwwroot** folder, then double-click **index.htm**.
 5. [ ] Find the comment that starts with the line:
 
     ```javascript
@@ -198,7 +207,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 6. [ ] After the second line of the comment, add the following HTML markup:
     ```html
-        <video src="http://ak.channel9.msdn.com/ch9/265b/9a76fccd-941e-4285-ad00-9ea200aa265b/MIX09KEY01_high_ch9.mp4"></video>
+        <video src="/media/contosoconf.mp4"></video>
     ```
 
 #### Task 2: Add controls to the video player
@@ -207,8 +216,8 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
     ```html
         <div class="video-controls" style="display: none">
-            <button class="video-play">Play</button>
-            <button class="video-pause">Pause</button>
+            <button type="button" class="video-play">Play</button>
+            <button type="button" class="video-pause">Pause</button>
             <span class="video-time"></span>
         </div>
     ```
@@ -257,13 +266,25 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         video.addEventListener("loadeddata", ready, false);
     ```
 
-7. [ ] In **video.js**, find the following comment:
+7. [ ] Find the following comment:
+
+    ```javascript
+        //       video timeupdate
+    ```
+
+8. [ ] After the comment, add the following JavaScript code:
+
+    ```javascript
+        video.addEventListener("timeupdate", updateTime, false);
+    ```
+
+9. [ ] In **video.js**, find the following comment:
 
     ```javascript
         // TODO: play the video
     ```
 
-8. [ ] After the comment, add the following JavaScript code:
+10. [ ] After the comment, add the following JavaScript code:
 
     ```javascript
         video.play();
@@ -271,13 +292,13 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         pauseButton.style.display = "";
     ```
 
-9. [ ] Find the following comment:
+11. [ ] Find the following comment:
 
     ```javascript
         // TODO: pause the video
     ```
 
-10. [ ] After the comment, add the following JavaScript code:
+12. [ ] After the comment, add the following JavaScript code:
 
     ```javascript
         video.pause();
@@ -285,18 +306,33 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         playButton.style.display = "";
     ```
 
-11. [ ] Find the following comments:
+13. [ ] Find the following comments:
 
     ```javascript
         //       play click
         //       pause click
     ```
 
-12. [ ] After the comments, add the following JavaScript code:
+14. [ ] After the comments, add the following JavaScript code:
 
     ```javascript
         playButton.addEventListener("click", play, false);
 		pauseButton.addEventListener("click", pause, false);
+    ```
+
+15. [ ] Find the following comment:
+
+    ```javascript
+        // TODO: Handle pre-loaded videos by checking video.readyState
+    ```
+
+16. [ ] After the comment, add the following code:
+
+    ```javascript
+        // If the video is already loaded, call ready() immediately
+        if (video.readyState >= 2) {
+            ready();
+        }
     ```
 
 #### Task 4: Display the video elapsed time
@@ -314,29 +350,15 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         time.textContent = formatTime(video.currentTime);
     ```
 
-3. [ ] Find the following comment:
-
-    ```javascript
-        //       video timeupdate
-    ```
-
-4. [ ] After the comment, add the following JavaScript code:
-
-    ```javascript
-        video.addEventListener("timeupdate", updateTime, false);
-    ```
-
 #### Task 5: Test the video player
 
-1. [ ] In **Solution Explorer**, double-click **index.htm**.
-
-2. [ ] On the **Debug** menu, click **Start Without Debugging**.
-3. [ ] In Microsoft Edge, wait for the **Play** button to appear underneath the video.
-4. [ ] Click **Play**.
-5. [ ] Verify that the video begins to play and that the current video time is displayed.
-6. [ ] Click **Pause**.
-7. [ ] Verify that the video pauses.
-8. [ ] Close Microsoft Edge.
+1. [ ] In **Solution Explorer**, on the **Debug** menu, click **Start Without Debugging**.
+1. [ ] In Microsoft Edge, wait for the **Play** button to appear underneath the video.
+1. [ ] Click **Play**.
+1. [ ] Verify that the video begins to play and that the current video time is displayed.
+1. [ ] Click **Pause**.
+1. [ ] Verify that the video pauses.
+1. [ ] Close Microsoft Edge.
 
 ::: success
 **Results**: After completing this exercise, you will have added a video player to the Home page.
@@ -353,7 +375,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
     **Note**: If **Security Warning for ContosoConf** dialog box appears, clear **Ask me for every project in this solution** checkbox and then click **OK**.
     :::
 
-3. [ ] In **Solution Explorer**, expand the **ContosoConf** project node.
+3. [ ] In **Solution Explorer**, expand the **wwwroot**, and then the **ContosoConf** project node.
 
 4. [ ] In **Solution Explorer**, double-click **location.htm**.
 5. [ ] Verify that the HTML markup contains the following **&lt;h2&gt;** element:
@@ -362,7 +384,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         <h2 id="distance"></h2>
     ```
 
-6. [ ] In **Solution Explorer**, expand the **scripts** folder, and then expand the **pages** folder.
+6. [ ] In **Solution Explorer**, expand the **wwwroot/scripts** folder, and then expand the **pages** folder.
 7. [ ] Double-click **location.js**.
 
 8. [ ] Verify that the file contains the following JavaScript code:
@@ -405,10 +427,9 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 4: Test the Location page
 
-1. [ ] In **Solution Explorer**, double-click **location.htm**.
-
-2. [ ] On the **Debug** menu, double-click **Start Without Debugging**.
-3. [ ] In **Microsoft Edge, if the Let localhost use your location?** message appears, click **Yes**.
+1. [ ] In **Solution Explorer**, on the **Debug** menu, double-click **Start Without Debugging**.
+2. [ ] In Microsoft Edge, navigate to the Location page.
+3. [ ] In Microsoft Edge, if the **Let localhost use your location?** message appears, click **Yes**.
 4. [ ] In the **Let Microsoft Edge access your precise location?** dialog box, click **Yes**.
 5. [ ] Verify that the page displays the distance to the conference venue, in miles (the actual value will vary, depending on your distance from the conference venue.)
 6. [ ] Close all open windows.

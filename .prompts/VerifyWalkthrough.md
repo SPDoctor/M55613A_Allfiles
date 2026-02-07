@@ -1,11 +1,13 @@
-# LabFixup Part 2: Module 9, Exercise 1 - Verify Walkthrough
+# Verify Walkthrough: Module 7, Exercise 1 
 
-## Task
-Make a copy of Mod9/Labfiles/Starter/Exercise 1 called 'temp Exercise 1'.
+## Step 1: Make a temporary copy of Starter
+COPY the Starter Exercise folder for this module and exercise to a new folder called 'temp Exercise N', where N is the current exercise number.
 
-Starting with 'temp Exercise 1', follow the step-by-step instructions in LabGuide/Lab9.md Exercise 1.
+## Step 2: Follow the instructions
+Starting with 'temp Exercise N', follow the step-by-step instructions in the Lab Guide for this module and exercise, and apply them to 'temp Exercise N', where N is the number of the exercise.
 
-After completing all tasks, compare the result with Mod9/Labfiles/Solution/Exercise 1.
+## Step 3: Check the results
+After completing all tasks, compare the result with the Solution file for this module and exercise.
 
 Note: it is acceptable for the TODO comments to be present or missing from the solution files - either way is fine.
 

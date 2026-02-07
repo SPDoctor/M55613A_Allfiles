@@ -25,7 +25,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 	**Note**: If **Security Warning for ContosoConf** dialog box appears, clear **Ask me for every project in this solution** checkbox and then click **OK**.
 	:::
 
-3. [ ] Expand the **ContosoConf** project, expand the **scripts** folder, and then expand the **pages** folder.
+3. [ ] Expand the **ContosoConf** project, expand the **wwwroot** folder, then expand the **scripts** folder, and then expand the **pages** folder.
 4. [ ] Double-click **schedule.js**.
 5. [ ] Find the following comment:
 
@@ -65,13 +65,20 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
     ```javascript
         //TODO: Add Constructor
     ```
-4. [ ] Replace the code with the following line of JavaScript code:
+4. [ ] Replace the code with the following JavaScript code:
     ```javascript
-        constructor(element, localStarStorage) {
-			this.element = element;
+        constructor(listElement, localStarStorage) {
+			this.element = listElement;
 			this.localStarStorage = localStarStorage;
+			this.items = [];
 		}
     ```
+5. [ ] In **schedule.js**, find and remove the following comment:
+    ```javascript
+        // TODO: Refactor these variables into properties of the ScheduleList class.
+		//		 Assign them in the "initialize" method from arguments
+    ```
+
 #### Task 3: Convert functions into methods of the ScheduleList class
 
 1. [ ] In **schedule.js**, find the following JavaScript code:
@@ -113,8 +120,13 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 		add(itemData) {
 			const item = new ScheduleItem(itemData, this.localStarStorage);
-			this.element.appendChild(item.element);
-		}
+		this.items.push(item); // Store item object in our array
+		this.element.appendChild(item.element); // Also add the item element to the UI.
+	}
+    ```
+4. [ ] In **schedule.js**, find and remove the following comment:
+    ```javascript
+        // TODO: Refactor these functions into methods of the ScheduleList class.
     ```
 
 #### Task 4: Create and use a ScheduleList object
@@ -124,35 +136,35 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         // TODO: Replace the following code by creating a ScheduleList object 
         //       and calling the startDownload method.
         element = document.getElementById("schedule");
-        localStarStorage = LocalStarStorage.create(localStorage);
+        localStarStorage = new LocalStarStorage(localStorage);
         startDownload();
     ```
-2. [ ] Delete this block of JavaScript code,  and then replace it with the following code:
+2. [ ] Delete this block of JavaScript code, including the TODO comment, and then replace it with the following code:
     ```javascript
+		const scheduleListElement = document.getElementById("schedule");
 		const scheduleList = new ScheduleList(
-			document.getElementById("schedule"),
+			scheduleListElement,
 			new LocalStarStorage(localStorage)
 		);
 		scheduleList.startDownload();
     ```
-3. [ ] Find the following JavaScript code:
+3. [ ] Find the following JavaScript code at the top of the file:
     ```javascript
 		//TODO: Import objects/functions from the modules/classes.
 		import { LocalStarStorage } from "../LocalStarStorage.js";
 		import { ScheduleItem } from "../ScheduleItem.js";
     ```
-4. [ ] Delete this block of JavaScript code,  and then replace it with the following code:
+4. [ ] Delete this block of JavaScript code, including the TODO comment, and then replace it with the following code:
     ```javascript
-		import { LocalStarStorage } from "../LocalStarStorage.js";
 		import { ScheduleList } from "../ScheduleList.js";
+		import { LocalStarStorage } from "../LocalStarStorage.js";
     ```
 
 #### Task 5: Test the application
 
-1. [ ] In **Solution Explorer**, double-click **schedule.htm**.
-
-2. [ ] On the **Debug** menu, click **Start Without Debugging**.
-3. [ ] In Microsoft Edge, if the **Intranet settings are turned off by default** of the **ScheduleList** object appears, click **Don’t show this message again**.
+1. [ ] In **Solution Explorer**, on the **Debug** menu, click **Start Without Debugging**.
+2. [ ] In Microsoft Edge, navigate to the **Schedule** page.
+3. [ ] In Microsoft Edge, if the **Intranet settings are turned off by default** message appears, click **Don't show this message again**.
 4. [ ] Verify that the page looks similar to the image below:
 
    ![Screenshot](./Images/Lab7_Schedule-Refactored.png "The Schedule page")
