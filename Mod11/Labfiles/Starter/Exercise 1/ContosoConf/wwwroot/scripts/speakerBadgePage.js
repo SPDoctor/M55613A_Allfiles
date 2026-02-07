@@ -1,5 +1,3 @@
-import { grayscaleImage } from "./grayscale.js";
-
 export class SpeakerBadgePage {
 
     constructor(element) {
@@ -33,9 +31,8 @@ export class SpeakerBadgePage {
         this.busy();
         this.readFile(file)
             .then((imageUrl) => this.loadImage(imageUrl))
-            .then((image) => grayscaleImage(image))
-            .then((processedImage) => {
-                this.drawBadge(processedImage);
+            .then((image) => {
+                this.drawBadge(image);
                 this.notBusy();
             })
             .catch((error) => {
