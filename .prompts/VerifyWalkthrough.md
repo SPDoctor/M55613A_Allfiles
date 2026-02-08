@@ -1,4 +1,4 @@
-# Verify Walkthrough: Module 7, Exercise 1 
+# Verify Walkthrough: Module 5, Exercise 3 
 
 ## Step 1: Make a temporary copy of Starter
 COPY the Starter Exercise folder for this module and exercise to a new folder called 'temp Exercise N', where N is the current exercise number.

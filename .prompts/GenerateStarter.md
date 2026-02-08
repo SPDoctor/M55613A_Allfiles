@@ -1,10 +1,10 @@
-# Generate Starter Project: Module 7, Exercise 1
+# Generate Starter Project: Module 5, Exercise 3
 
 ## Step 1: Confirm the Solution
-Verify that Mod8/Labfiles/Solution/ has a subfolder for this exercise and it is using .NET 10.
+Verify that ModX/Labfiles/Solution/ has a subfolder for this exercise and it is using .NET 10 (where ModX is the folder for the module, e.g. for Module 1 this would be Mod01, Module 2 would be Mod02, and so on).
 
 ## Step 2: Read Lab Instructions  
-Read the LabGuide for this Module and Exercise. List all tasks/code that students ADD during this exercise.
+Read the LabGuide for this Module and Exercise. List all tasks/code that students ADD during this exercise. The lab guide is in the folder LabGuide, and the file is for LabX, where X is the module number, e.g. for Module 1 this would be Lab1.md, Module 2 would be Lab2.md, and so on)
 
 ## Step 3: Create Starter
 COPY the Solution Exercise folder for this module and exercise to the Starter folder.

@@ -1,0 +1,28 @@
+/* Styles for the about page */
+
+/* TODO: .about > article > section */
+
+
+/* TODO: Add drop cap styling */
+
+
+/* TODO: Indent paragraphs */
+
+
+/* TODO: Blockquote */
+
+
+/* For small screens revert back to normal layout */
+@media screen and (max-width: 960px) {
+    .about > article > section {
+        column-count: 1;
+    }
+    
+    .about p:first-child:first-letter {
+        font-size: inherit;
+        float: inherit;
+        margin: inherit;
+        line-height: inherit;
+        color: inherit;
+    }
+}

@@ -37,7 +37,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 6. [ ] Find the lines containing the following HTML markup:
 
    ```html
-        <nav class="page-nav">
+        <nav>
           <div class="container">
             <a href="/index.htm" class="active">Home</a>
    ```
@@ -56,13 +56,13 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 2. [ ] Find the following comment:
 
    ```css
-        /* TODO: nav.page-nav */
+        /* TODO: nav */
    ```
 
 3. [ ] After this comment, insert the following Cascading Style Sheets (CSS):
 
    ```css
-        nav.page-nav {
+        nav {
             background-color: #1d1d1d;
             line-height: 6rem;
             font-size: 1.7rem;
@@ -72,13 +72,13 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 4. [ ] Find the following CSS comment:
 
    ```css
-        /* TODO: nav.page-nav .container */
+        /* TODO: nav .container */
    ```
 
 5. [ ] After this comment, insert the following CSS:
 
    ```css
-        nav.page-nav .container {
+        nav .container {
             display: flex;
         }
    ```
@@ -86,13 +86,13 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 6. [ ] Find the following comment:
 
    ```css
-        /* TODO: nav.page-nav a */
+        /* TODO: nav a */
    ```
 
 7. [ ] After the comment, insert the following CSS:
 
    ```css
-        nav.page-nav a {
+        nav a {
             display: block;
             min-width: 9rem;
             padding: 0 1.8rem;
@@ -108,13 +108,13 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 8. [ ] Find the following comment:
 
    ```css
-        /* TODO: nav.page-nav a:first-child */
+        /* TODO: nav a:first-child */
    ```
 
 9. [ ] After the comment, insert the following CSS:
 
    ```css
-        nav.page-nav a:first-child {
+        nav a:first-child {
             border-left: 1px dotted #3d3d3d;
         }
    ```
@@ -122,13 +122,13 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 10. [ ] Find the following comment:
 
     ```css
-        /* TODO: nav.page-nav a:hover */
+        /* TODO: nav a:hover */
     ```
 
 11. [ ] After the comment, insert the following CSS:
 
     ```css
-        nav.page-nav a:hover {
+        nav a:hover {
             color: #e4e4e4;
             background-color: black;
         }
@@ -137,13 +137,13 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 12. [ ] Find the following comment:
 
     ```css
-        /* TODO: nav.page-nav .active */
+        /* TODO: nav .active */
     ```
 
 13. [ ] After the comment, insert the following CSS:
 
     ```css
-        nav.page-nav .active {
+        nav .active {
             color: #fff;
             background: linear-gradient(#c95656, #8d0606);
         }
@@ -152,13 +152,13 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 14. [ ] Find the following comment:
 
      ```css
-        /* TODO: nav.page-nav .active:hover */
+        /* TODO: nav .active:hover */
     ```
 
 15. [ ] After the comment, insert the following CSS:
 
     ```css
-        nav.page-nav .active:hover {
+        nav .active:hover {
             /* Override hover effect for active page link */
             color: #fff;
         }
@@ -170,13 +170,13 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 1. [ ] Find the following comment:
 
    ```css
-        /* TODO: nav.page-nav .active:before */
+        /* TODO: nav .active:before */
    ```
 
 2. [ ] After the comment, insert the following CSS:
 
       ```css
-        nav.page-nav .active:before {
+        nav .active:before {
             position: absolute;
             top: 6rem;
             display: block;
@@ -192,13 +192,13 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 3. [ ] Find the following comment:
 
       ```css
-        /* TODO: nav.page-nav .active:after */
+        /* TODO: nav .active:after */
       ```
 
 4. [ ] After the comment, insert the following CSS:
 
       ```css
-        nav.page-nav .active:after {
+        nav .active:after {
             position: absolute;
             display: block;
             height: 0;
@@ -212,15 +212,18 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 4: Test the navigation bar
 
-1. [ ] In **Solution Explorer**, double-click **index.htm**.
+1. [ ] On the **Debug** menu, click **Start Without Debugging**.
 
-2. [ ] On the **Debug** menu, click **Start Without Debugging**.
+2. [ ] In Microsoft Edge, navigate to the **index** page.
+
 3. [ ] Verify that the navigation bar looks similar to the following image:
 
     ![Screenshot](./Images/Lab6_Nav-Bar-Styled-Final.png "The fully styled navigation bar")
 
 4. [ ] In the navigation bar, click **About**.
+
 5. [ ] Verify that the **About** item is styled correctly.
+
 6. [ ] Close Microsoft Edge.
 
 
@@ -282,66 +285,69 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 3. [ ] Modify the CSS rule following this comment, and add the CSS properties shown below:
 
       ```css
-        header.page-header .register {
+        header .register {
             display: block;
             position: absolute;
-            top: 2rem;
-            right: 3.5rem;
-            width: 16rem;
-            height: 10rem;
-            padding-top: 6rem;
+            top: 20px;
+            right: 35px;
+            width: 160px;
+            height: 100px;
+            padding-top: 60px;
         }
       ```
 
-4. [ ] Add the following CSS properties to the **header.page-header .register** CSS rule: 
+4. [ ] Add the following CSS properties to the **header .register** CSS rule: 
 
       ```css
-        header.page-header .register {
+        header .register {
             display: block;
             position: absolute;
-            top: 2rem;
-            right: 3.5rem;
-            width: 16rem;
-            height: 10rem;
-            padding-top: 6rem;
+            top: 20px;
+            right: 35px;
+            width: 160px;
+            height: 100px;
+            padding-top: 60px;
+            opacity: 0.8;
             font-size: 2.7rem;
+            color: #fff;
             text-align: center;
             text-decoration: none;
             text-transform: uppercase;
             text-shadow: 0 1px 0 #000;
-            color: #fff;
         }
       ```
 
 #### Task 3: Style the Register link background, shape, and rotation properties
 
-1. [ ] Add the following CSS properties to the **header.page-header .register** CSS rule:
+1. [ ] Add the following CSS properties to the **header .register** CSS rule:
 
       ```css
-        header.page-header .register {
+        header .register {
             display: block;
             position: absolute;
-            top: 2rem;
-            right: 3.5rem;
-            width: 16rem;
-            height: 10rem;
-            padding-top: 6rem;
+            top: 20px;
+            right: 35px;
+            width: 160px;
+            height: 100px;
+            padding-top: 60px;
+            opacity: 0.8;
             font-size: 2.7rem;
+            color: #fff;
             text-align: center;
             text-decoration: none;
             text-transform: uppercase;
-            text-shadow: 0 1px 0 #000;
-            color: #fff;
-            background: linear-gradient(#a80000, #740404);
+            /* Rounded corners to create circle */
             border-radius: 100%;
+            text-shadow: 0 1px 0 #000;
             transform: rotate(6deg);
+            background: linear-gradient(#a80000, #740404);
         }
       ```
 
 2. [ ] Find the following CSS rule:
 
       ```css
-        header.page-header .register:hover {
+        header .register:hover {
         
         }
       ```
@@ -349,7 +355,8 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 3. [ ] Add the following CSS properties to this rule:
 
       ```css
-        header.page-header .register:hover {
+        header .register:hover {
+            color: #fff;
             background: linear-gradient(#bc0101, #8c0909);
         }
       ```
@@ -357,7 +364,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 4. [ ] Find the following CSS rule: 
 
       ```css
-        header.page-header .register:before {
+        header .register:before {
         
         }
       ```
@@ -365,13 +372,13 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 5. [ ] Add the following CSS properties to this rule: 
 
       ```css
-        header.page-header .register:before {
+        header .register:before /* Creates dotted border */ {
             display: block;
             position: absolute;
-            top: -.7rem;
-            right: -.7rem;
-            height: 16.8rem;
-            width: 16.8rem;
+            top: -7px;
+            right: -7px;
+            height: 168px;
+            width: 168px;
             content: "";
             border: 3px dotted #740404;
             border-radius: 100%;
@@ -380,14 +387,16 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 4: Test the Register link
 
-1. [ ] In **Solution Explorer**, double-click **index.htm**.
+1. [ ] On the **Debug** menu, click **Start Without Debugging**.
 
-2. [ ] On the **Debug** menu, click **Start Without Debugging**.
-3. [ ] In Microsoft Edge, verify that the **Register** link in the page header looks like the following image:
+2. [ ] In Microsoft Edge, navigate to the **index** page.
+
+3. [ ] Verify that the **Register** link in the page header looks like the following image:
 
    ![Screenshot](./Images/Lab6_Register-Link-Final.png "The styled Register link")
 
 4. [ ] Move the mouse pointer over the **Register** link, and then verify that it changes color.
+
 5. [ ] Close Microsoft Edge.
 
 ::: success
@@ -436,7 +445,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 3. [ ] After this comment, add the following CSS:
 
       ```css
-        .about > article > section {
+        .about > div > section {
             column-count: 3;
             column-gap: 5rem;
             text-align: justify;
@@ -517,10 +526,11 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 6: Test the About page
 
-1. [ ] In **Solution Explorer**, double-click **about.htm**.
+1. [ ] On the **Debug** menu, click **Start Without Debugging**.
 
-2. [ ] On the **Debug** menu, click **Start Without Debugging**.
-3. [ ] In Microsoft Edge, verify that the page looks similar to the following image:
+2. [ ] In Microsoft Edge, navigate to the **about** page.
+
+3. [ ] Verify that the page looks similar to the following image:
 
     ![Screenshot](./Images/Lab6_About-Final.png "The About page")
 

@@ -1,0 +1,16 @@
+/* Styles for the about page */
+
+/* For small screens revert back to normal layout */
+@media screen and (max-width: 960px) {
+    .about > article > section {
+        column-count: 1;
+    }
+    
+    .about p:first-child:first-letter {
+        font-size: inherit;
+        float: inherit;
+        margin: inherit;
+        line-height: inherit;
+        color: inherit;
+    }
+}
