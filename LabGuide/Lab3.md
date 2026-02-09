@@ -87,21 +87,37 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 3: Implement the createSessionElement function that creates the list item for a session
 
-1. [ ] In **schedule.js**, after the line containing the **TODO: Task 3** comment, add the following JavaScript code:
+1. [ ] In **schedule.js**, in the **createSessionElement** function body, add the following JavaScript code:
 
     ```javascript
-        const li = document.createElement("li");
-        li.textContent = session.title;
+        const li = document.createElement('li');
+        li.className = 'schedule-item';
+        li.sessionId = session.id;
+        
+        li.innerHTML = `
+            <a href="#" class="star"></a>
+            <span>${session.title}</span>
+        `;
+        
         return li;
     ```
 
 #### Task 4: Implement the displaySchedule function that adds session items to the list for display
 
-1. [ ] In **schedule.js**, after the line containing the **TODO: Task 4** comment, add the following JavaScript code:
+1. [ ] In **schedule.js**, in the **displaySchedule** function, find the following comment:
 
     ```javascript
-        for (let i = 0; i < schedules.length; i++) {
-            const li = createSessionElement(schedules[i]);
+        // TODO: Task 4 - Loop through the schedules array
+        //       Create session elements
+        //       Append the elements to the list
+    ```
+
+2. [ ] After this comment, add the following JavaScript code:
+
+    ```javascript
+        clearList();
+        for (let schedule of schedules) {
+            const li = createSessionElement(schedule);
             list.appendChild(li);
         }
     ```
