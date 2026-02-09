@@ -210,7 +210,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
                 if (request.readyState === 4 && request.status === 200) {
                     const response = JSON.parse(request.responseText);
                     if (response.starCount > 50) {
-                        alert("This session is very popular! Be sure to arrive early to get a       seat.");
+                        alert("This session is very popular! Be sure to arrive early to get a seat.");
                     }
                 }
             };

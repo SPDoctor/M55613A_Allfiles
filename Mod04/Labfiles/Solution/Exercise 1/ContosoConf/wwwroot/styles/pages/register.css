@@ -1,0 +1,29 @@
+/* Styles for the register page */
+
+.register form {
+    max-width: 40rem;    
+}
+
+.register .field {
+    margin-bottom: 1rem;
+}
+
+.register label {
+    display: block;
+}
+
+.register input {
+    display: block;
+    padding: .5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.register button {
+    padding: .5rem;
+}
+
+/* TODO: Task 5 - Style elements that are not valid
+   Add a style for .register form.submission-attempted input:invalid
+   Set background-color to #ffeeee, border to 2px solid #b00, and outline to none
+*/

@@ -291,8 +291,8 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 6. [ ] After the comment, add the following JavaScript code:
 
       ```javascript
-        var passwordInput = document.getElementById("password");
-        var confirmPasswordInput = document.getElementById("confirm-password");
+        const passwordInput = document.getElementById("password");
+        const confirmPasswordInput = document.getElementById("confirm-password");
       ```
 
 #### Task 2: Write code to compare the **Password** and **Confirm Password** inputs
@@ -306,7 +306,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 2. [ ] After the comment, add the following JavaScript code:
    
       ```javascript
-        var passwordsMatch = passwordInput.value === confirmPasswordInput.value;
+        const passwordsMatch = passwordInput.value === confirmPasswordInput.value;
       ```
 
 #### Task 3: Write code to display a custom error message if the passwords differ
@@ -379,7 +379,8 @@ message:
 
       ```css
         .register form.submission-attempted input:invalid {
-            background-color: #f9b2b2;
+            background-color: #ffeeee;
+            border: 2px solid #b00;
             outline: none;
         }
       ```

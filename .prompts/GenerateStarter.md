@@ -1,4 +1,4 @@
-# Generate Starter Project: Module 5, Exercise 3
+# Generate Starter Project: Module 3, Exercise 1
 
 ## Step 1: Confirm the Solution
 Verify that ModX/Labfiles/Solution/ has a subfolder for this exercise and it is using .NET 10 (where ModX is the folder for the module, e.g. for Module 1 this would be Mod01, Module 2 would be Mod02, and so on).

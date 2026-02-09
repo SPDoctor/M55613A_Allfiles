@@ -50,7 +50,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 10. [ ] Review the contents of the **schedule.js** file and verify that the first few lines contain the following code:
 
     ```javascript
-        const schedule = [ 
+        const schedules = [ 
             {
                 "id": "session-1",
                 "title": "Registration",
@@ -100,18 +100,17 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 1. [ ] In **schedule.js**, after the line containing the **TODO: Task 4** comment, add the following JavaScript code:
 
     ```javascript
-        for (let i = 0; i < schedule.length; i++) {
-            const li = createSessionElement(schedule[i]);
+        for (let i = 0; i < schedules.length; i++) {
+            const li = createSessionElement(schedules[i]);
             list.appendChild(li);
         }
     ```
 
 #### Task 5: Run the web application and view the Schedule page
 
-1. [ ] In Solution Explorer, double-click **schedule.htm**.
-2. [ ] On the **Debug** menu, click **Start Without Debugging**.
-3. [ ] In Microsoft Edge, if the message, "Intranet settings are turned off by default," appears, click **Don’t show this message again**.
-
+1. [ ] In **Solution Explorer**, on the **Debug** menu, click **Start Without Debugging**.
+2. [ ] In Microsoft Edge, if the message, "Intranet settings are turned off by default," appears, click **Don't show this message again**.
+3. [ ] In Microsoft Edge, navigate to the **Schedule** page.
 4. [ ] Verify that the list of sessions is displayed.
 5. [ ] Close Microsoft Edge.
 
@@ -126,7 +125,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 1. [ ] In ContosoConf - Visual Studio, on the **File** menu, point to **Open**, and then click **Project/Solution**.
 
-2. [ ] In the **Open Project** dialog box, browse to **[Repository Root]\Allfiles\Mod03\Labfiles\Start\Exercise 2**, click **ContosoConf.sln**, and then click **Open**.
+2. [ ] In the **Open Project** dialog box, browse to **[Repository Root]\Allfiles\Mod03\Labfiles\Starter\Exercise 2**, click **ContosoConf.sln**, and then click **Open**.
 
     ::: warning
     **Note**: If **Security Warning for ContosoConf** dialog box appears, clear **Ask me for every project in this solution** checkbox and then click **OK**.
@@ -175,29 +174,37 @@ Show:
 
 #### Task 4: Update the displaySchedule function to display the sessions for selected tracks
 
-1. [ ] In the **schedule.js** file, in the **displaySchedule** function, replace the body of the **for** loop with the following JavaScript code:
+1. [ ] In the **schedule.js** file, in the **displaySchedule** function, find the **for** loop:
 
     ```javascript
-        const tracks = schedule[i].tracks;
+        for (let schedule of schedules) {
+            const li = createSessionElement(schedule);
+            list.appendChild(li);
+        }
+    ```
+
+2. [ ] Replace the two lines inside the **for** loop with the following JavaScript code (this adds filtering logic to only display sessions for the selected tracks):
+
+    ```javascript
+        const tracks = schedule.tracks;
         const isCurrentTrack = (track1CheckBox.checked && tracks.indexOf(1) >= 0) ||
                                 (track2CheckBox.checked && tracks.indexOf(2) >= 0);
         if (isCurrentTrack) {
-            const li = createSessionElement(schedule[i]);
+            const li = createSessionElement(schedule);
             list.appendChild(li);
         }
     ```
 
 #### Task 5: Run the web application and view the Schedule page
 
-1. [ ] In Solution Explorer, double-click **schedule.htm**.
-
-2. [ ] On the **Debug** menu, click **Start Without Debugging**.
-3. [ ] In Microsoft Edge, verify that both check boxes are selected and that the complete list of sessions is displayed.
+1. [ ] In **Solution Explorer**, on the **Debug** menu, click **Start Without Debugging**.
+2. [ ] In Microsoft Edge, navigate to the **Schedule** page.
+3. [ ] Verify that both check boxes are selected and that the complete list of sessions is displayed.
 4. [ ] Clear **Track 1** and verify that only the sessions for **Track 2** appear.
 5. [ ] Select **Track 1**, clear **Track 2**, and then verify that only the sessions for Track 1 appear.
 6. [ ] Clear **Track 1** and verify that no sessions appear.
 7. [ ] Close Microsoft Edge.
-6. [ ] Close all open windows.
+8. [ ] Close all open windows.
 
 ::: success
 **Results**: After completing this exercise, you will have updated the **Schedule** page to filter sessions based on which tracks have been selected.
