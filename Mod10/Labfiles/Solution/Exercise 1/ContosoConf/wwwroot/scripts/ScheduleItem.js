@@ -1,4 +1,3 @@
-import { HtmlTemplate } from "./HtmlTemplate.js";
 import { parseTimeAsTotalMinutes } from "./datetime.js";
 
 export class ScheduleItem {
@@ -7,8 +6,7 @@ export class ScheduleItem {
         this.id = data.id;
         this.tracks = data.tracks;
         this.localStarStorage = localStarStorage;
-        this.scheduleItemTemplate = new HtmlTemplate("schedule-item");
-        this.element = this.scheduleItemTemplate.createElement(data);
+        this.element = this.createSessionElement(data);
         this.starredClass = "starred";
         if (localStarStorage.isStarred(this.id)) {
             this.element.classList.add(this.starredClass);
@@ -17,6 +15,17 @@ export class ScheduleItem {
         this.initializeElementClass();
         this.initializeElementPosition(data.start, data.end);
         this.addStarClickEventHandler();
+    }
+
+    createSessionElement(data) {
+        const li = document.createElement("li");
+        li.className = "schedule-item";
+        li.innerHTML = `
+            <span>${data.title}</span>
+            <div class="star"></div>
+            <div class="star-count">${data.starCount || 0}</div>
+        `;
+        return li;
     }
 
 

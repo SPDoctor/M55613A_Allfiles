@@ -6,11 +6,11 @@ const track2CheckBox = document.getElementById("show-track-2");
 const downloadSchedule = async () => {
     // await response of fetch call
     let response = await fetch("/schedule/list");
-    // transform body to json
-    let data = await response.json();
 
     // checking response is ok
     if (response.ok) {
+        // transform body to json
+        let data = await response.json();
         schedules = data.schedule;
         displaySchedule();
     }
@@ -19,19 +19,15 @@ const downloadSchedule = async () => {
 }
 
 const createSessionElement = (session) => {
-    const li = document.createElement("li");
-
+    const li = document.createElement('li');
+    li.className = 'schedule-item';
     li.sessionId = session.id;
-
-    const star = document.createElement("a");
-    star.setAttribute("href", "#");
-    star.setAttribute("class", "star");
-    li.appendChild(star);
-
-    const title = document.createElement("span");
-    title.textContent = session.title;
-    li.appendChild(title);
-
+    
+    li.innerHTML = `
+        <a href="#" class="star"></a>
+        <span>${session.title}</span>
+    `;
+    
     return li;
 };
 
