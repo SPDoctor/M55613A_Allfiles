@@ -9,7 +9,7 @@ Starting with 'temp Exercise N', follow the step-by-step instructions in the Lab
 ## Step 3: Check the results
 After completing all tasks, compare the result with the Solution file for this module and exercise.
 
-Note: it is acceptable for the TODO comments to be present or missing from the solution files - either way is fine.
+Note: it is acceptable for the TODO comments to be present or missing from the solution files - either way is fine. You can also ignore trivial differences in white space.
 
 ## Report
 - Does following the instructions produce the Solution? 

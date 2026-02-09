@@ -301,6 +301,42 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 	}
    ```
 
+2. [ ] In the **schedule.js** file, find the **handleListClick** function declaration:
+
+   ```javascript
+   const handleListClick = (event) => {
+   ```
+
+3. [ ] Update the function declaration to make it async:
+
+   ```javascript
+   const handleListClick = async (event) => {
+   ```
+
+4. [ ] In the **handleListClick** function, find the two lines that call **saveStar**:
+
+   ```javascript
+   saveStar(listItem.sessionId, false);
+   ```
+   
+   and
+   
+   ```javascript
+   saveStar(listItem.sessionId, true);
+   ```
+
+5. [ ] Update both lines to use **await**:
+
+   ```javascript
+   await saveStar(listItem.sessionId, false);
+   ```
+   
+   and
+   
+   ```javascript
+   await saveStar(listItem.sessionId, true);
+   ```
+
 #### Task 3: Test the Schedule page
 
 1. [ ] In **Solution Explorer**, double-click **schedule.htm**.
@@ -328,7 +364,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 16. [ ] Close Microsoft Edge.
 
 ::: success
-**Results**: After completing this exercise, you will have refactored the JavaScript code that sends and receives data to use the jQuery **ajax** method.
+**Results**: After completing this exercise, you will have refactored the JavaScript code that sends and receives data to use the **async/await** pattern with the **fetch** API.
 :::
 
 ©2026 Specialist Courseware Ltd

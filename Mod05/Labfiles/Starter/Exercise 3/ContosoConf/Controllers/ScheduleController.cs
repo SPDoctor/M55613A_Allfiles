@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Conference.Controllers
 {
@@ -20,7 +17,7 @@ namespace Conference.Controllers
             public int starCount { get; set; }
         }
 
-        static readonly Random random = new Random(1);
+        static readonly Random random = new Random();
         static readonly IEnumerable<ScheduleItem> schedule;
 
         static int RandomStarCount()
@@ -227,21 +224,21 @@ namespace Conference.Controllers
             };
         }
 
-        public ActionResult List()
+        public IActionResult List()
         {
-            if (Request.Url.Query != "?fail")
+            if (!Request.Query.ContainsKey("fail"))
             {
-                return Json(new { schedule }, JsonRequestBehavior.AllowGet);
+                return Json(new { schedule });
             }
             else
             {
                 Response.StatusCode = 503;
-                return Json(new { message = "Service currently unavailable." }, JsonRequestBehavior.AllowGet);
+                return Json(new { message = "Service currently unavailable." });
             }
         }
 
         [HttpPost]
-        public ActionResult Star(string id, bool starred)
+        public IActionResult Star(string id, bool starred)
         {
             var item = schedule.First(s => s.id == id);
             item.starCount += starred ? 1 : -1;
