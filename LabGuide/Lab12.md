@@ -271,9 +271,9 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 3: Test the application
 
-1. [ ] In **Solution Explorer**, double-click **feedback.htm**.
+1. [ ] On the **Debug** menu, click **Start Without Debugging**.
 
-2. [ ] On the **Debug** menu, click **Start Without Debugging**.
+2. [ ] In Microsoft Edge navigate to the **Feedback** page.
 3. [ ] In Microsoft Edge, click **Send Feedback**.
 4. [ ] Verify that the form shrinks and flies off the top of the page.
 5. [ ] Close Microsoft Edge.

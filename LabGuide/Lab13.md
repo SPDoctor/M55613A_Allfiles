@@ -146,9 +146,8 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 4: Test the application
 
-1. [ ] In Solution Explorer, double-click **live.htm**.
-
-2. [ ] On the **Debug** menu, click **Start Without Debugging**.
+1. [ ] On the **Debug** menu, click **Start Without Debugging**.
+2. [ ] In Microsoft Edge, navigate to the **Live** page.
 3. [ ] In Microsoft Edge, once the page has loaded, wait five seconds.
 4. [ ] Verify that the page displays the following four questions:
 
@@ -234,9 +233,8 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 3: Test the application
 
-1. [ ] In Solution Explorer, double-click **live.htm**.
-
-2. [ ] On the **Debug** menu, click **Start Without Debugging**.
+1. [ ] On the **Debug** menu, click **Start Without Debugging**.
+2. [ ] In Microsoft Edge, navigate to the **Live** page.
 3. [ ] In Microsoft Edge, press Ctrl + T to open a new tab.
 4. [ ] In the **Address bar**, type **http://localhost:[port]/live.htm**, and then press **ENTER**.
 
@@ -285,7 +283,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         //item.appendChild(this.createReportLink());
     ```
 
-6. [ ] Modify this statement and remove the __//__ characters, as shown in the following JavaScript code:
+6. [ ] Uncomment this statement by removing the __//__ characters, as shown in the following JavaScript code:
 
     ```javascript
         item.appendChild(this.createReportLink());
@@ -366,9 +364,8 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 4: Test the application
 
-1. [ ] In Solution Explorer, double-click **live.htm**.
-
-2. [ ] On the **Debug** menu, click **Start Without Debugging**.
+1. [ ] On the **Debug** menu, click **Start Without Debugging**.
+2. [ ] In Microsoft Edge, navigate to the **Live** page.
 3. [ ] In Microsoft Edge, after the page loads, wait five seconds.
 4. [ ] Next to **What are some good resources for getting started with HTML5?**, click **Report**.
 5. [ ] Wait for about five seconds.
