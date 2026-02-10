@@ -26,7 +26,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
    **Note**: If **Security Warning for ContosoConf** dialog box appears, clear **Ask me for every project in this solution** checkbox and then click **OK**.
    :::
 
-4. [ ] In **Solution Explorer**, expand the **ContosoConf** project, and then double-click **register.htm**.
+4. [ ] In **Solution Explorer**, expand the **ContosoConf** project, expand the **wwwroot** folder, and then double-click **register.htm**.
 5. [ ] Find and review the comment that starts with the following text:
 
       ```html
@@ -42,7 +42,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 7. [ ] Before the **&lt;/body&gt;** tag near the end of the file, verify that the following HTML markup is present:
 
       ```html
-        <script src="/scripts/pages/register.js" type="text/javascript"></script>
+        <script src="/scripts/pages/register.js" type="module"></script>
       ```
 
 #### Task 2: Add form inputs to the Register page

@@ -25,19 +25,16 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
    **Note**: If **Security Warning for ContosoConf** dialog box appears, clear **Ask me for every project in this solution** checkbox and then click **OK**.
    :::
 
-3. [ ] In **Solution Explorer**, expand the **ContosoConf** project, expand the **wwwroot** folder, and then double-click **schedule.htm**.
-4. [ ] On the **Debug** menu, click **Start Without Debugging**.
-
-5. [ ] Expand the Windows notification area, right-click **IIS Express**, and then select **Exit**.
-6. [ ] In the **Confirmation** dialog box, click **Yes**.
-7. [ ] In Microsoft Edge, in the **Registration** box, click the star icon, and then verify that the icon is now colored yellow.
-8. [ ] Click **Refresh**.
-9. [ ] Verify that the star icon for **Registration** is now colored white.
-10. [ ] Close Microsoft Edge.
+3. [ ] On the **Debug** menu, click **Start Without Debugging**.
+4. [ ] In Microsoft Edge, navigate to the **Schedule** page.
+5. [ ] In Microsoft Edge, in the **Registration** box, click the star icon, and then verify that the icon is now colored yellow.
+6. [ ] Click **Refresh**.
+7. [ ] Verify that the star icon for **Registration** is now colored white, because the change was not persisted.
+8. [ ] Close Microsoft Edge.
 
 #### Task 2: Save information about starred sessions to local storage
 
-1. [ ] In **Solution Explorer**, expand the **ContosoConf** project, expand the **scripts** folder, and then double-click **LocalStarStorage.js**.
+1. [ ] In **Solution Explorer**, expand the **ContosoConf** project, expand the **wwwroot** folder, then expand the **scripts** folder, and then double-click **LocalStarStorage.js**.
 2. [ ] Find the following comments:
 
       ```javascript
@@ -135,17 +132,14 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 1. [ ] On the **Debug** menu, click **Start Without Debugging**.
 1. [ ] In Microsoft Edge, navigate to the Schedule page.
 1. [ ] In Microsoft Edge, to hard refresh the page, press Ctrl-F5.
-1. [ ] Expand the Windows notification area, right-click **IIS Express**, and then select **Exit**.
-1. [ ] In the **Confirmation** dialog box, click **Yes**.
 1. [ ] In Microsoft Edge, click the star icon in the **Registration** box, and then verify that the icon is now coloured yellow.
 1. [ ] Press Ctrl-F5 to hard refresh the browser.
 1. [ ] Verify that the star icon for **Registration** is still coloured yellow.
-1. [ ] Close Microsoft Edge.
 
 #### Task 6: Clear local storage data
 
 1. [ ] In Microsoft Edge, press **F12** to open the Developer Tools.
-2. [ ] Click the **Application** tab (it may be under the >> menu if your window is narrow).
+2. [ ] Click the **Application** tab (it may be under the + menu if your window is narrow).
 3. [ ] In the left sidebar, expand **Storage**, then expand **Local Storage**.
 4. [ ] Click on the site URL (e.g., **http://localhost:xxxx** where xxxx is your port number).
 5. [ ] You should see the **stars** key with its JSON array value in the right panel.

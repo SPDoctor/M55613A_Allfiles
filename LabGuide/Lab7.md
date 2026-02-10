@@ -32,7 +32,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
     ```javascript
         // TODO: Create a ScheduleList class.
     ```
-6. [ ] Right-click the **scripts** folder, point to **Add**, and then select **JavaScript File**.
+6. [ ] Right-click the **scripts** folder, point to **Add**, then **New Item...** and then select **JavaScript File**.
 7. [ ] For item name, add **ScheduleList.js**, and then click **Ok**.
 8. [ ] Add the following JavaScript code:
 	```javascript
@@ -40,9 +40,10 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 		export class ScheduleList {
 			//TODO: Add Constructor
+			
+			//TODO: Add methods
 		}
 		
-		//TODO: Add methods
 	```
 9. [ ] In **schedule.js**, find and remove the following comment:
 	```javascript

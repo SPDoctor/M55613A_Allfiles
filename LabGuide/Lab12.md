@@ -66,7 +66,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 7. [ ] Verify that the HTML contains the following:
     ```html
-        <script src="/scripts/pages/feedback.js" type="text/javascript"></script>
+        <script src="/scripts/pages/feedback.js" type="module"></script>
     ```
 
 8. [ ] On the **Debug** menu, click **Start Without Debugging**.
@@ -86,10 +86,10 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
             background-position: 0 -15px;
 
             /* TODO: Scale transform by 1.3 */
-            **transform: scale(1.3, 1.3);**
+            transform: scale(1.3, 1.3);
 
             /* TODO: Transition the transform property over 0.5 seconds */
-            **transition: transform .5s;**
+            transition: transform .5s;
         }
     ```
 
@@ -105,7 +105,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
             flex: 0 0 15px;
 
             /* TODO: Transition the transform property over 0.5 seconds */
-            **transition: transform .5s;**
+            transition: transform .5s;
         }
     ```
 
@@ -116,7 +116,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
             background-position: 0 -30px;
 
             /* TODO: Scale transform by 1.3 */
-            **transform: scale(1.3, 1.3);**
+            transform: scale(1.3, 1.3);
         }
     ```
 
@@ -127,22 +127,22 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 2. [ ] Update the following CSS rule, and add the code shown below:
 
     ```css
-        header.page-header .register:hover {
+        header .register:hover {
             color: #fff;
             background: linear-gradient(#bc0101, #8c0909);
 
             /* TODO: rotate to 16 degrees and scale by 1.1 */
-            **transform: rotate(16deg) scale(1.1, 1.1);**
+            transform: rotate(16deg) scale(1.1, 1.1);
 
             /* TODO: Transition the transform property over 1 second */
-            **transition: transform 1s;**
+            transition: transform 1s;
         }
     ```
 
-3. [ ] Update the following CSS rule, and add the code shown below:
+3. [ ] Find the header .register CSS ruleset, and add the code shown below after the comment:
 
     ```css
-        header.page-header .register {
+        header .register {
             display: block;
             position: absolute;
             top: 20px;
@@ -162,20 +162,20 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
             background: linear-gradient(#a80000, #740404);
 
             /* TODO: Transition the transform property over 1 second */
-            **transition: transform 1s;**
+            transition: transform 1s;
         }
     ```
 
 #### Task 4: Test the application
 
-1. [ ] In **Solution Explorer**, double-click **feedback.htm**.
-2. [ ] On the **Debug** menu, click **Start Without Debugging**.
+1. [ ] On the **Debug** menu, click **Start Without Debugging**.
+2. [ ] In Microsoft Edge, navigate to the **Feedback** page.
 
 3. [ ] In Microsoft Edge, place the mouse pointer over the third star of **How would you rate the speaker's knowledge of the topic?**.
 4. [ ] Verify that the first three stars animate to a larger size.
 5. [ ] Click the third star, and then move the mouse pointer away from the stars.
 6. [ ] Verify that the first three stars remain a larger size.
-7. [ ] Click **Home**.
+7. [ ] Navigate to the **Home** page.
 8. [ ] Place the mouse pointer over the **Register Free** link, and then verify that it rotates and enlarges.
 9. [ ] Close Microsoft Edge.
 

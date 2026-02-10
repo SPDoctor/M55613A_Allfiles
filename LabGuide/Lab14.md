@@ -26,7 +26,7 @@ Wherever a path to a file starts with *[Repository Root]*, replace it with the a
     **Note**: If **Security Warning for ContosoConf** dialog box appears clear **Ask me for every project in this solution** and then click **OK**.
     :::
 
-4. [ ] In ContosoConf - Microsoft Visual Studio, on the **Project** menu, right-click **Add New Item**.
+4. [ ] In ContosoConf - Microsoft Visual Studio, on the **Project** menu, right-click, choose **Add** and then **New Item...**.
 5. [ ] In the **Add New Item – ContosoConf** dialog box, click **npm Configuration File**.
 6. [ ] In the **Name** box, type **package.json**.
 7. [ ] Click **Add**.
@@ -37,7 +37,7 @@ Wherever a path to a file starts with *[Repository Root]*, replace it with the a
         npm install @babel/core babel-loader @babel/preset-env webpack webpack-cli --save-dev
    ```
 
-10. [ ] In ContosoConf - Microsoft Visual Studio, on the **Project** menu, right-click **Add New Item**.
+10. [ ] In ContosoConf - Microsoft Visual Studio, on the **Project** menu, right-click, choose **Add** then **New Item...**.
 11. [ ] In the **Add New Item – Solution Items** dialog box, click **JavaScript File**.
 12. [ ] In the **Name** box, type **webpack.config.js**.
 13. [ ] Click **Add**.
@@ -132,7 +132,7 @@ Wherever a path to a file starts with *[Repository Root]*, replace it with the a
         <script src="/dist/offline.bundle.js" type="module"></script>
         <script src="/dist/video.bundle.js" type="module"></script>
     ```
-3. [ ] Run the application. The application should work as before and support older versions of Internet Explorer.
+3. [ ] Run the application. The application should work as before and support older versions of Internet Explorer, with reduced network load.
 
 ::: success
 **Results**: After completing this exercise, you will have a new **bundle.js** file which supports ECMAScript 5 for older browsers. As a further exercise, you can add a build step in Visual Studio to call webpack automatically with every build.

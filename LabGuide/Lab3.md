@@ -41,7 +41,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 6. [ ] Verify that the file contains the following HTML markup towards the end:
 
     ```html
-        <script src="/scripts/pages/schedule.js" type="text/javascript"></script>
+        <script src="/scripts/pages/schedule.js" type="module"></script>
     ```
 
 7. [ ] In Solution Explorer, expand the **scripts** folder.
@@ -147,7 +147,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
     **Note**: If **Security Warning for ContosoConf** dialog box appears, clear **Ask me for every project in this solution** checkbox and then click **OK**.
     :::
 
-3. [ ] In Solution Explorer, expand the **ContosoConf** project, and then double-click **schedule.htm**.
+3. [ ] In Solution Explorer, expand the **ContosoConf** project, expand **wwwroot** and then double-click **schedule.htm**.
 4. [ ] Find the line containing the following HTML markup:
 
     ```html
@@ -155,7 +155,6 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
     ```
 
 5. [ ] Before this line, insert the following HTML markup:
-Show:
 
     ```html
         <input type="checkbox" id="show-track-1" checked="checked"/><label      for="show-track-1">Track 1</label>
@@ -164,7 +163,7 @@ Show:
 
 #### Task 2: Write code to get the check box elements from the Schedule page
 
-1. [ ] In Solution Explorer, expand the **scripts** folder, expand the **pages** sub-folder, and then double-click **schedule.js**.
+1. [ ] In Solution Explorer, expand the **wwwroot/scripts** folder, expand the **pages** sub-folder, and then double-click **schedule.js**.
 
 2. [ ] In **schedule.js**, find the line containing the following JavaScript code:
 
