@@ -89,18 +89,18 @@
             messageLabel = document.getElementById("messageLabel");
 
             // Handle the event that occurs when the ball animation starts.
-            ball.addEventListener("MSAnimationStart", function (e) {
+            ball.addEventListener("animationstart", function (e) {
                 pooltable.classList.add("animate");
                 messageLabel.innerHTML += "Animation <b>" +  e.animationName + "</b> started at " + new Date() + ".<br>";
             }, false);
 
             // Handle the event that occurs for each iteration.
-            ball.addEventListener("MSAnimationIteration", function (e) {
+            ball.addEventListener("animationiteration", function (e) {
                 messageLabel.innerHTML += "Animation <b>" +  e.animationName + "</b> iteration completed, elapsed time " + e.elapsedTime + ".<br>";
             }, false);
 
             // Handle the event that occurs when the ball animation ends.
-            ball.addEventListener("MSAnimationEnd", function (e) {
+            ball.addEventListener("animationend", function (e) {
                 button.disabled = false;
                 ball.classList.remove("animate");
                 pooltable.classList.remove("animate");

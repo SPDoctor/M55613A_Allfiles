@@ -15,14 +15,9 @@
         position: absolute;
     }
 
-
     #container {
         margin: 400px;
         perspective: 200px;
-        -webkit-perspective: 200px;
-        -moz-perspective: 200px;
-        -o-perspective: 200px;
-
         transition: transform 5s;
     }
 
@@ -33,54 +28,31 @@
     #rightFace  {
         background-color: yellow;
         transform: translateX(-100px) rotateY(90deg) translateZ(200px);
-        -webkit-transform: translateX(-100px) rotateY(90deg) translateZ(200px);
-        -moz-transform: translateX(-100px) rotateY(90deg) translateZ(200px);
-        -o-transform: translateX(-100px) rotateY(90deg) translateZ(200px);
     }
-
 
     #leftFace {
         background-color: orange;
         transform: translateX(100px) rotateY(-90deg) translateZ(200px);
-        -webkit-transform: translateX(100px) rotateY(-90deg) translateZ(200px);
-        -moz-transform: translateX(100px) rotateY(-90deg) translateZ(200px);
-        -o-transform: translateX(100px) rotateY(-90deg) translateZ(200px);
     }
-
 
     #topFace {
         background-color:  purple;
         transform: translateY(100px) rotateX(-90deg) rotateY(180deg) translateZ(200px);
-        -webkit-transform: translateY(100px) rotateX(-90deg) rotateY(180deg) translateZ(200px);
-        -moz-transform: translateY(100px) rotateX(-90deg) rotateY(180deg) translateZ(200px);
-        -o-transform: translateY(100px) rotateX(-90deg) rotateY(180deg) translateZ(200px);
     }
-
 
     #bottomFace {
         background-color: red;
         transform: translateY(-100px) rotateX(90deg) rotateY(180deg) translateZ(200px);
-        -webkit-transform: translateY(-100px) rotateX(90deg) rotateY(180deg) translateZ(200px);
-        -moz-transform: translateY(-100px) rotateX(90deg) rotateY(180deg) translateZ(200px);
-        -o-transform: translateY(-100px) rotateX(90deg) rotateY(180deg) translateZ(200px);
     }
-
 
     #backFace {
         background-color: green;
         transform: rotateY(180deg) translateZ(100px);
-        -webkit-transform: rotateY(180deg) translateZ(200px);
-        -moz-transform: rotateY(180deg) translateZ(200px);
-        -o-transform: rotateY(180deg) translateZ(200px);
     }
-
 
     #frontFace  {
         background-color: rgba(0, 0, 255, 0.25);
         transform: translateZ(100px);
-        -webkit-transform: translateZ(100px);
-        -moz-transform: translateZ(100px);    
-        -o-transform: translateZ(100px);    
     }
 
     </style>
@@ -88,7 +60,7 @@
     <script>
         function onChangePerspective() {
             var container = document.getElementById("container");
-            alert(container.style["msPerspective"]);
+            alert(container.style["perspective"]);
         }
 
     </script>

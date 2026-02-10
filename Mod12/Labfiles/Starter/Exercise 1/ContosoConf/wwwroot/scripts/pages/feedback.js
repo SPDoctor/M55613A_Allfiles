@@ -17,7 +17,6 @@ function animationEnded() {
 form.addEventListener("submit", formSubmitting, false);
 // TODO: Add listener for the animationend event,
 //       calling the animationEnded function.
-form.addEventListener("msAnimationEnd", animationEnded, false);
 
 const questions = form.querySelectorAll(".feedback-question");
 for (let i = 0; i < questions.length; i++) {

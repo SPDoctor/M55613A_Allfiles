@@ -15,8 +15,6 @@ function animationEnded() {
 };
 
 form.addEventListener("submit", formSubmitting, false);
-form.addEventListener("msAnimationEnd", animationEnded, false);
-form.addEventListener("webkitAnimationEnd", animationEnded, false);
 form.addEventListener("animationend", animationEnded, false);
 
 const questions = form.querySelectorAll(".feedback-question");
