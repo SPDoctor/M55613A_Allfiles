@@ -1,19 +1,1 @@
 /* Styles for smaller browsers e.g. phones and tablets */
-
-/* TODO: Task 2: Add a CSS media query that targets screens up to 480 pixels wide */
-
-    /* TODO: Task 2: Add a rule for nav.page-nav .container using flexbox:
-
-    /* TODO: Task 2: Hide the :before and :after pseudo elements of .active navigation links (display: none) */
-
-    /* TODO: Task 2: Add a rule for nav.page-nav a with:
-       - border: 1px dotted #3d3d3d
-       - margin: .5rem */
-
-/* TODO: Task 2: Add another media query that targets screens up to 720 pixels wide */
-
-    /* TODO: Task 2: Reduce the height of the page header (set height to auto) */
-
-    /* TODO: Task 2: Hide the large Register link in the page header (display: none) */
-
-    /* TODO: Task 2: Reduce the font-size of the h1 element in the page header to 3rem */

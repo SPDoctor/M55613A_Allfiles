@@ -23,33 +23,21 @@ Also, make sure that you have disabled caching in Microsoft Edge:
 #### Task 1: Review the existing application
 
 1.	Start Microsoft Visual Studio, and then from the **[Repository Root]\Allfiles\Mod10\Labfiles\Starter\Exercise 1** folder, open the **ContosoConf.sln** solution.
-2.	Run the application, and then view the **about.htm** page in the **wwwroot** folder.
+2.	Run the application by clicking on Debug->Start Without Debugging, and then view the **about.htm** page in the **wwwroot** folder.
 2.  In Microsoft Edge, if the **Intranet settings are turned off by default** message appears, click **Don’t show this message again**.
 3.	On the **About** page press **Ctrl+P**  to open the **Print Preview** window. Notice that the print preview attempts to display the page header and that the text columns are too narrow.
 
 ![alt text](./Images/Lab10_Print-Preview.png "The About page in Print Preview mode")
 
 4.	Close the **About ContosoConf - Print** window and then close Microsoft Edge.
-5.	In ContosoConf - Microsoft Visual Studio, examine the about.htm page and verify that the **&lt;nav&gt;** element is marked with the **page-nav** class, the **&lt;header&gt;** element is marked with the **page-header** class, and the **&lt;footer&gt;** element is marked with the **page-footer** class, as follows:
-```html
-    <nav class="page-nav">
-
-    <header class="page-header">
-
-    <footer class="page-footer">
-```
-You will use these classes to style the elements when the page is printed.
+5.	In ContosoConf - Microsoft Visual Studio, examine the about.htm page and verify that it is using HTML5 semantic elements such as **&lt;nav&gt;**, **&lt;header&gt;** , and **&lt;footer&gt;**. You will use these elements to apply the print-specific styles when the page is printed.
 
 #### Task 2: Create a style sheet for printing web pages
 
-1.	In the ContosoConf project, right-click the **wwwroot/styles** folder, and choose **Add New Item** to add a new style sheet named **print.css**.
-- Use the **Add New Item** wizard and the **Style Sheet** template on the **Web** tab, and give it the name **print.css**.
-2.	In the **print.css** style sheet, delete the existing content.
-2.  Add the following CSS rule to hide the **nav** element that has the **page-nav** class, the **header** element that has the **page-header** class, and the **footer** element that has the **page-footer** class, by setting the **display** property of these elements to **none**:
+1.	In the ContosoConf project, right-click the **wwwroot/styles** folder, and double-click on **print.css**.
+2.  Add the following CSS rule to hide the **nav**, the **header**, and the **footer** elements by setting the **display** property of these elements to **none**:
     ```css
-    nav.page-nav,
-    header.page-header,
-    footer.page-footer {
+    nav, header, footer {
         display: none;
     }
     ```
@@ -58,10 +46,11 @@ You will use these classes to style the elements when the page is printed.
     .container {
         padding: 0;
         max-width: none;
-    }    ```
+    }
+    ```
 4.	In the **styles/pages** folder, the **about.css** style sheet contains the following CSS rule to display the page text in columns.
     ```css
-        .about > article > section {
+        .about > div > section {
             text-align: justify;
 
             /* Columns Layout */
@@ -71,7 +60,7 @@ You will use these classes to style the elements when the page is printed.
     ```
 5. In **print.css**, add a CSS rule that removes the columns, so that the text displays as a single block:
     ```css
-    .about > article > section {
+    .about > div > section {
         column-count: 1;
     }
     ```
@@ -100,6 +89,10 @@ You will use these classes to style the elements when the page is printed.
 
 4.	Close the **About ContosoConf - Print** window, and then close Microsoft Edge.
 
+::: warning
+**Note**: Whether the headers and footers appear will depend on the settings in the print dialog.
+:::
+
 >**Results**: After completing this exercise, you will have added a style sheet that implements a print-friendly format for the web pages.
 
 ### Exercise 2: Adapting Page Layout to Fit Different Form Factors
@@ -112,9 +105,9 @@ You will use these classes to style the elements when the page is printed.
 **Note**: If **Security Warning for ContosoConf** dialog box appears, clear **Ask me for every project in this solution** checkbox and then click **OK**.
 :::
 
-2.	Run the application, and then view the **index.htm** page.
+2.	Run the application, and then view the **Home** page.
 
-3.	Resize Microsoft Edge to **800 x 480**, approximating the form factor of a smartphone device, by using the F12 Developer Tools to change the size of the device viewing the website. The **Resize** command on the **Tools** menu enables you to change the size of the browser.
+3.	Resize Microsoft Edge to **800 x 480**, approximating the form factor of a smartphone device, by using the F12 Developer Tools to change the size of the device viewing the website. Use the device emulation toggle, which is the second button on the developer tools menu bar.
 
 4.	Notice that the website navigation bar does not fit on the screen and that the big **Register** link overlaps the header text.
 
@@ -124,30 +117,31 @@ You will use these classes to style the elements when the page is printed.
 
 #### Task 2: Implement styles for hand-held devices and smartphones
 
-1.	From the styles **folder**, open the **mobile.css** style sheet. This style sheet is referenced in the **&lt;head&gt;** element of each page in the website. This style sheet is currently empty, but you will use it to specify the styles for hand-held devices and smartphones.
+1.	From the **styles** folder, open the **mobile.css** style sheet. This style sheet is referenced in the **&lt;head&gt;** element of each page in the website. This style sheet is currently empty, but you will use it to specify the styles for hand-held devices and smartphones.
 2.	Add a CSS media query that targets screens that are less than or equal to 480 pixels in width:
   ```css
   @media screen and (max-width: 480px) {
   }
   ```
 
-3.	In the media query, add a rule for **nav.page-nav .container** that uses a flexbox to display the contents of the navigation bar, as follows:
+3.	Inside the media query, add a ruleset for **nav .container** that uses a flexbox to display the contents of the navigation bar, as follows:
    ```css
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        nav .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
    ```
-4.	Add another rule that hides the **:before** and **:after** pseudo elements of the **.active** navigation link, setting the **display** property to none:
+4.	Add another ruleset that hides the **:before** and **:after** pseudo elements of the **.active** navigation link, setting the **display** property to none:
    ```css
-        nav.page-nav .active:before,
-        nav.page-nav .active:after {
+        nav .active:before, nav .active:after {
             display: none;
         }
    ```
 
-5.	Add another rule that sets a **.5rem** margin around each navigation link. This rule should also set a **1px** dotted border with the color **#3d3d3d** completely around the link, instead of just on the right:
+5.	Add another ruleset that sets a **.5rem** margin around each navigation link. This rule should also set a **1px** dotted border with the color **#3d3d3d** completely around the link, instead of just on the right:
    ```css
-        nav.page-nav a {
+        nav a {
             border: 1px dotted #3d3d3d;
             margin: .5rem;
         }
@@ -165,15 +159,15 @@ You will use these classes to style the elements when the page is printed.
 - Reduce the **font-size** of the **&lt;h1&gt;** element in the page header to **3rem**:
   ```css
     @media screen and (max-width: 720px) {
-        header.page-header {
+        header {
             height: auto;
         }
 
-        header.page-header .register {
+        header .register {
             display: none;
         }
 
-        header.page-header h1 {
+        header h1 {
             font-size: 3rem;
         }
     }
@@ -183,7 +177,7 @@ You will use these classes to style the elements when the page is printed.
 
 1.	Run the application, and then view the **Home** page.
 1.  In Microsoft Edge, open the F12 Developer Tools.
-1.	Resize Microsoft Edge to various sizes to test that the media queries adapt the user interface correctly, by using the **Emulation** option under **Display**.
+1.	Resize Microsoft Edge to various sizes to test that the media queries adapt the user interface correctly, by using the **Emulation** option described earlier, or you can simply adjust the viewport width continuously using the drag handle on the boundary between the display and developer tools windows.
 1. Select **1280x800** from the resolution drop-down list, and verify that the desktop layout is displayed correctly:
 ![desktop screenshot](./Images/Lab10_Home-Desktop.png "screenshot of home page with desktop size display")
 1. Select **1280x800** from the resolution drop-down list, and verify that the desktop layout is displayed correctly:

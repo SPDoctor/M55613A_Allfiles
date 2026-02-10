@@ -1,33 +1,32 @@
 /* Styles for smaller browsers e.g. phones and tablets */
 
 @media screen and (max-width: 480px) {
-    nav.page-nav .container {
+    nav .container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    nav.page-nav .active:before,
-    nav.page-nav .active:after {
+    nav .active:before, nav .active:after {
         display: none;
     }
 
-    nav.page-nav a {
+    nav a {
         border: 1px dotted #3d3d3d;
         margin: .5rem;
     }
 }
 
 @media screen and (max-width: 720px) {
-    header.page-header {
+    header {
         height: auto;
     }
 
-    header.page-header .register {
+    header .register {
         display: none;
     }
 
-    header.page-header h1 {
+    header h1 {
         font-size: 3rem;
     }
 }
