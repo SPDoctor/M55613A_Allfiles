@@ -2,7 +2,7 @@
 
 /* For small screens revert back to normal layout */
 @media screen and (max-width: 960px) {
-    .about > article > section {
+    .about > div > section {
         column-count: 1;
     }
     
