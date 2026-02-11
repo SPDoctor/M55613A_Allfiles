@@ -8,36 +8,44 @@ const pauseButton = videoSection.querySelector(".video-pause");
 const time = videoSection.querySelector(".video-time");
 
 function ready() {
+  // TODO: display the video controls
   controls.style.display = "block";
   console.log("ready");
 };
 
 function play() {
+    // TODO: play the video
     video.play();
     playButton.style.display = "none";
-    pauseButton.style.display = "";
+    pauseButton.style.display = ""; 
 };
 
 function pause() {
+    // TODO: pause the video
     video.pause();
-    playButton.style.display = "";
     pauseButton.style.display = "none";
+    playButton.style.display = ""; 
 };
 
 function updateTime() {
-    time.textContent = formatTime(video.currentTime);
+    // TODO: Set time.textContent using video.current time.
+    //       Use the formatTime function to convert raw seconds into HH:MM:SS format.
+    time.textContent = formatTime(video.currentTime); 
 };
 
 pauseButton.style.display = "none";
 
-video.addEventListener("loadeddata", ready, false);
-video.addEventListener("timeupdate", updateTime, false);
-playButton.addEventListener("click", play, false);
-pauseButton.addEventListener("click", pause, false);
-
+// TODO: Add event listeners for:
+//       video loaddata
+    video.addEventListener("loadeddata", ready, false);
+//       video timeupdate
+    video.addEventListener("timeupdate", updateTime, false);
+//       play click
+//       pause click
+    playButton.addEventListener("click", play, false);
+    pauseButton.addEventListener("click", pause, false);
+// TODO: Handle pre-loaded videos by checking video.readyState
 // If the video is already loaded, call ready() immediately
-if (video.readyState >= 2) {
-    ready();
-}
-
-
+    if (video.readyState >= 2) {
+      ready();
+    } 

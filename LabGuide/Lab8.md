@@ -50,7 +50,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 2: Add a drag and drop event listeners
 
-1. [ ] In **SpeakerBadgePage.js**, find the following comment:
+1. [ ] In the **wwwroot/scripts** folder, open **SpeakerBadgePage.js**, then find the following comment:
 
     ```javascript
         // TODO: Add event listeners for element "dragover" and "drop" events.
@@ -60,8 +60,8 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 2. [ ] After the comment, add the following JavaScript code:
 
     ```javascript
-        this.canvas.addEventListener("dragover", this.handleDragOver.bind(this));
-        this.canvas.addEventListener("drop", this.handleDrop.bind(this));
+        this.imageElement.addEventListener("dragover", this.handleDragOver.bind(this));
+        this.imageElement.addEventListener("drop", this.handleDrop.bind(this));
     ```
 
 #### Task 3: Handle the drop event
@@ -100,30 +100,20 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
     ```javascript
         if (this.isImageType(file.type)) {
-    ```
 
-7. [ ] Find the following comment:
-
-    ```javascript
-         //       Use this.readFile to read the file, then load and draw the image
-         //       Chain: this.readFile(file) -> this.loadImage(imageUrl) -> this.drawBadge(image)
-         //       (Note that readFile and loadImage return Promises, so use .then() to chain them)
-    ```
-8. [ ] After the comment, add the following JavaScript code:
-    ```javascript
-			this.readFile(file)
-                .then((imageUrl) => this.loadImage(imageUrl))
-                .then((image) => {
-                    this.drawBadge(image);
-                    this.notBusy();
-                })
-                .catch((error) => {
-                    console.error("Error processing image:", error);
-                    this.notBusy();
-                });
         } else {
-            alert("Please drop an image file.");
+
         }
+    ```
+
+7. [ ] Following the if statement, add the following code:
+
+    ```javascript
+            this.readFile(file).then((file) => this.displayImage(file));
+    ```
+8. [ ] In the else clause, add the following code:
+    ```javascript
+            alert("Please drop an image file.");
     ```
 
 #### Task 4: Read the image by using a FileReader  object
@@ -199,20 +189,25 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 3. [ ] In **Solution Explorer**, expand the **ContosoConf** project node.
 
 4. [ ] Expand the **wwwroot** folder, then double-click **index.htm**.
-5. [ ] Find the comment that starts with the line:
+5. [ ] Find the comment:
 
     ```javascript
         <!-- TODO: Add video tag here -->
     ```
 
-6. [ ] After the second line of the comment, add the following HTML markup:
+6. [ ] After the comment, add the following HTML markup:
     ```html
         <video src="/media/contosoconf.mp4"></video>
     ```
 
 #### Task 2: Add controls to the video player
 
-1. [ ] In **index.htm**, after the **&lt;/video&gt;** element, insert the following HTML markup:
+5. [ ] In **index.htm**, find the comment:
+
+    ```javascript
+        <!-- TODO: Add video controls here -->
+    ```
+1. [ ] After the comment, insert the following HTML markup:
 
     ```html
         <div class="video-controls" style="display: none">
@@ -222,15 +217,15 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         </div>
     ```
 
-2. [ ] Find the following comment and select it with the mouse: 
+1. [ ] Find the following comment and select it with the mouse: 
 
     ```html
         <!--<script src="/scripts/pages/video.js" type="module"></script>-->
     ```
 
-3. [ ] In the toolbar, click the **Uncomment the selected lines** button. 
+1. [ ] In the toolbar, click the **Uncomment the selected lines** button. 
 
-4. [ ] Verify that the HTML markup now looks like this:
+1. [ ] Verify that the HTML markup now looks like this:
 
     ```html
         <script src="/scripts/pages/video.js" type="module"></script>
@@ -238,7 +233,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 3: Control the video by using JavaScript code
 
-1. [ ] In **Solution Explorer**, expand the **scripts** folder, and then expand the **pages** folder.
+1. [ ] In **Solution Explorer**, expand the **wwwroot/scripts** folder, and then expand the **pages** folder.
 2. [ ] Double-click **video.js**.
 
 3. [ ] Find the following comment:
@@ -428,7 +423,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 #### Task 4: Test the Location page
 
 1. [ ] In **Solution Explorer**, on the **Debug** menu, double-click **Start Without Debugging**.
-2. [ ] In Microsoft Edge, navigate to the Location page.
+2. [ ] In Microsoft Edge, navigate to the **Location** page.
 3. [ ] In Microsoft Edge, if the **Let localhost use your location?** message appears, click **Yes**.
 4. [ ] In the **Let Microsoft Edge access your precise location?** dialog box, click **Yes**.
 5. [ ] Verify that the page displays the distance to the conference venue, in miles (the actual value will vary, depending on your distance from the conference venue.)
