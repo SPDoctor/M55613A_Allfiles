@@ -26,34 +26,30 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 **Note**: If **Security Warning for ContosoConf** dialog box appears, clear **Ask me for every project in this solution** checkbox and then click **OK**.
 :::
 
-4. [ ] In **Solution Explorer**, expand the **ContosoConf** project, expand the **scripts** folder, and then expand the **pages** folder. 
+4. [ ] In **Solution Explorer**, expand the **ContosoConf** project, expand the **wwwroot** folder, then expand the **scripts** folder, and then expand the **pages** folder. 
 
 5. [ ] Double-click **schedule.js**.
 6. [ ] Verify that the first line of the file now contains the following JavaScript code:
 
     ```javascript
-        let schedule = [];
+        let schedules = [];
     ```
 
 7. [ ] Verify that the **createSessionElement** function contains the following JavaScript code:
 
     ```javascript
-        function createSessionElement(session) {
-            const li = document.createElement("li");
-
-            li.sessionId = session.id;
-
-            const star = document.createElement("a");
-            star.setAttribute("href", "#");
-            star.setAttribute("class", "star");
-            li.appendChild(star);
-
-            const title = document.createElement("span");
-            title.textContent = session.title;
-            li.appendChild(title);
-
-            return li;
-        };
+    const createSessionElement = (session) => {
+        const li = document.createElement('li');
+        li.className = 'schedule-item';
+        li.sessionId = session.id;
+        
+        li.innerHTML = `
+            <a href="#" class="star"></a>
+            <span>${session.title}</span>
+        `;
+        
+        return li;
+    };
     ```
 
 #### Task 2: Create the downloadSchedule function
@@ -72,7 +68,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         }
     ```
 
-3. [ ] In the **schedule.js** file, after the previous statement in the **downloadSchedule** function, add the following JavaScript code: 
+3. [ ] In the **schedule.js** file, after the statement in the **downloadSchedule** function, and before the closing brace, add the following JavaScript code: 
 
     ```javascript
         request.open("GET", "/schedule/list", true);
@@ -80,7 +76,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
             if (request.readyState === 4) {
                 const response = JSON.parse(request.responseText);
                 response.schedule.forEach(function (element) {
-                    schedule.push(element);
+                    schedules.push(element);
                 });
                 displaySchedule();
             }
@@ -96,7 +92,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 3: Add error handling to the downloadSchedule function
 
-1. [ ] In the **schedule.js** file, add the following code shown in bold to the **downloadSchedule** function:
+1. [ ] In the **schedule.js** file, add code to the **downloadSchedule** function to make it more defensive, so that it looks like the following (or just replace the function downloadSchedule with the following):
 
     ```javascript
         function downloadSchedule() {
@@ -108,7 +104,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
                         const response = JSON.parse(request.responseText);
                         if (request.status === 200) {
                             response.schedule.forEach(function (element) {
-								schedule.push(element);
+								schedules.push(element);
 							});
                             displaySchedule();
                         } else {
@@ -125,9 +121,8 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 4: Test the Schedule page
 
-1. [ ] In **Solution Explorer**, double-click **schedule.htm**.
-
-2. [ ] On the **Debug** menu, click **Start Without Debugging**.
+1. [ ] On the **Debug** menu, click **Start Without Debugging**.
+2. [ ] Navigate to the **Schedule** page.
 3. [ ] In Microsoft Edge, if the **Intranet settings are turned off by default** message appears, click **Don’t show this message again**.
 4. [ ] Verify that the page displays a list of conference sessions.
 5. [ ] Close Microsoft Edge.
@@ -179,7 +174,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         function saveStar(sessionId, isStarred) {
     ```
 
-6. [ ] After the last line of the **TODO** comment in the body of this function, add the following JavaScript code:
+6. [ ] In the body of this function, add the following JavaScript code:
 
     ```javascript
         const request = new XMLHttpRequest();
@@ -219,8 +214,8 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 3: Test the Schedule page
 
-1. [ ] In **Solution Explorer**, double-click **schedule.htm**.
-2. [ ] On the **Debug** menu, click **Start Without Debugging**.
+1. [ ] On the **Debug** menu, click **Start Without Debugging**.
+2. [ ] Navigate to the **Schedule** page.
 3. [ ] In Microsoft Edge, click the star next to **New Technologies in Enterprise**.
 4. [ ] Verify that the following message alert is displayed:
 
@@ -339,9 +334,8 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 3: Test the Schedule page
 
-1. [ ] In **Solution Explorer**, double-click **schedule.htm**.
-
-2. [ ] On the **Debug** menu, click **Start Without Debugging**.
+1. [ ] On the **Debug** menu, click **Start Without Debugging**.
+2. [ ] Navigate to the **Schedule** page.
 3. [ ] In Microsoft Edge, verify that the page displays the list of conference sessions.
 4. [ ] Click the star icon next to **New Technologies in Enterprise**.
 5. [ ] Verify that the following message alert is displayed:

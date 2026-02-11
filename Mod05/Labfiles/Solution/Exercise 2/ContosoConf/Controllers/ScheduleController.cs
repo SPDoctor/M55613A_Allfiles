@@ -63,7 +63,7 @@ namespace Conference.Controllers
                     end = "10:55",
                     tracks = new[] {1},
                     room = "A",
-                    starCount = RandomStarCount()
+                    starCount = 10
                 },
                 new ScheduleItem
                 {
@@ -75,7 +75,7 @@ namespace Conference.Controllers
                     end = "11:55",
                     tracks = new[] {2},
                     room = "B",
-                    starCount = RandomStarCount()
+                    starCount = 55
                 },
                 new ScheduleItem
                 {

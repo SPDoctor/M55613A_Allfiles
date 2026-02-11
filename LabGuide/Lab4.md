@@ -86,7 +86,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         </div>
       ```
 
-3. [ ] On the **Debug** menu, click **Start Without Debugging**.
+3. [ ] On the **Debug** menu, click **Start Without Debugging** and navigate to the **Register** page.
 
 4. [ ] In Microsoft Edge, if the **Intranet settings are turned off by default** message appears, click **Don’t show this message again**.
 5. [ ] In the **First name** box, type **Josh**.
@@ -140,7 +140,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         <input type="url" id="website" name="WebsiteUrl" placeholder="http://" />
       ```
 
-6. [ ] On the **Debug** menu, click **Start Without Debugging**.
+6. [ ] On the **Debug** menu, click **Start Without Debugging** and navigate to the **Register** page.
 
 7. [ ] In Microsoft Edge, verify that the cursor is placed in the **First name** box.
 8. [ ] Verify that the **Website/blog** box has **http://** as the placeholder text.
@@ -211,16 +211,15 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         <input type="password" id="confirm-password" name="ConfirmPassword" required="required" />
       ```
 
-12. [ ] On the **Debug** menu, click **Start Without Debugging**.
+12. [ ] On the **Debug** menu, click **Start Without Debugging** and navigate to the **Register** page.
 13. [ ] In Microsoft Edge, click **Register** without entering any data.
-14. [ ] Verify that the application highlights each mandatory box and that the form displays the following error message:
+14. [ ] Verify that the application highlights each mandatory box and that the form displays the following error message (exact wording might depend on browser):
 
       ```html
-        This is a required field
+        Please fill in this field.
       ```
 
 15. [ ] In the **First name** box, type **Josh**.
-
 16. [ ] In the **Last name** box, type **Bailey**.
 17. [ ] In the **Email address** box, type **josh.bailey@adatum.com**.
 18. [ ] In the **Choose a password** box, type **Passw0rd**.
@@ -244,17 +243,18 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         <input type="password" id="password" name="Password" required="required" pattern="[a-zA-Z0-9]{5,}" title="At least 5 letters and numbers" />
       ```
 
-4. [ ] On the **Debug** menu, click **Start Without Debugging**.
+4. [ ] On the **Debug** menu, click **Start Without Debugging** and navigate to the **Register** page.
 5. [ ] In Microsoft Edge, in the **First name** box, type **Josh**.
 6. [ ] In the **Last name** box, type **Bailey**.
 7. [ ] In the **Email address** box, type **josh.bailey@adatum.com**.
 8. [ ] In the **Choose a password** box, type **abc**.
 9. [ ] In the **Confirm your password** box, type **abc**.
 10. [ ] Click **Register**.
-11. [ ] Verify that the **Choose a password** box displays the following error message:
+11. [ ] Verify that the **Choose a password** box displays the following error message (exact wording of first part of message may depend on browser):
 
       ```html
-        You must use this format: At least 5 letters and numbers
+        Please match the requested format.
+        At least 5 letters and numbers
       ```
 
 12. [ ] In the **Choose a password** box, type **Passw0rd**.
@@ -314,7 +314,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 1. [ ] In the **register.js** file, find the comment that starts with the following text:
 
       ```javascript
-        // TODO: Task 3
+        // TODO: Task 3 - Display a custom error message if the passwords differ
       ```
 
 2. [ ] After this comment, add the following JavaScript code:
@@ -334,7 +334,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 1. [ ] In the **register.js** file, find the comment that starts with the following text:
 
       ```javascript
-        // TODO: Task 4
+        // TODO: Task 4 - Add input event listeners to call checkPasswords
       ```
 
 2. [ ] After the comment, add the following JavaScript code:
@@ -344,9 +344,8 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         confirmPasswordInput.addEventListener("input", checkPasswords, false);
       ```
 
-3. [ ] In **Solution Explorer**, double-click **register.htm**.
-
-4. [ ] On the **Debug** menu, click **Start Without Debugging**.
+3. [ ] On the **Debug** menu, click **Start Without Debugging**.
+4. [ ] Navigate to the **Register** page
 5. [ ] In Microsoft Edge, in the **First name** box, type **Josh**.
 6. [ ] In the **Last name** box, type **Bailey**.
 7. [ ] In the **Email address** box, type **josh.bailey\@adatum.com**.
@@ -367,15 +366,15 @@ message:
 #### Task 5: Style elements that are not valid
 
 1. [ ] In **Solution Explorer**, in the **ContosoConf** project, expand the **styles** folder, and then expand the **pages** folder.
-2. [ ] Double-click **register.css**.
+1. [ ] Double-click **register.css**.
 
-3. [ ] Find the comment that starts with the following text:
+1. [ ] Find the comment that starts with the following text:
 
       ```css
-        /* TODO: Task 5
+        /* TODO: Task 5 - Style elements that are not valid
       ```
 
-4. [ ] Below the comment, add the following style:
+1. [ ] Below the comment, add the following style:
 
       ```css
         .register form.submission-attempted input:invalid {
@@ -385,13 +384,11 @@ message:
         }
       ```
 
-5. [ ] In **Solution Explorer**, double-click **register.htm**.
-6. [ ] On the **Debug** menu, click **Start Without Debugging**.
-
-7. [ ] In Microsoft Edge, click **Register**.
-8. [ ] Verify that the application highlights the **First name**, **Last name**, **Email address**, **Choose a password**, and **Confirm your password** boxes with colored backgrounds.
-9. [ ] Close Microsoft Edge.
-10. [ ] Close all open windows.
+1. [ ] On the **Debug** menu, click **Start Without Debugging** and navigate to the **Register** page.
+1. [ ] In Microsoft Edge, click **Register**.
+1. [ ] Verify that the application highlights the **First name**, **Last name**, **Email address**, **Choose a password**, and **Confirm your password** boxes with colored backgrounds and red outlines to indicate that they have invalid input (you might need to hard refresh the browser to ensure the updated CSS is used).
+1. [ ] Close Microsoft Edge.
+1. [ ] Close all open windows.
 
 ::: success
 **Results:** After completing this exercise, you will have modified the registration page to validate password inputs.

@@ -26,7 +26,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
    **Note**: If **Security Warning for ContosoConf** dialogue box appears, clear **Ask me for every project in this solution** checkbox and then click **OK**.
    :::
 
-4. [ ] In **Solution Explorer**, expand the **ContosoConf** project, and then double-click **index.htm**. 
+4. [ ] In **Solution Explorer**, expand the **ContosoConf** project, expand the **wwwroot** folder, and then double-click **index.htm**. 
 
 5. [ ] Verify that the **&lt;head&gt;** element contains the following HTML markup:
 
@@ -51,7 +51,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 2: Style the navigation bar and links
 
-1. [ ] In ContosoConf - Microsoft Visual Studio, in **Solution Explorer**, expand the **styles** folder, and then double-click **nav.css**.
+1. [ ] In ContosoConf - Microsoft Visual Studio, in **Solution Explorer**, expand the **wwwroot/styles** folder, and then double-click **nav.css**.
 
 2. [ ] Find the following comment:
 
@@ -243,7 +243,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
    **Note**: If **Security Warning for ContosoConf** dialogue box appears, clear **Ask me for every project in this solution** checkbox and then click **OK**.
    :::
 
-3. [ ] In **Solution Explorer**, expand the **ContsoConf** project, and then double-click **index.htm**.
+3. [ ] In **Solution Explorer**, expand the **ContsoConf** project, expand the **wwwroot** folder, and then double-click **index.htm**.
 
 
 4. [ ] Verify that the **&lt;head&gt;** element contains the following HTML markup:
@@ -255,7 +255,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 5. [ ] Verify that the **&lt;header&gt;** element contains the following HTML markup:
 
       ```html
-        <header class="page-header">
+        <header>
             <div class="container">
                 <h1>ContosoConf</h1>
                 <p class="tag-line">A two-track conference on the latest HTML5      developments</p>
@@ -275,14 +275,14 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 #### Task 2: Position the Register link and set the text styling
 
-1. [ ] In **Solution Explorer**, expand the **styles** folder, and then double-click **header.css**.
+1. [ ] In **Solution Explorer**, expand the **wwwroot/styles** folder, and then double-click **header.css**.
 2. [ ] Find the following comment:
 
       ```css
         /* TODO: header.page-header .register */
       ```
 
-3. [ ] Modify the CSS rule following this comment, and add the CSS properties shown below:
+3. [ ] Modify the CSS rule following this comment, and add the CSS properties for positioning of the link as shown below:
 
       ```css
         header .register {
@@ -296,46 +296,23 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         }
       ```
 
-4. [ ] Add the following CSS properties to the **header .register** CSS rule: 
+4. [ ] Add the following additional CSS properties to the **header .register** CSS rule to enhance its appearance: 
 
       ```css
-        header .register {
-            display: block;
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            width: 160px;
-            height: 100px;
-            padding-top: 60px;
             opacity: 0.8;
             font-size: 2.7rem;
             color: #fff;
             text-align: center;
             text-decoration: none;
             text-transform: uppercase;
-            text-shadow: 0 1px 0 #000;
-        }
       ```
 
 #### Task 3: Style the Register link background, shape, and rotation properties
 
-1. [ ] Add the following CSS properties to the **header .register** CSS rule:
+1. [ ] Add the following CSS properties to the **header .register** CSS rule to further style it and make it circular:
 
       ```css
         header .register {
-            display: block;
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            width: 160px;
-            height: 100px;
-            padding-top: 60px;
-            opacity: 0.8;
-            font-size: 2.7rem;
-            color: #fff;
-            text-align: center;
-            text-decoration: none;
-            text-transform: uppercase;
             /* Rounded corners to create circle */
             border-radius: 100%;
             text-shadow: 0 1px 0 #000;
@@ -352,7 +329,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         }
       ```
 
-3. [ ] Add the following CSS properties to this rule:
+3. [ ] Add the following CSS properties to this rule to change the link's appearance when the user hovers over it:
 
       ```css
         header .register:hover {
@@ -389,13 +366,13 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 
 1. [ ] On the **Debug** menu, click **Start Without Debugging**.
 
-2. [ ] In Microsoft Edge, navigate to the **index** page.
+2. [ ] In Microsoft Edge, navigate to the **Home** page.
 
 3. [ ] Verify that the **Register** link in the page header looks like the following image:
 
    ![Screenshot](./Images/Lab6_Register-Link-Final.png "The styled Register link")
 
-4. [ ] Move the mouse pointer over the **Register** link, and then verify that it changes color.
+4. [ ] Move the mouse pointer over the **Register** link, and then verify that it subtly changes color.
 
 5. [ ] Close Microsoft Edge.
 
@@ -415,7 +392,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
    **Note**: If **Security Warning for ContosoConf** dialogue box appears, clear **Ask me for every project in this solution** checkbox and then click **OK**.
    :::
 
-3. [ ] In **Solution Explorer**, expand the **ContsoConf** project, and then double-click **about.htm**.
+3. [ ] In **Solution Explorer**, expand the **ContsoConf** project, expand the **wwwroot** folder, and then double-click **about.htm**.
 4. [ ] Verify that the **&lt;head&gt;** element contains the following HTML markup:
 
       ```html
@@ -425,21 +402,21 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 5. [ ] Verify that the **&lt;body&gt;** element contains the following HTML markup:
 
       ```html
-        <section class="page-section about">
-            <article class="container">
+        <main class="about">
+            <div class="container">
                 ...
-            </article>
-        </section>
+            </div>
+        </main>
       ```
 
 #### Task 2: Define text columns
 
-1. [ ] In **Solution Explorer**, expand the **styles** folder, expand the **pages** folder, and then double-click **about.css**.
+1. [ ] In **Solution Explorer**, expand the **wwwroot/styles** folder, expand the **pages** folder, and then double-click **about.css**.
 
 2. [ ] In **about.css**, find the following CSS comment:
 
       ```css
-        /* TODO: .about > article > section */
+        /* TODO: .about > div > section */
       ```
 
 3. [ ] After this comment, add the following CSS:
