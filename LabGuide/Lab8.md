@@ -93,7 +93,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
 5. [ ] Find the following comment:
 
     ```javascript
-        //       Check the file type is an image
+        // Check the file type is an image
     ```
 
 6. [ ] After the comment, add the following JavaScript code:
@@ -217,13 +217,13 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
         </div>
     ```
 
-1. [ ] Find the following comment and select it with the mouse: 
+1. [ ] Find the following comment: 
 
     ```html
         <!--<script src="/scripts/pages/video.js" type="module"></script>-->
     ```
 
-1. [ ] In the toolbar, click the **Uncomment the selected lines** button. 
+1. [ ] Uncomment this line (you can use the **Uncomment the selected lines** button in the toolbar). 
 
 1. [ ] Verify that the HTML markup now looks like this:
 
@@ -387,7 +387,7 @@ Ensure that you have cloned the M55613A_Allfiles directory from GitHub
     ```javascript
         const conferenceLocation = {
             latitude: 47.6097,  // decimal degrees
-            longitude: -122.3331 // decimal degrees
+            longitude: 122.3331 // decimal degrees
         };
     ```
 
