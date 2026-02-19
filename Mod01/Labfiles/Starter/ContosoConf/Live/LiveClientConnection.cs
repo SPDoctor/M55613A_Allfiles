@@ -31,7 +31,7 @@ namespace ContosoConf.Live
         async Task SendJsonMessageAsync(object message)
         {
             if (socket.State != WebSocketState.Open) return;
-            
+
             var json = JsonSerializer.Serialize(message);
             var buffer = new ArraySegment<byte>(Encoding.UTF8.GetBytes(json));
             await socket.SendAsync(buffer, WebSocketMessageType.Text, true, CancellationToken.None);
@@ -98,7 +98,7 @@ namespace ContosoConf.Live
         async Task SimulateOtherClientsAsync()
         {
             var badQuestion = new Question(3, "This is an #&!%!* inappropriate message!!");
-            
+
             await Task.Delay(1000);
             Questions.Add(new Question(1, "What are some good resources for getting started with HTML5?"));
             await Task.Delay(2000);
@@ -121,7 +121,7 @@ namespace ContosoConf.Live
             var id = ((JsonElement)message["report"]).GetInt32();
             var question = Questions.FirstOrDefault(q => q.id == id);
             if (question == null) return;
-            
+
             // Start background task to remove question after delay
             _ = Task.Run(async () =>
             {
@@ -134,13 +134,13 @@ namespace ContosoConf.Live
         {
             var buffer = new ArraySegment<byte>(new byte[1024]);
             var result = await socket.ReceiveAsync(buffer, CancellationToken.None);
-            
+
             // Handle close frames - return null to signal no message content
             if (result.MessageType == WebSocketMessageType.Close)
             {
                 return null;
             }
-            
+
             var json = Encoding.UTF8.GetString(buffer.Array, buffer.Offset, result.Count);
             var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(json);
             return dict;
